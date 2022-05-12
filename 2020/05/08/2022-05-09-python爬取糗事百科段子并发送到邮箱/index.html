@@ -16,12 +16,12 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="代码如下： #coding&#x3D;utf-8 import smtplib from email.mime.text import MIMEText from email.utils import formataddr import requests from bs4 import BeautifulSoup  r &#x3D; requests.get(&#39;https:&#x2F;&#x2F;www.qiushibaike.com&#x2F;">
+    <meta name="description" content="代码如下： #coding&#x3D;utf-8 import smtplib from email.mime.text import MIMEText from email.utils import formataddr import requests from bs4 import BeautifulSoup  r &#x3D; requests.get(&#39;https:&#x2F;&amp;#">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python爬取糗事百科段子并发送到邮箱">
 <meta property="og:url" content="http://example.com/2020/05/08/2022-05-09-python%E7%88%AC%E5%8F%96%E7%B3%97%E4%BA%8B%E7%99%BE%E7%A7%91%E6%AE%B5%E5%AD%90%E5%B9%B6%E5%8F%91%E9%80%81%E5%88%B0%E9%82%AE%E7%AE%B1/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="代码如下： #coding&#x3D;utf-8 import smtplib from email.mime.text import MIMEText from email.utils import formataddr import requests from bs4 import BeautifulSoup  r &#x3D; requests.get(&#39;https:&#x2F;&#x2F;www.qiushibaike.com&#x2F;">
+<meta property="og:description" content="代码如下： #coding&#x3D;utf-8 import smtplib from email.mime.text import MIMEText from email.utils import formataddr import requests from bs4 import BeautifulSoup  r &#x3D; requests.get(&#39;https:&#x2F;&amp;#">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-08T03:23:06.000Z">
 <meta property="article:modified_time" content="2022-05-12T01:55:14.178Z">
@@ -225,7 +225,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.2k 字
+      1.6k 字
     </span>
   
 
@@ -234,7 +234,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      6 分钟
+      7 分钟
     </span>
   
 
@@ -275,47 +275,47 @@
             
             <div class="markdown-body">
               <p>代码如下：</p>
-<div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#coding=utf-8</span>
-<span class="token keyword">import</span> smtplib
-<span class="token keyword">from</span> email<span class="token punctuation">.</span>mime<span class="token punctuation">.</span>text <span class="token keyword">import</span> MIMEText
-<span class="token keyword">from</span> email<span class="token punctuation">.</span>utils <span class="token keyword">import</span> formataddr
-<span class="token keyword">import</span> requests
-<span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
+<div class="code-wrapper"><pre class="line-numbers language-python" data-language="python"><code class="language-python">#coding&#x3D;utf-8
+import smtplib
+from email.mime.text import MIMEText
+from email.utils import formataddr
+import requests
+from bs4 import BeautifulSoup
 
-r <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'https://www.qiushibaike.com/text/page/1/'</span><span class="token punctuation">)</span>
-soup <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>r<span class="token punctuation">.</span>content<span class="token punctuation">,</span><span class="token string">'lxml'</span><span class="token punctuation">)</span>
+r &#x3D; requests.get(&#39;https:&#x2F;&#x2F;www.qiushibaike.com&#x2F;text&#x2F;page&#x2F;1&#x2F;&#39;)
+soup &#x3D; BeautifulSoup(r.content,&#39;lxml&#39;)
 
-contentUrl <span class="token operator">=</span> soup<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">,</span>class_<span class="token operator">=</span><span class="token string">'col1 old-style-col1'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">,</span>class_<span class="token operator">=</span><span class="token string">"article block untagged mb15 typs_long"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span>class_<span class="token operator">=</span><span class="token string">"contentHerf"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'href'</span><span class="token punctuation">)</span>
+contentUrl &#x3D; soup.find(&#39;div&#39;,class_&#x3D;&#39;col1 old-style-col1&#39;).find(&#39;div&#39;,class_&#x3D;&quot;article block untagged mb15 typs_long&quot;).find(&#39;a&#39;,class_&#x3D;&quot;contentHerf&quot;).get(&#39;href&#39;)
 
-textUrl <span class="token operator">=</span> <span class="token string">'https://www.qiushibaike.com'</span> <span class="token operator">+</span> contentUrl
+textUrl &#x3D; &#39;https:&#x2F;&#x2F;www.qiushibaike.com&#39; + contentUrl
 
-textR <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>textUrl<span class="token punctuation">)</span>
-textSoup <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>textR<span class="token punctuation">.</span>content<span class="token punctuation">,</span> <span class="token string">'lxml'</span><span class="token punctuation">)</span>
-text <span class="token operator">=</span> textSoup<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">,</span>class_<span class="token operator">=</span><span class="token string">"content"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>text
+textR &#x3D; requests.get(textUrl)
+textSoup &#x3D; BeautifulSoup(textR.content, &#39;lxml&#39;)
+text &#x3D; textSoup.find(&#39;div&#39;,class_&#x3D;&quot;content&quot;).text
 
-my_sender<span class="token operator">=</span><span class="token string">'*********@qq.com'</span>  <span class="token comment"># 发件人邮箱账号</span>
-my_pass <span class="token operator">=</span> <span class="token string">'werprgqmxaadbasd'</span>   <span class="token comment"># 发件人邮箱授权码</span>
-my_user<span class="token operator">=</span><span class="token string">'*********@163.com'</span>   <span class="token comment"># 收件人邮箱</span>
-<span class="token keyword">def</span> <span class="token function">mail</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-  ret<span class="token operator">=</span><span class="token boolean">True</span>
-  <span class="token keyword">try</span><span class="token punctuation">:</span>
-    msg<span class="token operator">=</span>MIMEText<span class="token punctuation">(</span>text<span class="token punctuation">,</span><span class="token string">'plain'</span><span class="token punctuation">,</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span> <span class="token comment">#填写邮件内容</span>
-    msg<span class="token punctuation">[</span><span class="token string">'From'</span><span class="token punctuation">]</span><span class="token operator">=</span>formataddr<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"发件人昵称"</span><span class="token punctuation">,</span>my_sender<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 括号里的对应发件人邮箱昵称、发件人邮箱账号</span>
-    msg<span class="token punctuation">[</span><span class="token string">'To'</span><span class="token punctuation">]</span><span class="token operator">=</span>formataddr<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"收件人昵称"</span><span class="token punctuation">,</span>my_user<span class="token punctuation">]</span><span class="token punctuation">)</span>       <span class="token comment"># 括号里的对应收件人邮箱昵称、收件人邮箱账号</span>
-    msg<span class="token punctuation">[</span><span class="token string">'Subject'</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">"每日笑话"</span>        <span class="token comment"># 邮件的主题，也可以说是标题</span>
+my_sender&#x3D;&#39;*********@qq.com&#39;  # 发件人邮箱账号
+my_pass &#x3D; &#39;werprgqmxaadbasd&#39;   # 发件人邮箱授权码
+my_user&#x3D;&#39;*********@163.com&#39;   # 收件人邮箱
+def mail():
+  ret&#x3D;True
+  try:
+    msg&#x3D;MIMEText(text,&#39;plain&#39;,&#39;utf-8&#39;) #填写邮件内容
+    msg[&#39;From&#39;]&#x3D;formataddr([&quot;发件人昵称&quot;,my_sender]) # 括号里的对应发件人邮箱昵称、发件人邮箱账号
+    msg[&#39;To&#39;]&#x3D;formataddr([&quot;收件人昵称&quot;,my_user])       # 括号里的对应收件人邮箱昵称、收件人邮箱账号
+    msg[&#39;Subject&#39;]&#x3D;&quot;每日笑话&quot;        # 邮件的主题，也可以说是标题
  
-    server<span class="token operator">=</span>smtplib<span class="token punctuation">.</span>SMTP_SSL<span class="token punctuation">(</span><span class="token string">"smtp.qq.com"</span><span class="token punctuation">,</span> <span class="token number">465</span><span class="token punctuation">)</span> <span class="token comment"># 发件人邮箱中的SMTP服务器，端口是25</span>
-    server<span class="token punctuation">.</span>login<span class="token punctuation">(</span>my_sender<span class="token punctuation">,</span> my_pass<span class="token punctuation">)</span> <span class="token comment"># 括号中对应的是发件人邮箱账号、邮箱密码</span>
-    server<span class="token punctuation">.</span>sendmail<span class="token punctuation">(</span>my_sender<span class="token punctuation">,</span><span class="token punctuation">[</span>my_user<span class="token punctuation">,</span><span class="token punctuation">]</span><span class="token punctuation">,</span>msg<span class="token punctuation">.</span>as_string<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 括号中对应的是发件人邮箱账号、收件人邮箱账号、发送邮件</span>
-    server<span class="token punctuation">.</span>quit<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 关闭连接</span>
-  <span class="token keyword">except</span> Exception<span class="token punctuation">:</span> <span class="token comment"># 如果 try 中的语句没有执行，则会执行下面的 ret=False</span>
-    ret<span class="token operator">=</span><span class="token boolean">False</span>
-  <span class="token keyword">return</span> ret
-ret<span class="token operator">=</span>mail<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">if</span> ret<span class="token punctuation">:</span>
-  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"邮件发送成功"</span><span class="token punctuation">)</span>
-<span class="token keyword">else</span><span class="token punctuation">:</span>
-  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"邮件发送失败"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
+    server&#x3D;smtplib.SMTP_SSL(&quot;smtp.qq.com&quot;, 465) # 发件人邮箱中的SMTP服务器，端口是25
+    server.login(my_sender, my_pass) # 括号中对应的是发件人邮箱账号、邮箱密码
+    server.sendmail(my_sender,[my_user,],msg.as_string()) # 括号中对应的是发件人邮箱账号、收件人邮箱账号、发送邮件
+    server.quit() # 关闭连接
+  except Exception: # 如果 try 中的语句没有执行，则会执行下面的 ret&#x3D;False
+    ret&#x3D;False
+  return ret
+ret&#x3D;mail()
+if ret:
+  print(&quot;邮件发送成功&quot;)
+else:
+  print(&quot;邮件发送失败&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
 
             </div>
             <hr>

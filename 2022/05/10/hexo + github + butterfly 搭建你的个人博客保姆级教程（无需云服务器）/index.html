@@ -378,16 +378,16 @@
 
 <p><img src="https://img-blog.csdnimg.cn/a2d53693b0c245609fd8da4d41862ed1.png" srcset="/img/loading.gif" lazyload alt="请添加图片描述"><br>下图可以看到，主题已经更换成功<br><img src="https://img-blog.csdnimg.cn/df5c2ee9fbf94ea1aaaa0d6ae10bf3e7.png" srcset="/img/loading.gif" lazyload alt="请添加图片描述"></p>
 <h2 id="部署到-github"><a href="#部署到-github" class="headerlink" title="部署到 github"></a>部署到 github</h2><p>首先输入下面的命令安装插件：</p>
-<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm install hexo-deployer-git --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
 
 <p><img src="https://img-blog.csdnimg.cn/85e5ff29599646a9a71a71ef7ec82999.png" srcset="/img/loading.gif" lazyload alt="请添加图片描述"><br>打开自己的 github 主页，没有账号的可以去注册一下。</p>
 <p>新建一个仓库<br><img src="https://img-blog.csdnimg.cn/3d1b369cdb2e4f4b85a389e776ed6a7d.png" srcset="/img/loading.gif" lazyload alt="请添加图片描述"><br>输入仓库名，<strong>这里要特别注意，仓库名一定要按照以下格式：</strong></p>
 <div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">你的github用户名.github.io<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
 <p>然后点击创建仓库即可<br><img src="https://img-blog.csdnimg.cn/faea98e097f44be9a08ceb64b9ccc61e.png" srcset="/img/loading.gif" lazyload alt="请添加图片描述"><br>创建完之后，会自动进入下面的页面。复制下图中的地址<br><img src="https://img-blog.csdnimg.cn/3eb2a9f2cd3c4c63b4be821b05dd9ddb.png" srcset="/img/loading.gif" lazyload alt="请添加图片描述"><br>打开本地博客的配置文件<code>_config.yml</code>，在<code>deploy</code>下输入以下内容：</p>
-<div class="code-wrapper"><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">deploy</span><span class="token punctuation">:</span>
-  <span class="token key atrule">type</span><span class="token punctuation">:</span> <span class="token string">'git'</span>
-  <span class="token key atrule">repo</span><span class="token punctuation">:</span> 你刚刚复制的地址
-  <span class="token key atrule">branch</span><span class="token punctuation">:</span> master
+<div class="code-wrapper"><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">deploy:
+  type: &#39;git&#39;
+  repo: 你刚刚复制的地址
+  branch: master
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div>
 
 <p><img src="https://img-blog.csdnimg.cn/9563aa4debcb4c8086c47890ea5d653b.png" srcset="/img/loading.gif" lazyload alt="请添加图片描述"><br>在git命令行窗口依次输入以下命令，部署到GitHub</p>
@@ -397,7 +397,7 @@ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
 <p>在浏览器中输入<code>你的GitHub用户名.github.io</code>即可看到刚刚部署的博客，如果没有看到也不要着急，github有一定的延迟，多刷新几次就好<br><img src="https://img-blog.csdnimg.cn/b628a199b855413889902041a8d9974a.png" srcset="/img/loading.gif" lazyload alt="请添加图片描述"></p>
 <h2 id="写一篇博客"><a href="#写一篇博客" class="headerlink" title="写一篇博客"></a>写一篇博客</h2><p>可以看到，可以看到，刚刚部署的博客网站中只有一篇初始文章，下面介绍一下怎么写自己的博客<br><img src="https://img-blog.csdnimg.cn/6b70d6c2fa2e4d01b0bb94981cfd6f7c.png#pic_center" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
 <p>首先，还是在git命令行窗口中，输入以下命令创建一篇博客，命名为<code>demo</code>（也可以是其他名字）</p>
-<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo new post <span class="token string">"demo"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo new post &quot;demo&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
 
 <p><img src="https://img-blog.csdnimg.cn/82673fdbaa92462ca55792e0ddcece99.png" srcset="/img/loading.gif" lazyload alt="请添加图片描述"><br>这时，在blog&#x2F;source&#x2F;_posts目录下就会多一个名为demo的.md文件，这就是我们刚刚创建的博客，在这个文件里，我们可以写自己的博客。<br><img src="https://img-blog.csdnimg.cn/b1da2d4aa4bc4c8ba34f2c184bce0244.png#pic_center" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"><br>写完博客之后，保存，依次输入以下命令部署到 Github：</p>
 <div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo clean
