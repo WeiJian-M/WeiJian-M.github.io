@@ -158,11 +158,39 @@
           
           
           
-            <li class="nav-item">
-              <a class="nav-link" href="/guestbook/">
-                <i class="iconfont icon-comment"></i>
-                留言板
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                工具
               </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/guestbook/">
+                    <i class="iconfont icon-comment"></i>
+                    留言板
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/links/">
+                    <i class="iconfont icon-link-fill"></i>
+                    友链
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" target="_blank" rel="noopener" href="https://my-waline-comment-2nrv2mw4j-weijian-m.vercel.app/ui/login">
+                    <i class="iconfont icon-users"></i>
+                    评论管理
+                  </a>
+                
+              </div>
             </li>
           
         
@@ -174,18 +202,6 @@
               <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
                 关于
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/links/">
-                <i class="iconfont icon-link-fill"></i>
-                友链
               </a>
             </li>
           
@@ -368,20 +384,20 @@
                   
                 
                 
-  <div id="valine"></div>
+  <div id="waline"></div>
   <script type="text/javascript">
-    Fluid.utils.loadComments('#valine', function() {
-      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', function() {
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@waline/client@1/dist/Waline.min.js', function() {
         var options = Object.assign(
-          {"appId":"QJrJTbyaKnLTXazIyFvWAIt9-MdYXbMMI","appKey":"lgeXgcTuS1TMcW5EFm0UwF9S","path":"window.location.pathname","placeholder":"可匿名评论","avatar":"retro","meta":["nick","mail","link"],"requiredFields":["nick"],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":true,"serverURLs":"https://qjrjtbya.api.lncldglobal.com","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {"serverURL":"my-waline-comment-2nrv2mw4j-weijian-m.vercel.app","path":"window.location.pathname","placeholder":"匿名评论可以不用登录，登录或填写邮箱地址可获得较快回复，欢迎评论~","meta":["nick","mail"],"requiredMeta":[],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"retro","avatarCDN":"https://seccdn.libravatar.org/avatar/","avatarForce":false,"wordLimit":[2,1024],"pageSize":10,"highlight":true,"login":"enable"},
           {
-            el: "#valine",
+            el: '#waline',
             path: window.location.pathname
           }
         )
-        new Valine(options);
-        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
-          Fluid.plugins.initFancyBox('#valine .vcontent img:not(.vemoji)');
+        new Waline(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          Fluid.plugins.initFancyBox('#waline .vcontent img:not(.vemoji)');
         })
       });
     });
