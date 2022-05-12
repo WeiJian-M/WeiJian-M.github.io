@@ -364,7 +364,7 @@ E=mc^2
     Fluid.utils.loadComments('#waline', function() {
       Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@waline/client@1/dist/Waline.min.js', function() {
         var options = Object.assign(
-          {"serverURL":"my-waline-comment-2nrv2mw4j-weijian-m.vercel.app","path":"window.location.pathname","placeholder":"匿名评论可以不用登录，也不用填写邮箱；\n登录或填写邮箱地址可获得较快回复，建议使用QQ邮箱，这样你的评论头像就是你的QQ头像，欢迎评论~","meta":["nick","mail"],"requiredMeta":[],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"retro","avatarCDN":"https://seccdn.libravatar.org/avatar/","avatarForce":false,"wordLimit":[2,1024],"pageSize":10,"highlight":true,"login":"enable"},
+          {"serverURL":"my-waline-comment-2nrv2mw4j-weijian-m.vercel.app","path":"window.location.pathname","placeholder":"* 匿名评论可以不用登录，也不用填写邮箱；\n * 登录或填写邮箱地址可获得较快回复，建议使用QQ邮箱，这样你的评论头像就是你的QQ头像；\n * 登录注册时，个人网站可以不用填写","meta":["nick","mail"],"requiredMeta":[],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"retro","avatarCDN":"https://seccdn.libravatar.org/avatar/","avatarForce":false,"wordLimit":[2,1024],"pageSize":10,"highlight":true,"login":"enable"},
           {
             el: '#waline',
             path: window.location.pathname
