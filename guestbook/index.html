@@ -16,15 +16,15 @@
   <meta name="author" content="WeiJian-M">
   <meta name="keywords" content="">
   
-    <meta name="description" content="你有什么想对我说么？😉               留言板1基于Valine搭建，填写邮箱后，当别人回复你时，会通过邮箱提醒你。">
+    <meta name="description" content="你有什么想对我说么？😉">
 <meta property="og:type" content="website">
 <meta property="og:title" content="留言板">
 <meta property="og:url" content="http://example.com/guestbook/index.html">
 <meta property="og:site_name" content="WeiJian-M">
-<meta property="og:description" content="你有什么想对我说么？😉               留言板1基于Valine搭建，填写邮箱后，当别人回复你时，会通过邮箱提醒你。">
+<meta property="og:description" content="你有什么想对我说么？😉">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-05-12T07:02:04.000Z">
-<meta property="article:modified_time" content="2022-05-13T06:31:41.552Z">
+<meta property="article:modified_time" content="2022-05-13T07:07:47.531Z">
 <meta property="article:author" content="WeiJian-M">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -253,9 +253,6 @@
   <center>
 你有什么想对我说么？😉
 </center>
-<div class="note note-success">
-            <p>留言板1基于Valine搭建，填写邮箱后，当别人回复你时，会通过邮箱提醒你。</p>
-          </div>
 
 
   
@@ -271,7 +268,7 @@
     Fluid.utils.loadComments('#waline', function() {
       Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@waline/client@1/dist/Waline.min.js', function() {
         var options = Object.assign(
-          {"serverURL":"waline-comment-email-o2mvi81is-weijian-m.vercel.app","path":"window.location.pathname","placeholder":" 1. 匿名评论可以不用登录，也不用填写邮箱；\n 2. 登录或填写邮箱地址可获得较快回复，建议使用QQ邮箱，这样你的评论头像就是你的QQ头像；\n 3. 登录注册时，个人网站可以不用填写","meta":["nick","mail"],"requiredMeta":[],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"retro","avatarCDN":"https://seccdn.libravatar.org/avatar/","avatarForce":false,"wordLimit":[2,1024],"pageSize":10,"highlight":true,"login":"enable"},
+          {"serverURL":"waline-comment-email-o2mvi81is-weijian-m.vercel.app","path":"window.location.pathname","placeholder":" 1. 匿名评论可以不用登录，也不用填写邮箱；\n 2. 如果你想收到评论回复通知，建议填写邮箱，这样在别人回复你时，你会收到邮件提醒；\n 3. 登录或填写邮箱地址可获得较快回复，建议使用QQ邮箱，这样你的评论头像就是你的QQ头像；\n 4. 登录注册时，个人网站可以不用填写","meta":["nick","mail"],"requiredMeta":[],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"retro","avatarCDN":"https://seccdn.libravatar.org/avatar/","avatarForce":false,"wordLimit":[1,1024],"pageSize":10,"highlight":true,"login":"enable"},
           {
             el: '#waline',
             path: window.location.pathname
