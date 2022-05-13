@@ -263,20 +263,20 @@
         
       
       
-  <div id="waline"></div>
+  <div id="valine"></div>
   <script type="text/javascript">
-    Fluid.utils.loadComments('#waline', function() {
-      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@waline/client@1/dist/Waline.min.js', function() {
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', function() {
         var options = Object.assign(
-          {"serverURL":"my-waline-comment-567na1ddj-weijian-m.vercel.app","path":"window.location.pathname","placeholder":" 1. 匿名评论可以不用登录，也不用填写邮箱；\n 2. 登录或填写邮箱地址可获得较快回复，建议使用QQ邮箱，这样你的评论头像就是你的QQ头像；\n 3. 登录注册时，个人网站可以不用填写","meta":["nick","mail"],"requiredMeta":[],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","avatar":"retro","avatarCDN":"https://seccdn.libravatar.org/avatar/","avatarForce":false,"wordLimit":[2,1024],"pageSize":10,"highlight":true,"login":"enable"},
+          {"appId":"QJrJTbyaKnLTXazIyFvWAIt9-MdYXbMMI","appKey":"lgeXgcTuS1TMcW5EFm0UwF9S","path":"window.location.pathname","placeholder":"可匿名评论，填写邮箱可获得较快回复，欢迎评论~","avatar":"retro","meta":["nick","mail"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":true,"serverURLs":"https://qjrjtbya.api.lncldglobal.com","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
           {
-            el: '#waline',
+            el: "#valine",
             path: window.location.pathname
           }
         )
-        new Waline(options);
-        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
-          Fluid.plugins.initFancyBox('#waline .vcontent img:not(.vemoji)');
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          Fluid.plugins.initFancyBox('#valine .vcontent img:not(.vemoji)');
         })
       });
     });
