@@ -16,15 +16,15 @@
   <meta name="author" content="WeiJian-M">
   <meta name="keywords" content="">
   
-    <meta name="description" content="基本结构 % 导言区 \documentclass&amp;#123;article&amp;#125;  % 正文区（文稿区） \begin&amp;#123;document&amp;#125; % 一个latex文件（正文区）有且仅有一个document文件      Hello World!  \end&amp;#123;document&amp;#125; 上面的这段代码是一个简单的 \(LaTeX\) 源文件，主要由两部分组成">
+    <meta name="description" content="基本结构 % 导言区 \documentclass&amp;#123;article&amp;#125;  % 正文区（文稿区） \begin&amp;#123;document&amp;#125; % 一个latex文件（正文区）有且仅有一个document文件      Hello World!  \end&amp;#123;document&amp;#125; 上面的这段代码是一个简单的 \(\LaTeX\) 源文件，主要由两部分组">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Latex01-Latex源文件的基本结构及入门介绍">
 <meta property="og:url" content="http://example.com/articles/3bf209ab.html">
 <meta property="og:site_name" content="WeiJian-M">
-<meta property="og:description" content="基本结构 % 导言区 \documentclass&amp;#123;article&amp;#125;  % 正文区（文稿区） \begin&amp;#123;document&amp;#125; % 一个latex文件（正文区）有且仅有一个document文件      Hello World!  \end&amp;#123;document&amp;#125; 上面的这段代码是一个简单的 \(LaTeX\) 源文件，主要由两部分组成">
+<meta property="og:description" content="基本结构 % 导言区 \documentclass&amp;#123;article&amp;#125;  % 正文区（文稿区） \begin&amp;#123;document&amp;#125; % 一个latex文件（正文区）有且仅有一个document文件      Hello World!  \end&amp;#123;document&amp;#125; 上面的这段代码是一个简单的 \(\LaTeX\) 源文件，主要由两部分组">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-05-16T13:08:46.000Z">
-<meta property="article:modified_time" content="2022-05-16T13:59:37.179Z">
+<meta property="article:modified_time" content="2022-05-16T14:06:30.008Z">
 <meta property="article:author" content="WeiJian-M">
 <meta property="article:tag" content="Latex">
 <meta name="twitter:card" content="summary_large_image">
@@ -311,7 +311,8 @@
     Hello World!
 
 <span class="token function selector">\end</span><span class="token punctuation">&#123;</span><span class="token keyword">document</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
-<p>上面的这段代码是一个简单的 <span class="math inline">\(LaTeX\)</span>
+<p>上面的这段代码是一个简单的 <span
+class="math inline">\(\LaTeX\)</span>
 源文件，主要由两部分组成：导言区、正文区（文稿区）。在
 <code>\documentclass</code> 和 <code>\begin&#123;document&#125;</code>
 之间的位置称为导言区，<code>document</code>
@@ -320,7 +321,7 @@
 <li><p><code>\documentclass</code> 指定了文档类型，除了上面代码中的
 <code>article</code>，还可以是<code>book</code>、<code>report</code>、<code>report</code>
 等。</p></li>
-<li><p>一个 <span class="math inline">\(LaTeX\)</span>
+<li><p>一个 <span class="math inline">\(\LaTeX\)</span>
 源文件（正文区）有且仅有一个document文件。</p></li>
 </ul>
 <p>编译上面的代码，可以得到如下效果：</p>
@@ -368,8 +369,8 @@ src="https://cdn.jsdelivr.net/gh/WeiJian-M/img/blogImg/202205162146283.png" srcs
     <span class="token equation string">$$f(x)=3x^2+x-1$$</span> which is a polynomial of degree 2.
 <span class="token function selector">\end</span><span class="token punctuation">&#123;</span><span class="token keyword">document</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
 <ul>
-<li><p>行内公式：$你的公式$</p></li>
-<li><p>行间公式：$$你的公式$$</p></li>
+<li><p>行内公式：<code>$你的公式$</code></p></li>
+<li><p>行间公式：<code>$$你的公式$$</code></p></li>
 </ul>
 <p>上方代码执行结果如下：</p>
 <p><img
@@ -615,6 +616,48 @@ src="https://cdn.jsdelivr.net/gh/WeiJian-M/img/blogImg/202205162151429.png" srcs
 
 
 
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        loader: {
+          load: ['ui/lazy']
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" ></script>
+
+  
 
 
 
