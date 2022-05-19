@@ -16,24 +16,21 @@
   <meta name="author" content="WeiJian-M">
   <meta name="keywords" content="">
   
-    <meta name="description" content="最近学机器学习的时候，看到这样一段代码：x.reshape(-1,1)，一直搞不懂参数-1是什么意思。最后就去看了看官方文档：   我们主要看一下红框框里面的内容：  The new shape should be compatible with the original shape. If an integer, then the result will be a 1-D array">
+    <meta name="description" content="字体属性 在Latex中，一个字体有5种属性：  字体编码  正文字体编码：OT1、T1、EU1等 数学字体编码：OML、OMS、OMX等  字体族  罗马字体：笔画起始处有装饰 无衬线字体：笔画起始处无装饰 打字机字体：每个字符宽度相同，又称等宽字体  字体系列  粗细 宽度  字体形状  直立 斜体 伪斜体 小型大写  字体大小  具体示">
 <meta property="og:type" content="article">
-<meta property="og:title" content="numpy中reshap函数参数为-1的情况分析">
-<meta property="og:url" content="http://example.com/articles/bcfbebe4.html">
+<meta property="og:title" content="Latex03-字体字号设置">
+<meta property="og:url" content="http://example.com/articles/2c01d7ed.html">
 <meta property="og:site_name" content="WeiJian-M">
-<meta property="og:description" content="最近学机器学习的时候，看到这样一段代码：x.reshape(-1,1)，一直搞不懂参数-1是什么意思。最后就去看了看官方文档：   我们主要看一下红框框里面的内容：  The new shape should be compatible with the original shape. If an integer, then the result will be a 1-D array">
+<meta property="og:description" content="字体属性 在Latex中，一个字体有5种属性：  字体编码  正文字体编码：OT1、T1、EU1等 数学字体编码：OML、OMS、OMX等  字体族  罗马字体：笔画起始处有装饰 无衬线字体：笔画起始处无装饰 打字机字体：每个字符宽度相同，又称等宽字体  字体系列  粗细 宽度  字体形状  直立 斜体 伪斜体 小型大写  字体大小  具体示">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20201027105911442.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="article:published_time" content="2020-05-08T03:23:06.000Z">
-<meta property="article:modified_time" content="2022-05-16T13:13:26.609Z">
+<meta property="article:published_time" content="2022-05-19T07:05:46.000Z">
+<meta property="article:modified_time" content="2022-05-19T09:18:29.612Z">
 <meta property="article:author" content="WeiJian-M">
-<meta property="article:tag" content="python">
-<meta property="article:tag" content="numpy">
+<meta property="article:tag" content="Latex">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20201027105911442.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
   
   
-  <title>numpy中reshap函数参数为-1的情况分析 - WeiJian-M</title>
+  <title>Latex03-字体字号设置 - WeiJian-M</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -229,7 +226,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="numpy中reshap函数参数为-1的情况分析">
+            <span class="h2" id="subtitle" title="Latex03-字体字号设置">
               
             </span>
 
@@ -244,8 +241,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-05-08 11:23" pubdate>
-        2020年5月8日 上午
+      <time datetime="2022-05-19 15:05" pubdate>
+        2022年5月19日 下午
       </time>
     </span>
   
@@ -255,7 +252,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      560 字
+      1.8k 字
     </span>
   
 
@@ -264,7 +261,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      3 分钟
+      8 分钟
     </span>
   
 
@@ -301,30 +298,98 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">numpy中reshap函数参数为-1的情况分析</h1>
+            <h1 style="display: none">Latex03-字体字号设置</h1>
             
             <div class="markdown-body">
-              <p>最近学机器学习的时候，看到这样一段代码：<code>x.reshape(-1,1)</code>，一直搞不懂参数-1是什么意思。最后就去看了看官方文档：</p>
-<center>
-<p><img src="https://img-blog.csdnimg.cn/20201027105911442.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" srcset="/img/loading.gif" lazyload width="60%"></p>
-<p>我们主要看一下红框框里面的内容：</p>
-<blockquote>
-<p>The new shape should be compatible with the original shape. If an
-integer, then the result will be a 1-D array of that length. One shape
-dimension can be -1. In this case, the value is inferred from the length
-of the array and remaining dimensions.</p>
-</blockquote>
-<p>翻译：</p>
-<p>新形状应与原形状兼容。如果是整数，那么结果将是该长度的1-D数组。一个形状维数可以是-1，该值是从数组的长度和其余维数推断出来的。</p>
-<p>人话：</p>
-<p>这里我们用一个例子来说明，假如一个数组的shape是<code>(3,4)</code>，这里<code>3*4=12</code>，对这个数组进行<code>reshape</code>操作后，新数组的<code>shape</code>中各维度的乘积也应为12。如果其中一个参数是-1，另一个参数是2，也就是<code>(-1,2)</code>，那么这个新数组的shape就是<code>(12/2,2)</code>，即<code>(6,2)</code>；如果另一个参数是1，那么这个新数组的shape就是<code>(12/1,1)</code>，即<code>(12,1)</code>.</p>
-<p>更多的情况用下面的代码实现：</p>
-<figure>
-<img
-src="https://img-blog.csdnimg.cn/2020102711161051.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTQ3NjUwMg==,size_16,color_FFFFFF,t_70#pic_center" srcset="/img/loading.gif" lazyload
-alt="在这里插入图片描述" />
-<figcaption aria-hidden="true">在这里插入图片描述</figcaption>
-</figure>
+              <h2 id="字体属性">字体属性</h2>
+<p>在Latex中，一个字体有5种属性：</p>
+<ul>
+<li><p>字体编码</p>
+<ul>
+<li><p>正文字体编码：OT1、T1、EU1等</p></li>
+<li><p>数学字体编码：OML、OMS、OMX等</p></li>
+</ul></li>
+<li><p>字体族</p>
+<ul>
+<li><p>罗马字体：笔画起始处有装饰</p></li>
+<li><p>无衬线字体：笔画起始处无装饰</p></li>
+<li><p>打字机字体：每个字符宽度相同，又称等宽字体</p></li>
+</ul></li>
+<li><p>字体系列</p>
+<ul>
+<li><p>粗细</p></li>
+<li><p>宽度</p></li>
+</ul></li>
+<li><p>字体形状</p>
+<ul>
+<li><p>直立</p></li>
+<li><p>斜体</p></li>
+<li><p>伪斜体</p></li>
+<li><p>小型大写</p></li>
+</ul></li>
+<li><p>字体大小</p></li>
+</ul>
+<p>具体示例见如下代码：</p>
+<div class="code-wrapper"><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token comment">% 导言区</span>
+<span class="token function selector">\documentclass</span><span class="token punctuation">[</span>10pt<span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token keyword">article</span><span class="token punctuation">&#125;</span> <span class="token comment">% 这里设置normal size的大小为10磅，一般只有10，11，12</span>
+
+<span class="token function selector">\usepackage</span><span class="token punctuation">&#123;</span><span class="token keyword">ctex</span><span class="token punctuation">&#125;</span>
+
+<span class="token function selector">\newcommand</span><span class="token punctuation">&#123;</span><span class="token function selector">\myfont</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#123;</span><span class="token function selector">\textbf</span><span class="token punctuation">&#123;</span><span class="token function selector">\textsf</span><span class="token punctuation">&#123;</span>Fancy Text<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
+
+<span class="token comment">% 正文区（文稿区）</span>
+<span class="token function selector">\begin</span><span class="token punctuation">&#123;</span><span class="token keyword">document</span><span class="token punctuation">&#125;</span>
+    <span class="token comment">% 字体族设置（罗马字体、无衬线字体、打字机字体）</span>
+
+    <span class="token comment">% 使用字体命令</span>
+    <span class="token function selector">\textrm</span><span class="token punctuation">&#123;</span>Roman Family<span class="token punctuation">&#125;</span> <span class="token function selector">\textsf</span><span class="token punctuation">&#123;</span>Sans Serif Family<span class="token punctuation">&#125;</span> <span class="token function selector">\texttt</span><span class="token punctuation">&#123;</span>Typewriter Family<span class="token punctuation">&#125;</span>
+
+    <span class="token comment">% 使用字体声明</span>
+    <span class="token punctuation">&#123;</span><span class="token function selector">\rmfamily</span> Roman Family<span class="token punctuation">&#125;</span> <span class="token punctuation">&#123;</span><span class="token function selector">\sffamily</span> Sans Serif Family<span class="token punctuation">&#125;</span> <span class="token punctuation">&#123;</span><span class="token function selector">\ttfamily</span> Typewriter Family<span class="token punctuation">&#125;</span>
+
+    <span class="token punctuation">&#123;</span><span class="token function selector">\sffamily</span> who you are? you find self on everyone around.take you as the same as others!<span class="token punctuation">&#125;</span>
+
+    <span class="token punctuation">&#123;</span><span class="token function selector">\ttfamily</span> Are you wiser than others? definitely no. in some ways, may it is true. What can you achieve? a luxurious house? a brillilant car? an admirable career? who knows? <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">% 字体粗细设置</span>
+    <span class="token function selector">\textmd</span><span class="token punctuation">&#123;</span>Medium Series<span class="token punctuation">&#125;</span> <span class="token function selector">\textbf</span><span class="token punctuation">&#123;</span>Boldface Series<span class="token punctuation">&#125;</span>
+
+    <span class="token punctuation">&#123;</span><span class="token function selector">\mdseries</span> Medium Series<span class="token punctuation">&#125;</span> <span class="token punctuation">&#123;</span><span class="token function selector">\bfseries</span> Boldface Series<span class="token punctuation">&#125;</span>
+
+    <span class="token comment">%字体形状(直立、斜体、伪斜体、小型大写)</span>
+    <span class="token function selector">\textup</span><span class="token punctuation">&#123;</span>Upright Shape<span class="token punctuation">&#125;</span> <span class="token function selector">\textit</span><span class="token punctuation">&#123;</span>Italic Shape<span class="token punctuation">&#125;</span>
+    <span class="token function selector">\textsl</span><span class="token punctuation">&#123;</span>Slanted Shape<span class="token punctuation">&#125;</span> <span class="token function selector">\textsc</span><span class="token punctuation">&#123;</span>Small Caps Shape<span class="token punctuation">&#125;</span>
+
+    <span class="token punctuation">&#123;</span><span class="token function selector">\upshape</span> Upright Shape<span class="token punctuation">&#125;</span> <span class="token punctuation">&#123;</span><span class="token function selector">\itshape</span> Italic Shape<span class="token punctuation">&#125;</span> <span class="token punctuation">&#123;</span><span class="token function selector">\slshape</span> Slanted Shape<span class="token punctuation">&#125;</span> <span class="token punctuation">&#123;</span><span class="token function selector">\scshape</span> Small Caps Shape<span class="token punctuation">&#125;</span>
+
+    <span class="token comment">% 中文字体</span>
+    <span class="token punctuation">&#123;</span><span class="token function selector">\songti</span> 宋体<span class="token punctuation">&#125;</span> <span class="token function selector">\quad</span> <span class="token punctuation">&#123;</span><span class="token function selector">\heiti</span> 黑体<span class="token punctuation">&#125;</span> <span class="token function selector">\quad</span> <span class="token punctuation">&#123;</span><span class="token function selector">\fangsong</span> 仿宋<span class="token punctuation">&#125;</span>
+    <span class="token function selector">\quad</span> <span class="token punctuation">&#123;</span><span class="token function selector">\kaishu</span> 楷书<span class="token punctuation">&#125;</span>
+
+    中文字体的<span class="token function selector">\textbf</span><span class="token punctuation">&#123;</span>粗体<span class="token punctuation">&#125;</span>与<span class="token function selector">\textit</span><span class="token punctuation">&#123;</span>斜体<span class="token punctuation">&#125;</span>
+
+    <span class="token comment">%字体大小</span>
+    <span class="token punctuation">&#123;</span><span class="token function selector">\tiny</span>         He11o<span class="token punctuation">&#125;</span><span class="token function selector">\\</span>
+    <span class="token punctuation">&#123;</span><span class="token function selector">\scriptsize</span>   He11o<span class="token punctuation">&#125;</span><span class="token function selector">\\</span>
+    <span class="token punctuation">&#123;</span><span class="token function selector">\footnotesize</span> He11o<span class="token punctuation">&#125;</span><span class="token function selector">\\</span>
+    <span class="token punctuation">&#123;</span><span class="token function selector">\small</span>        He1lo<span class="token punctuation">&#125;</span><span class="token function selector">\\</span>
+    <span class="token punctuation">&#123;</span><span class="token function selector">\normalsize</span>   He11o<span class="token punctuation">&#125;</span><span class="token function selector">\\</span>
+    <span class="token punctuation">&#123;</span><span class="token function selector">\large</span>        Hello<span class="token punctuation">&#125;</span><span class="token function selector">\\</span>
+    <span class="token punctuation">&#123;</span><span class="token function selector">\Large</span>        He1lo<span class="token punctuation">&#125;</span><span class="token function selector">\\</span>
+    <span class="token punctuation">&#123;</span><span class="token function selector">\LARGE</span>        He1lo<span class="token punctuation">&#125;</span><span class="token function selector">\\</span>
+    <span class="token punctuation">&#123;</span><span class="token function selector">\huge</span>         He11o<span class="token punctuation">&#125;</span><span class="token function selector">\\</span>
+    <span class="token punctuation">&#123;</span><span class="token function selector">\Huge</span>         He11o<span class="token punctuation">&#125;</span><span class="token function selector">\\</span>
+
+    <span class="token comment">% 中文字号的设置命令</span>
+    <span class="token function selector">\zihao</span><span class="token punctuation">&#123;</span>-0<span class="token punctuation">&#125;</span> 你好！<span class="token comment">% 具体参考ctex文档</span>
+
+    <span class="token comment">% 命令与内容分离</span>
+    <span class="token function selector">\myfont</span> 
+
+<span class="token function selector">\end</span><span class="token punctuation">&#123;</span><span class="token keyword">document</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
+<p>编译结果如下：</p>
+<p><img
+src="https://img-blog.csdnimg.cn/img_convert/3a03e8f601bd8f51d33b712e9cdde93f.png" srcset="/img/loading.gif" lazyload /></p>
 
             </div>
             <hr>
@@ -334,7 +399,7 @@ alt="在这里插入图片描述" />
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/python/">python</a>
+                      <a class="hover-with-bg" href="/categories/Latex%E5%9F%BA%E7%A1%80/">Latex基础</a>
                     
                   </div>
                 
@@ -342,9 +407,7 @@ alt="在这里插入图片描述" />
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/python/">python</a>
-                    
-                      <a class="hover-with-bg" href="/tags/numpy/">numpy</a>
+                      <a class="hover-with-bg" href="/tags/Latex/">Latex</a>
                     
                   </div>
                 
@@ -361,15 +424,21 @@ alt="在这里插入图片描述" />
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/articles/61ec06a7.html">
+                      <a href="/articles/e955ebb6.html">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">python爬取糗事百科段子并发送到邮箱</span>
+                        <span class="hidden-mobile">Latex04-篇章结构</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/articles/378a5245.html">
+                        <span class="hidden-mobile">Latex02: 中文的处理方法</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
