@@ -2,54 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://example.com/articles/3bf209ab.html</loc>
+    
+    <lastmod>2022-05-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/guestbook/index.html</loc>
     
     <lastmod>2022-05-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/articles/4cc7aaf6.html</loc>
-    
-    <lastmod>2022-05-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/articles/e955ebb6.html</loc>
-    
-    <lastmod>2022-05-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/articles/2c01d7ed.html</loc>
-    
-    <lastmod>2022-05-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/articles/378a5245.html</loc>
-    
-    <lastmod>2022-05-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/articles/3bf209ab.html</loc>
-    
-    <lastmod>2022-05-16</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -128,6 +92,13 @@
 
   
   <url>
+    <loc>http://example.com/tags/numpy/</loc>
+    <lastmod>2022-05-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/tags/python/</loc>
     <lastmod>2022-05-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -142,20 +113,6 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/numpy/</loc>
-    <lastmod>2022-05-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/Latex/</loc>
-    <lastmod>2022-05-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/tags/hexo/</loc>
     <lastmod>2022-05-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -164,6 +121,13 @@
   
   <url>
     <loc>http://example.com/tags/butterfly/</loc>
+    <lastmod>2022-05-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/Latex/</loc>
     <lastmod>2022-05-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -193,14 +157,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/Latex%E5%9F%BA%E7%A1%80/</loc>
+    <loc>http://example.com/categories/hexo%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2022-05-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/categories/hexo%E6%95%99%E7%A8%8B/</loc>
+    <loc>http://example.com/categories/Latex%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2022-05-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
