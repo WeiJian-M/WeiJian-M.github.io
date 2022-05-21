@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=auto>
+<html lang="zh-CN" data-default-color-scheme=dark>
 
 
 
@@ -12,16 +12,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  <meta name="theme-color" content="#2f4154">
+  <meta name="theme-color" content="#1f1f22">
   <meta name="author" content="WeiJian-M">
   <meta name="keywords" content="">
   
-    <meta name="description" content="基本结构 % 导言区 \documentclass&amp;#123;article&amp;#125;  % 正文区（文稿区） \begin&amp;#123;document&amp;#125; % 一个latex文件（正文区）有且仅有一个document文件      Hello World!  \end&amp;#123;document&amp;#125; 上面的这段代码是一个简单的 \(\LaTeX\) 源文件，主要由两部分组">
+    <meta name="description" content="基本结构 123456789% 导言区\documentclass&amp;#123;article&amp;#125;% 正文区（文稿区）\begin&amp;#123;document&amp;#125; % 一个latex文件（正文区）有且仅有一个document文件    Hello World!\end&amp;#123;document&amp;#125; 上面的这段代码是一个简单的 \(\LaTeX\) 源文件，主要由两部分">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LaTex基础">
 <meta property="og:url" content="http://example.com/articles/3bf209ab.html">
 <meta property="og:site_name" content="WeiJian-M">
-<meta property="og:description" content="基本结构 % 导言区 \documentclass&amp;#123;article&amp;#125;  % 正文区（文稿区） \begin&amp;#123;document&amp;#125; % 一个latex文件（正文区）有且仅有一个document文件      Hello World!  \end&amp;#123;document&amp;#125; 上面的这段代码是一个简单的 \(\LaTeX\) 源文件，主要由两部分组">
+<meta property="og:description" content="基本结构 123456789% 导言区\documentclass&amp;#123;article&amp;#125;% 正文区（文稿区）\begin&amp;#123;document&amp;#125; % 一个latex文件（正文区）有且仅有一个document文件    Hello World!\end&amp;#123;document&amp;#125; 上面的这段代码是一个简单的 \(\LaTeX\) 源文件，主要由两部分">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/08ce396af1a6171d4da702b7d7329e2e.png#pic_center">
 <meta property="article:published_time" content="2022-05-16T13:08:46.000Z">
@@ -32,40 +32,27 @@
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/img_convert/08ce396af1a6171d4da702b7d7329e2e.png#pic_center">
   
   
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
   <title>LaTex基础 - WeiJian-M</title>
 
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
 
-  
-    
-    
-      
-      
-        
-          
-          
-          
-        
-        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-okaidia.min.css" />
-      
-      
-        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.css" />
-      
-    
-  
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
 
-  
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
-  
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
 
 
 
@@ -74,21 +61,44 @@
 
 <link  rel="stylesheet" href="/css/main.css" />
 
-<!-- 自定义样式保持在最底部 -->
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/fluid-extension.css">
+
 
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"76a2c58225b952233d541c471171b458","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"⭐","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":1},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":false,"baidu":"76a2c58225b952233d541c471171b458","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
+
+  
 <meta name="generator" content="Hexo 6.2.0"></head>
 
 
 <body>
-  <header style="height: 70vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
       <strong>WeiJian-M&#39;s Blog</strong>
@@ -210,6 +220,7 @@
               &nbsp;<i class="iconfont icon-search"></i>&nbsp;
             </a>
           </li>
+          
         
         
           <li class="nav-item" id="color-toggle-btn">
@@ -222,70 +233,82 @@
   </div>
 </nav>
 
-    <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="LaTex基础">
-              
-            </span>
-
-            
-              <div class="mt-3">
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-author" aria-hidden="true"></i>
-      WeiJian-M
-    </span>
-  
-  
-    <span class="post-meta">
-      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-05-16 21:08" pubdate>
-        2022年5月16日 晚上
-      </time>
-    </span>
-  
-</div>
-
-<div class="mt-1">
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      5.3k 字
-    </span>
   
 
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
-      
-      
-      22 分钟
-    </span>
-  
-
-  
-  
-    
-      <!-- 不蒜子统计文章PV -->
-      <span id="busuanzi_container_page_pv" style="display: none">
-        <i class="iconfont icon-eye" aria-hidden="true"></i>
-        <span id="busuanzi_value_page_pv"></span> 次
-      </span>
-    
-  
-</div>
-
-            
-          </div>
-
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="LaTex基础"></span>
           
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        WeiJian-M
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-05-16 21:08" pubdate>
+          2022年5月16日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          24 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
       </div>
+
+      
     </div>
+  </div>
+</div>
+
+</div>
+
   </header>
 
   <main>
@@ -294,25 +317,30 @@
 
 <div class="container-fluid nopadding-x">
   <div class="row nomargin-x">
-    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
     <div class="col-lg-8 nopadding-x-md">
       <div class="container nopadding-x-md" id="board-ctn">
-        <div class="py-5" id="board">
+        <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
             <h1 style="display: none">LaTex基础</h1>
             
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2022年5月19日 下午
+                  
+                
+              </p>
+            
             <div class="markdown-body">
+              
               <h2 id="基本结构">基本结构</h2>
-<div class="code-wrapper"><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token comment">% 导言区</span>
-<span class="token function selector">\documentclass</span><span class="token punctuation">&#123;</span><span class="token keyword">article</span><span class="token punctuation">&#125;</span>
-
-<span class="token comment">% 正文区（文稿区）</span>
-<span class="token function selector">\begin</span><span class="token punctuation">&#123;</span><span class="token keyword">document</span><span class="token punctuation">&#125;</span> <span class="token comment">% 一个latex文件（正文区）有且仅有一个document文件</span>
-
-    Hello World!
-
-<span class="token function selector">\end</span><span class="token punctuation">&#123;</span><span class="token keyword">document</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs tex"><span class="hljs-comment">% 导言区</span><br><span class="hljs-keyword">\documentclass</span>&#123;article&#125;<br><br><span class="hljs-comment">% 正文区（文稿区）</span><br><span class="hljs-keyword">\begin</span>&#123;document&#125; <span class="hljs-comment">% 一个latex文件（正文区）有且仅有一个document文件</span><br><br>    Hello World!<br><br><span class="hljs-keyword">\end</span>&#123;document&#125;<br></code></pre></td></tr></table></figure>
 <p>上面的这段代码是一个简单的 <span
 class="math inline">\(\LaTeX\)</span>
 源文件，主要由两部分组成：导言区、正文区（文稿区）。在
@@ -329,23 +357,7 @@ class="math inline">\(\LaTeX\)</span>
 <p>编译上面的代码，可以得到如下效果：</p>
 <p><img title="" src="https://img-blog.csdnimg.cn/img_convert/08ce396af1a6171d4da702b7d7329e2e.png#pic_center" srcset="/img/loading.gif" lazyload alt="" data-align="left"></p>
 <h2 id="添加标题作者日期文本换行">添加标题、作者、日期，文本换行</h2>
-<div class="code-wrapper"><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token comment">% 导言区</span>
-<span class="token function selector">\documentclass</span><span class="token punctuation">&#123;</span><span class="token keyword">article</span><span class="token punctuation">&#125;</span>
-
-<span class="token function selector">\title</span><span class="token punctuation">&#123;</span>My First Document<span class="token punctuation">&#125;</span> 
-<span class="token function selector">\author</span><span class="token punctuation">&#123;</span>Weijian Ma<span class="token punctuation">&#125;</span>
-<span class="token function selector">\date</span><span class="token punctuation">&#123;</span><span class="token function selector">\today</span><span class="token punctuation">&#125;</span>
-
-<span class="token comment">% 正文区（文稿区）</span>
-<span class="token function selector">\begin</span><span class="token punctuation">&#123;</span><span class="token keyword">document</span><span class="token punctuation">&#125;</span> <span class="token comment">% 一个latex文件（正文区）有且仅有一个document文件</span>
-    <span class="token function selector">\maketitle</span> <span class="token comment">% 输出标题</span>
-
-    Hello World!
-
-    <span class="token comment">% 空行可以换行，注释不算空行，多个空行算一个空行</span>
-    To be or not to be, it's just a question
-
-<span class="token function selector">\end</span><span class="token punctuation">&#123;</span><span class="token keyword">document</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs tex"><span class="hljs-comment">% 导言区</span><br><span class="hljs-keyword">\documentclass</span>&#123;article&#125;<br><br><span class="hljs-keyword">\title</span>&#123;My First Document&#125; <br><span class="hljs-keyword">\author</span>&#123;Weijian Ma&#125;<br><span class="hljs-keyword">\date</span>&#123;<span class="hljs-keyword">\today</span>&#125;<br><br><span class="hljs-comment">% 正文区（文稿区）</span><br><span class="hljs-keyword">\begin</span>&#123;document&#125; <span class="hljs-comment">% 一个latex文件（正文区）有且仅有一个document文件</span><br>    <span class="hljs-keyword">\maketitle</span> <span class="hljs-comment">% 输出标题</span><br><br>    Hello World!<br><br>    <span class="hljs-comment">% 空行可以换行，注释不算空行，多个空行算一个空行</span><br>    To be or not to be, it&#x27;s just a question<br><br><span class="hljs-keyword">\end</span>&#123;document&#125;<br></code></pre></td></tr></table></figure>
 <p>在导言区，我们可以通过<code>\title(你的标题)</code>来指定文章的标题，通过<code>\author(作者)</code>来指定文章作者，通过<code>\date&#123;&#125;</code>来指定日期，<code>\today</code>指今天。<strong>必须在正文区添加<code>\maketitle</code>
 才能显示标题</strong>。</p>
 <p>在正文区，可使用空行来进行文本换行，其中，注释不算空行，多个空行算一个空行。</p>
@@ -353,22 +365,7 @@ class="math inline">\(\LaTeX\)</span>
 <p><img
 src="https://img-blog.csdnimg.cn/img_convert/5adea828c917821986624005cfe25004.png" srcset="/img/loading.gif" lazyload /></p>
 <h2 id="插入数学公式">插入数学公式</h2>
-<div class="code-wrapper"><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token comment">% 导言区</span>
-<span class="token function selector">\documentclass</span><span class="token punctuation">&#123;</span><span class="token keyword">article</span><span class="token punctuation">&#125;</span> <span class="token comment">%article, book, report, letter(letter 不使用 \maketitle)</span>
-
-<span class="token function selector">\title</span><span class="token punctuation">&#123;</span>My First Document<span class="token punctuation">&#125;</span>
-<span class="token function selector">\author</span><span class="token punctuation">&#123;</span>Weijian Ma<span class="token punctuation">&#125;</span>
-<span class="token function selector">\date</span><span class="token punctuation">&#123;</span><span class="token function selector">\today</span><span class="token punctuation">&#125;</span>
-
-<span class="token comment">% 正文区（文稿区）</span>
-<span class="token function selector">\begin</span><span class="token punctuation">&#123;</span><span class="token keyword">document</span><span class="token punctuation">&#125;</span> <span class="token comment">% 一个latex文件（正文区）有且仅有一个document文件</span>
-    <span class="token function selector">\maketitle</span> <span class="token comment">% 输出标题</span>
-    Hello World!
-
-    <span class="token comment">% 空行可以换行，注释不算空行，多个空行算一个空行</span>
-    Let <span class="token equation string">$f(x)$</span> be defined by the formula
-    <span class="token equation string">$$f(x)=3x^2+x-1$$</span> which is a polynomial of degree 2.
-<span class="token function selector">\end</span><span class="token punctuation">&#123;</span><span class="token keyword">document</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs tex"><span class="hljs-comment">% 导言区</span><br><span class="hljs-keyword">\documentclass</span>&#123;article&#125; <span class="hljs-comment">%article, book, report, letter(letter 不使用 \maketitle)</span><br><br><span class="hljs-keyword">\title</span>&#123;My First Document&#125;<br><span class="hljs-keyword">\author</span>&#123;Weijian Ma&#125;<br><span class="hljs-keyword">\date</span>&#123;<span class="hljs-keyword">\today</span>&#125;<br><br><span class="hljs-comment">% 正文区（文稿区）</span><br><span class="hljs-keyword">\begin</span>&#123;document&#125; <span class="hljs-comment">% 一个latex文件（正文区）有且仅有一个document文件</span><br>    <span class="hljs-keyword">\maketitle</span> <span class="hljs-comment">% 输出标题</span><br>    Hello World!<br><br>    <span class="hljs-comment">% 空行可以换行，注释不算空行，多个空行算一个空行</span><br>    Let <span class="hljs-built_in">$</span>f(x)<span class="hljs-built_in">$</span> be defined by the formula<br>    <span class="hljs-built_in">$</span><span class="hljs-built_in">$</span>f(x)=3x<span class="hljs-built_in">^</span>2+x-1<span class="hljs-built_in">$</span><span class="hljs-built_in">$</span> which is a polynomial of degree 2.<br><span class="hljs-keyword">\end</span>&#123;document&#125;<br></code></pre></td></tr></table></figure>
 <ul>
 <li><p>行内公式：<code>$你的公式$</code></p></li>
 <li><p>行间公式：<code>$$你的公式$$</code></p></li>
@@ -377,38 +374,13 @@ src="https://img-blog.csdnimg.cn/img_convert/5adea828c917821986624005cfe25004.pn
 <p><img
 src="https://img-blog.csdnimg.cn/img_convert/e0dd6c2f8027cbeecbdb9f7fd5039747.png" srcset="/img/loading.gif" lazyload /></p>
 <h2 id="中文的处理方法">中文的处理方法</h2>
-<div class="code-wrapper"><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token comment">% 导言区</span>
-<span class="token function selector">\documentclass</span><span class="token punctuation">&#123;</span><span class="token keyword">article</span><span class="token punctuation">&#125;</span> <span class="token comment">%article, book, report, letter(letter 不使用 \maketitle)</span>
-
-<span class="token function selector">\usepackage</span><span class="token punctuation">&#123;</span><span class="token keyword">ctex</span><span class="token punctuation">&#125;</span> <span class="token comment">% 在cmd命令行窗口输入 `texdoc ctex` 可打开ctex文档</span>
-
-<span class="token function selector">\newcommand</span><span class="token function selector">\degree</span><span class="token punctuation">&#123;</span>^<span class="token function selector">\circ</span><span class="token punctuation">&#125;</span> <span class="token comment">% 角度符号</span>
-
-<span class="token function selector">\title</span><span class="token punctuation">&#123;</span><span class="token function selector">\heiti</span> 我的第一个文档<span class="token punctuation">&#125;</span>
-<span class="token function selector">\author</span><span class="token punctuation">&#123;</span><span class="token function selector">\kaishu</span> 小猪佩奇<span class="token punctuation">&#125;</span>
-<span class="token function selector">\date</span><span class="token punctuation">&#123;</span><span class="token function selector">\today</span><span class="token punctuation">&#125;</span>
-
-<span class="token comment">% 正文区（文稿区）</span>
-<span class="token function selector">\begin</span><span class="token punctuation">&#123;</span><span class="token keyword">document</span><span class="token punctuation">&#125;</span> <span class="token comment">% 一个latex文件（正文区）有且仅有一个document文件</span>
-    <span class="token function selector">\maketitle</span> <span class="token comment">% 输出标题</span>
-    勾股定理可以用现代语言表述如下:
-
-    直角三角形斜边的平方等于西腰的平方和。
-
-    可以用符号语言表述为:设直角三角形<span class="token equation string">$ABC$</span>， 其中<span class="token equation string">$<span class="token equation-command regex">\angle</span> C=90<span class="token equation-command regex">\degree</span>$</span>，则有:
-    <span class="token function selector">\begin</span><span class="token punctuation">&#123;</span><span class="token keyword">equation</span><span class="token punctuation">&#125;</span> <span class="token comment">% 用于生成带编号的公式</span>
-        AB^2 = BC^2 + AC^2.
-    <span class="token function selector">\end</span><span class="token punctuation">&#123;</span><span class="token keyword">equation</span><span class="token punctuation">&#125;</span>
-
-<span class="token function selector">\end</span><span class="token punctuation">&#123;</span><span class="token keyword">document</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-comment">% 导言区</span><br><span class="hljs-keyword">\documentclass</span>&#123;article&#125; <span class="hljs-comment">%article, book, report, letter(letter 不使用 \maketitle)</span><br><br><span class="hljs-keyword">\usepackage</span>&#123;ctex&#125; <span class="hljs-comment">% 在cmd命令行窗口输入 `texdoc ctex` 可打开ctex文档</span><br><br><span class="hljs-keyword">\newcommand</span><span class="hljs-keyword">\degree</span>&#123;<span class="hljs-built_in">^</span><span class="hljs-keyword">\circ</span>&#125; <span class="hljs-comment">% 角度符号</span><br><br><span class="hljs-keyword">\title</span>&#123;<span class="hljs-keyword">\heiti</span> 我的第一个文档&#125;<br><span class="hljs-keyword">\author</span>&#123;<span class="hljs-keyword">\kaishu</span> 小猪佩奇&#125;<br><span class="hljs-keyword">\date</span>&#123;<span class="hljs-keyword">\today</span>&#125;<br><br><span class="hljs-comment">% 正文区（文稿区）</span><br><span class="hljs-keyword">\begin</span>&#123;document&#125; <span class="hljs-comment">% 一个latex文件（正文区）有且仅有一个document文件</span><br>    <span class="hljs-keyword">\maketitle</span> <span class="hljs-comment">% 输出标题</span><br>    勾股定理可以用现代语言表述如下:<br><br>    直角三角形斜边的平方等于西腰的平方和。<br><br>    可以用符号语言表述为:设直角三角形<span class="hljs-built_in">$</span>ABC<span class="hljs-built_in">$</span>， 其中<span class="hljs-built_in">$</span><span class="hljs-keyword">\angle</span> C=90<span class="hljs-keyword">\degree</span><span class="hljs-built_in">$</span>，则有:<br>    <span class="hljs-keyword">\begin</span>&#123;equation&#125; <span class="hljs-comment">% 用于生成带编号的公式</span><br>        AB<span class="hljs-built_in">^</span>2 = BC<span class="hljs-built_in">^</span>2 + AC<span class="hljs-built_in">^</span>2.<br>    <span class="hljs-keyword">\end</span>&#123;equation&#125;<br><br><span class="hljs-keyword">\end</span>&#123;document&#125;<br></code></pre></td></tr></table></figure>
 <ul>
 <li><p>为了显示中文，我们需要在导言区导入<code>ctex</code>包：<code>\usepackage&#123;ctex&#125;</code>；</p></li>
 <li><p>在文字前面可以指定字体类型，比如使用<code>\title&#123;\heiti 我的第一个文档&#125;</code>使标题显示为黑体，使用<code>\author&#123;\kaishu 小猪佩奇&#125;</code>使作者名显示为楷书</p></li>
 <li><p>此外，如果想要在文中显示带编号的公式，需要使用如下格式：</p></li>
 </ul>
-<div class="code-wrapper"><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token function selector">\begin</span><span class="token punctuation">&#123;</span><span class="token keyword">equation</span><span class="token punctuation">&#125;</span> <span class="token comment">% 用于生成带编号的公式</span>
-        你的公式
-<span class="token function selector">\end</span><span class="token punctuation">&#123;</span><span class="token keyword">equation</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs tex"><span class="hljs-keyword">\begin</span>&#123;equation&#125; <span class="hljs-comment">% 用于生成带编号的公式</span><br>        你的公式<br><span class="hljs-keyword">\end</span>&#123;equation&#125;<br></code></pre></td></tr></table></figure>
 <p>上面代码的编译结果如下：</p>
 <p><img
 src="https://img-blog.csdnimg.cn/img_convert/5932e463c3ef4affb4c800b618a8b514.png" srcset="/img/loading.gif" lazyload /></p>
@@ -441,160 +413,106 @@ src="https://img-blog.csdnimg.cn/img_convert/5932e463c3ef4affb4c800b618a8b514.pn
 <li><p>字体大小</p></li>
 </ul>
 <p>具体示例见如下代码：</p>
-<div class="code-wrapper"><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token comment">% 导言区</span>
-<span class="token function selector">\documentclass</span><span class="token punctuation">[</span>10pt<span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token keyword">article</span><span class="token punctuation">&#125;</span> <span class="token comment">% 这里设置normal size的大小为10磅，一般只有10，11，12</span>
-
-<span class="token function selector">\usepackage</span><span class="token punctuation">&#123;</span><span class="token keyword">ctex</span><span class="token punctuation">&#125;</span>
-
-<span class="token function selector">\newcommand</span><span class="token punctuation">&#123;</span><span class="token function selector">\myfont</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#123;</span><span class="token function selector">\textbf</span><span class="token punctuation">&#123;</span><span class="token function selector">\textsf</span><span class="token punctuation">&#123;</span>Fancy Text<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
-
-<span class="token comment">% 正文区（文稿区）</span>
-<span class="token function selector">\begin</span><span class="token punctuation">&#123;</span><span class="token keyword">document</span><span class="token punctuation">&#125;</span>
-    <span class="token comment">% 字体族设置（罗马字体、无衬线字体、打字机字体）</span>
-
-    <span class="token comment">% 使用字体命令</span>
-    <span class="token function selector">\textrm</span><span class="token punctuation">&#123;</span>Roman Family<span class="token punctuation">&#125;</span> <span class="token function selector">\textsf</span><span class="token punctuation">&#123;</span>Sans Serif Family<span class="token punctuation">&#125;</span> <span class="token function selector">\texttt</span><span class="token punctuation">&#123;</span>Typewriter Family<span class="token punctuation">&#125;</span>
-
-    <span class="token comment">% 使用字体声明</span>
-    <span class="token punctuation">&#123;</span><span class="token function selector">\rmfamily</span> Roman Family<span class="token punctuation">&#125;</span> <span class="token punctuation">&#123;</span><span class="token function selector">\sffamily</span> Sans Serif Family<span class="token punctuation">&#125;</span> <span class="token punctuation">&#123;</span><span class="token function selector">\ttfamily</span> Typewriter Family<span class="token punctuation">&#125;</span>
-
-    <span class="token punctuation">&#123;</span><span class="token function selector">\sffamily</span> who you are? you find self on everyone around.take you as the same as others!<span class="token punctuation">&#125;</span>
-
-    <span class="token punctuation">&#123;</span><span class="token function selector">\ttfamily</span> Are you wiser than others? definitely no. in some ways, may it is true. What can you achieve? a luxurious house? a brillilant car? an admirable career? who knows? <span class="token punctuation">&#125;</span>
-
-    <span class="token comment">% 字体粗细设置</span>
-    <span class="token function selector">\textmd</span><span class="token punctuation">&#123;</span>Medium Series<span class="token punctuation">&#125;</span> <span class="token function selector">\textbf</span><span class="token punctuation">&#123;</span>Boldface Series<span class="token punctuation">&#125;</span>
-
-    <span class="token punctuation">&#123;</span><span class="token function selector">\mdseries</span> Medium Series<span class="token punctuation">&#125;</span> <span class="token punctuation">&#123;</span><span class="token function selector">\bfseries</span> Boldface Series<span class="token punctuation">&#125;</span>
-
-    <span class="token comment">%字体形状(直立、斜体、伪斜体、小型大写)</span>
-    <span class="token function selector">\textup</span><span class="token punctuation">&#123;</span>Upright Shape<span class="token punctuation">&#125;</span> <span class="token function selector">\textit</span><span class="token punctuation">&#123;</span>Italic Shape<span class="token punctuation">&#125;</span>
-    <span class="token function selector">\textsl</span><span class="token punctuation">&#123;</span>Slanted Shape<span class="token punctuation">&#125;</span> <span class="token function selector">\textsc</span><span class="token punctuation">&#123;</span>Small Caps Shape<span class="token punctuation">&#125;</span>
-
-    <span class="token punctuation">&#123;</span><span class="token function selector">\upshape</span> Upright Shape<span class="token punctuation">&#125;</span> <span class="token punctuation">&#123;</span><span class="token function selector">\itshape</span> Italic Shape<span class="token punctuation">&#125;</span> <span class="token punctuation">&#123;</span><span class="token function selector">\slshape</span> Slanted Shape<span class="token punctuation">&#125;</span> <span class="token punctuation">&#123;</span><span class="token function selector">\scshape</span> Small Caps Shape<span class="token punctuation">&#125;</span>
-
-    <span class="token comment">% 中文字体</span>
-    <span class="token punctuation">&#123;</span><span class="token function selector">\songti</span> 宋体<span class="token punctuation">&#125;</span> <span class="token function selector">\quad</span> <span class="token punctuation">&#123;</span><span class="token function selector">\heiti</span> 黑体<span class="token punctuation">&#125;</span> <span class="token function selector">\quad</span> <span class="token punctuation">&#123;</span><span class="token function selector">\fangsong</span> 仿宋<span class="token punctuation">&#125;</span>
-    <span class="token function selector">\quad</span> <span class="token punctuation">&#123;</span><span class="token function selector">\kaishu</span> 楷书<span class="token punctuation">&#125;</span>
-
-    中文字体的<span class="token function selector">\textbf</span><span class="token punctuation">&#123;</span>粗体<span class="token punctuation">&#125;</span>与<span class="token function selector">\textit</span><span class="token punctuation">&#123;</span>斜体<span class="token punctuation">&#125;</span>
-
-    <span class="token comment">%字体大小</span>
-    <span class="token punctuation">&#123;</span><span class="token function selector">\tiny</span>         He11o<span class="token punctuation">&#125;</span><span class="token function selector">\\</span>
-    <span class="token punctuation">&#123;</span><span class="token function selector">\scriptsize</span>   He11o<span class="token punctuation">&#125;</span><span class="token function selector">\\</span>
-    <span class="token punctuation">&#123;</span><span class="token function selector">\footnotesize</span> He11o<span class="token punctuation">&#125;</span><span class="token function selector">\\</span>
-    <span class="token punctuation">&#123;</span><span class="token function selector">\small</span>        He1lo<span class="token punctuation">&#125;</span><span class="token function selector">\\</span>
-    <span class="token punctuation">&#123;</span><span class="token function selector">\normalsize</span>   He11o<span class="token punctuation">&#125;</span><span class="token function selector">\\</span>
-    <span class="token punctuation">&#123;</span><span class="token function selector">\large</span>        Hello<span class="token punctuation">&#125;</span><span class="token function selector">\\</span>
-    <span class="token punctuation">&#123;</span><span class="token function selector">\Large</span>        He1lo<span class="token punctuation">&#125;</span><span class="token function selector">\\</span>
-    <span class="token punctuation">&#123;</span><span class="token function selector">\LARGE</span>        He1lo<span class="token punctuation">&#125;</span><span class="token function selector">\\</span>
-    <span class="token punctuation">&#123;</span><span class="token function selector">\huge</span>         He11o<span class="token punctuation">&#125;</span><span class="token function selector">\\</span>
-    <span class="token punctuation">&#123;</span><span class="token function selector">\Huge</span>         He11o<span class="token punctuation">&#125;</span><span class="token function selector">\\</span>
-
-    <span class="token comment">% 中文字号的设置命令</span>
-    <span class="token function selector">\zihao</span><span class="token punctuation">&#123;</span>-0<span class="token punctuation">&#125;</span> 你好！<span class="token comment">% 具体参考ctex文档</span>
-
-    <span class="token comment">% 命令与内容分离</span>
-    <span class="token function selector">\myfont</span> 
-
-<span class="token function selector">\end</span><span class="token punctuation">&#123;</span><span class="token keyword">document</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-comment">% 导言区</span><br><span class="hljs-keyword">\documentclass</span>[10pt]&#123;article&#125; <span class="hljs-comment">% 这里设置normal size的大小为10磅，一般只有10，11，12</span><br><br><span class="hljs-keyword">\usepackage</span>&#123;ctex&#125;<br><br><span class="hljs-keyword">\newcommand</span>&#123;<span class="hljs-keyword">\myfont</span>&#125;&#123;<span class="hljs-keyword">\textbf</span>&#123;<span class="hljs-keyword">\textsf</span>&#123;Fancy Text&#125;&#125;&#125;<br><br><span class="hljs-comment">% 正文区（文稿区）</span><br><span class="hljs-keyword">\begin</span>&#123;document&#125;<br>    <span class="hljs-comment">% 字体族设置（罗马字体、无衬线字体、打字机字体）</span><br><br>    <span class="hljs-comment">% 使用字体命令</span><br>    <span class="hljs-keyword">\textrm</span>&#123;Roman Family&#125; <span class="hljs-keyword">\textsf</span>&#123;Sans Serif Family&#125; <span class="hljs-keyword">\texttt</span>&#123;Typewriter Family&#125;<br><br>    <span class="hljs-comment">% 使用字体声明</span><br>    &#123;<span class="hljs-keyword">\rmfamily</span> Roman Family&#125; &#123;<span class="hljs-keyword">\sffamily</span> Sans Serif Family&#125; &#123;<span class="hljs-keyword">\ttfamily</span> Typewriter Family&#125;<br><br>    &#123;<span class="hljs-keyword">\sffamily</span> who you are? you find self on everyone around.take you as the same as others!&#125;<br><br>    &#123;<span class="hljs-keyword">\ttfamily</span> Are you wiser than others? definitely no. in some ways, may it is true. What can you achieve? a luxurious house? a brillilant car? an admirable career? who knows? &#125;<br><br>    <span class="hljs-comment">% 字体粗细设置</span><br>    <span class="hljs-keyword">\textmd</span>&#123;Medium Series&#125; <span class="hljs-keyword">\textbf</span>&#123;Boldface Series&#125;<br><br>    &#123;<span class="hljs-keyword">\mdseries</span> Medium Series&#125; &#123;<span class="hljs-keyword">\bfseries</span> Boldface Series&#125;<br><br>    <span class="hljs-comment">%字体形状(直立、斜体、伪斜体、小型大写)</span><br>    <span class="hljs-keyword">\textup</span>&#123;Upright Shape&#125; <span class="hljs-keyword">\textit</span>&#123;Italic Shape&#125;<br>    <span class="hljs-keyword">\textsl</span>&#123;Slanted Shape&#125; <span class="hljs-keyword">\textsc</span>&#123;Small Caps Shape&#125;<br><br>    &#123;<span class="hljs-keyword">\upshape</span> Upright Shape&#125; &#123;<span class="hljs-keyword">\itshape</span> Italic Shape&#125; &#123;<span class="hljs-keyword">\slshape</span> Slanted Shape&#125; &#123;<span class="hljs-keyword">\scshape</span> Small Caps Shape&#125;<br><br>    <span class="hljs-comment">% 中文字体</span><br>    &#123;<span class="hljs-keyword">\songti</span> 宋体&#125; <span class="hljs-keyword">\quad</span> &#123;<span class="hljs-keyword">\heiti</span> 黑体&#125; <span class="hljs-keyword">\quad</span> &#123;<span class="hljs-keyword">\fangsong</span> 仿宋&#125;<br>    <span class="hljs-keyword">\quad</span> &#123;<span class="hljs-keyword">\kaishu</span> 楷书&#125;<br><br>    中文字体的<span class="hljs-keyword">\textbf</span>&#123;粗体&#125;与<span class="hljs-keyword">\textit</span>&#123;斜体&#125;<br><br>    <span class="hljs-comment">%字体大小</span><br>    &#123;<span class="hljs-keyword">\tiny</span>         He11o&#125;<span class="hljs-keyword">\\</span><br>    &#123;<span class="hljs-keyword">\scriptsize</span>   He11o&#125;<span class="hljs-keyword">\\</span><br>    &#123;<span class="hljs-keyword">\footnotesize</span> He11o&#125;<span class="hljs-keyword">\\</span><br>    &#123;<span class="hljs-keyword">\small</span>        He1lo&#125;<span class="hljs-keyword">\\</span><br>    &#123;<span class="hljs-keyword">\normalsize</span>   He11o&#125;<span class="hljs-keyword">\\</span><br>    &#123;<span class="hljs-keyword">\large</span>        Hello&#125;<span class="hljs-keyword">\\</span><br>    &#123;<span class="hljs-keyword">\Large</span>        He1lo&#125;<span class="hljs-keyword">\\</span><br>    &#123;<span class="hljs-keyword">\LARGE</span>        He1lo&#125;<span class="hljs-keyword">\\</span><br>    &#123;<span class="hljs-keyword">\huge</span>         He11o&#125;<span class="hljs-keyword">\\</span><br>    &#123;<span class="hljs-keyword">\Huge</span>         He11o&#125;<span class="hljs-keyword">\\</span><br><br>    <span class="hljs-comment">% 中文字号的设置命令</span><br>    <span class="hljs-keyword">\zihao</span>&#123;-0&#125; 你好！<span class="hljs-comment">% 具体参考ctex文档</span><br><br>    <span class="hljs-comment">% 命令与内容分离</span><br>    <span class="hljs-keyword">\myfont</span> <br><br><span class="hljs-keyword">\end</span>&#123;document&#125;<br></code></pre></td></tr></table></figure>
 <p>编译结果如下：</p>
 <p><img
 src="https://img-blog.csdnimg.cn/img_convert/3a03e8f601bd8f51d33b712e9cdde93f.png" srcset="/img/loading.gif" lazyload /></p>
 <h2 id="篇章结构">篇章结构</h2>
-<div class="code-wrapper"><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token comment">% 导言区</span>
-<span class="token function selector">\documentclass</span><span class="token punctuation">&#123;</span><span class="token keyword">ctexart</span><span class="token punctuation">&#125;</span> 
-
-<span class="token comment">% \usepackage&#123;ctex&#125;</span>
-
-<span class="token comment">% 设置标题的格式</span>
-<span class="token function selector">\ctexset</span><span class="token punctuation">&#123;</span>
-    section = <span class="token punctuation">&#123;</span>
-        format+ = <span class="token function selector">\zihao</span><span class="token punctuation">&#123;</span>-4<span class="token punctuation">&#125;</span> <span class="token function selector">\heiti</span> <span class="token function selector">\raggedright</span>,
-        name = <span class="token punctuation">&#123;</span>,、<span class="token punctuation">&#125;</span>,
-        number = <span class="token function selector">\chinese</span><span class="token punctuation">&#123;</span>section<span class="token punctuation">&#125;</span>,
-        aftername = <span class="token function selector">\hspace</span><span class="token punctuation">&#123;</span>0pt<span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>,
-    subsection = <span class="token punctuation">&#123;</span>
-        format+ = <span class="token function selector">\zihao</span><span class="token punctuation">&#123;</span>5<span class="token punctuation">&#125;</span> <span class="token function selector">\heiti</span> <span class="token function selector">\raggedright</span>,
-        <span class="token comment">% name = &#123;\thesubsection、 &#125;,</span>
-        name = <span class="token punctuation">&#123;</span>,、<span class="token punctuation">&#125;</span>,
-        number = <span class="token function selector">\arabic</span><span class="token punctuation">&#123;</span>subsection<span class="token punctuation">&#125;</span>,
-        aftername = <span class="token function selector">\hspace</span><span class="token punctuation">&#123;</span>0pt<span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token comment">% 正文区（文稿区）</span>
-<span class="token function selector">\begin</span><span class="token punctuation">&#123;</span><span class="token keyword">document</span><span class="token punctuation">&#125;</span>
-    <span class="token function selector">\section</span><span class="token punctuation">&#123;</span><span class="token headline class-name">引言</span><span class="token punctuation">&#125;</span>
-    正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文
-
-    正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文 <span class="token function selector">\par</span> 正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文
-    <span class="token function selector">\section</span><span class="token punctuation">&#123;</span><span class="token headline class-name">实验方法</span><span class="token punctuation">&#125;</span>
-    <span class="token function selector">\section</span><span class="token punctuation">&#123;</span><span class="token headline class-name">实验结果</span><span class="token punctuation">&#125;</span>
-    <span class="token function selector">\subsection</span><span class="token punctuation">&#123;</span><span class="token headline class-name">数据</span><span class="token punctuation">&#125;</span>
-    <span class="token function selector">\subsection</span><span class="token punctuation">&#123;</span><span class="token headline class-name">图表</span><span class="token punctuation">&#125;</span>
-    <span class="token function selector">\subsubsection</span><span class="token punctuation">&#123;</span><span class="token headline class-name">实验条件</span><span class="token punctuation">&#125;</span>
-    <span class="token function selector">\subsubsection</span><span class="token punctuation">&#123;</span><span class="token headline class-name">实验过程</span><span class="token punctuation">&#125;</span>
-    <span class="token function selector">\subsection</span><span class="token punctuation">&#123;</span><span class="token headline class-name">结果分析</span><span class="token punctuation">&#125;</span>
-    <span class="token function selector">\section</span><span class="token punctuation">&#123;</span><span class="token headline class-name">结论</span><span class="token punctuation">&#125;</span>
-    <span class="token function selector">\section</span><span class="token punctuation">&#123;</span><span class="token headline class-name">致谢</span><span class="token punctuation">&#125;</span>
-<span class="token function selector">\end</span><span class="token punctuation">&#123;</span><span class="token keyword">document</span><span class="token punctuation">&#125;</span>ion<span class="token punctuation">&#123;</span>结论<span class="token punctuation">&#125;</span>
-    <span class="token function selector">\section</span><span class="token punctuation">&#123;</span><span class="token headline class-name">致谢</span><span class="token punctuation">&#125;</span>
-end<span class="token punctuation">&#123;</span>document<span class="token punctuation">&#125;</span>ion<span class="token punctuation">&#123;</span>结论<span class="token punctuation">&#125;</span>
-    <span class="token function selector">\section</span><span class="token punctuation">&#123;</span><span class="token headline class-name">致谢</span><span class="token punctuation">&#125;</span>
-<span class="token function selector">\end</span><span class="token punctuation">&#123;</span><span class="token keyword">document</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-comment">% 导言区</span><br><span class="hljs-keyword">\documentclass</span>&#123;ctexart&#125; <br><br><span class="hljs-comment">% \usepackage&#123;ctex&#125;</span><br><br><span class="hljs-comment">% 设置标题的格式</span><br><span class="hljs-keyword">\ctexset</span>&#123;<br>    section = &#123;<br>        format+ = <span class="hljs-keyword">\zihao</span>&#123;-4&#125; <span class="hljs-keyword">\heiti</span> <span class="hljs-keyword">\raggedright</span>,<br>        name = &#123;,、&#125;,<br>        number = <span class="hljs-keyword">\chinese</span>&#123;section&#125;,<br>        aftername = <span class="hljs-keyword">\hspace</span>&#123;0pt&#125;<br>    &#125;,<br>    subsection = &#123;<br>        format+ = <span class="hljs-keyword">\zihao</span>&#123;5&#125; <span class="hljs-keyword">\heiti</span> <span class="hljs-keyword">\raggedright</span>,<br>        <span class="hljs-comment">% name = &#123;\thesubsection、 &#125;,</span><br>        name = &#123;,、&#125;,<br>        number = <span class="hljs-keyword">\arabic</span>&#123;subsection&#125;,<br>        aftername = <span class="hljs-keyword">\hspace</span>&#123;0pt&#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">% 正文区（文稿区）</span><br><span class="hljs-keyword">\begin</span>&#123;document&#125;<br>    <span class="hljs-keyword">\section</span>&#123;引言&#125;<br>    正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文<br><br>    正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文 <span class="hljs-keyword">\par</span> 正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文<br>    <span class="hljs-keyword">\section</span>&#123;实验方法&#125;<br>    <span class="hljs-keyword">\section</span>&#123;实验结果&#125;<br>    <span class="hljs-keyword">\subsection</span>&#123;数据&#125;<br>    <span class="hljs-keyword">\subsection</span>&#123;图表&#125;<br>    <span class="hljs-keyword">\subsubsection</span>&#123;实验条件&#125;<br>    <span class="hljs-keyword">\subsubsection</span>&#123;实验过程&#125;<br>    <span class="hljs-keyword">\subsection</span>&#123;结果分析&#125;<br>    <span class="hljs-keyword">\section</span>&#123;结论&#125;<br>    <span class="hljs-keyword">\section</span>&#123;致谢&#125;<br><span class="hljs-keyword">\end</span>&#123;document&#125;ion&#123;结论&#125;<br>    <span class="hljs-keyword">\section</span>&#123;致谢&#125;<br>end&#123;document&#125;ion&#123;结论&#125;<br>    <span class="hljs-keyword">\section</span>&#123;致谢&#125;<br><span class="hljs-keyword">\end</span>&#123;document&#125;<br></code></pre></td></tr></table></figure>
 <p>运行结果如下：</p>
 <p><img
 src="https://img-blog.csdnimg.cn/img_convert/54b9e9bd65a55166a22ed51df9805558.png" srcset="/img/loading.gif" lazyload /></p>
 <h2 id="特殊字符">特殊字符</h2>
-<div class="code-wrapper"><pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token comment">% 导言区</span>
-<span class="token function selector">\documentclass</span><span class="token punctuation">&#123;</span><span class="token keyword">article</span><span class="token punctuation">&#125;</span>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-comment">% 导言区</span><br><span class="hljs-keyword">\documentclass</span>&#123;article&#125;<br><br><span class="hljs-keyword">\usepackage</span>&#123;ctex&#125;<br><br><span class="hljs-comment">% 正文区（文稿区）</span><br><span class="hljs-keyword">\begin</span>&#123;document&#125;<br>    <span class="hljs-keyword">\section</span>&#123;空白符号&#125;<br>    <span class="hljs-keyword">\section</span>&#123;<span class="hljs-keyword">\LaTeX</span> 控制符&#125;<br>    <span class="hljs-keyword">\section</span>&#123;排版符号&#125;<br>    <span class="hljs-keyword">\section</span>&#123;<span class="hljs-keyword">\TeX</span> 标志符号&#125;<br>    <span class="hljs-keyword">\section</span>&#123;引号&#125;<br>    <span class="hljs-keyword">\section</span>&#123;连字符&#125;<br>    <span class="hljs-keyword">\section</span>&#123;韭英文字符&#125;<br>    <span class="hljs-keyword">\section</span>&#123;重音符号(以o为例)&#125;<br><span class="hljs-keyword">\end</span>&#123;document&#125;<br></code></pre></td></tr></table></figure>
 
-<span class="token function selector">\usepackage</span><span class="token punctuation">&#123;</span><span class="token keyword">ctex</span><span class="token punctuation">&#125;</span>
-
-<span class="token comment">% 正文区（文稿区）</span>
-<span class="token function selector">\begin</span><span class="token punctuation">&#123;</span><span class="token keyword">document</span><span class="token punctuation">&#125;</span>
-    <span class="token function selector">\section</span><span class="token punctuation">&#123;</span><span class="token headline class-name">空白符号</span><span class="token punctuation">&#125;</span>
-    <span class="token function selector">\section</span><span class="token punctuation">&#123;</span><span class="token headline class-name">\LaTeX 控制符</span><span class="token punctuation">&#125;</span>
-    <span class="token function selector">\section</span><span class="token punctuation">&#123;</span><span class="token headline class-name">排版符号</span><span class="token punctuation">&#125;</span>
-    <span class="token function selector">\section</span><span class="token punctuation">&#123;</span><span class="token headline class-name">\TeX 标志符号</span><span class="token punctuation">&#125;</span>
-    <span class="token function selector">\section</span><span class="token punctuation">&#123;</span><span class="token headline class-name">引号</span><span class="token punctuation">&#125;</span>
-    <span class="token function selector">\section</span><span class="token punctuation">&#123;</span><span class="token headline class-name">连字符</span><span class="token punctuation">&#125;</span>
-    <span class="token function selector">\section</span><span class="token punctuation">&#123;</span><span class="token headline class-name">韭英文字符</span><span class="token punctuation">&#125;</span>
-    <span class="token function selector">\section</span><span class="token punctuation">&#123;</span><span class="token headline class-name">重音符号(以o为例)</span><span class="token punctuation">&#125;</span>
-<span class="token function selector">\end</span><span class="token punctuation">&#123;</span><span class="token keyword">document</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
-
+              
             </div>
-            <hr>
+            <hr/>
             <div>
-              <div class="post-metas mb-3">
-                
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/Latex%E5%9F%BA%E7%A1%80/">Latex基础</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/Latex/">Latex</a>
-                    
-                  </div>
-                
-              </div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Latex%E5%9F%BA%E7%A1%80/" class="category-chain-item">Latex基础</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Latex/">#Latex</a>
+      
+    </div>
+  
+</div>
+
+
               
-                <p class="note note-warning">
-                  
-                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
-                  
-                </p>
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>LaTex基础</div>
+      <div>http://example.com/articles/3bf209ab.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>WeiJian-M</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年5月16日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2022年5月19日</div>
+        </div>
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
               
-              
-                <div class="post-prevnext">
+                <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
                     
@@ -602,7 +520,7 @@ src="https://img-blog.csdnimg.cn/img_convert/54b9e9bd65a55166a22ed51df9805558.pn
                   <article class="post-next col-6">
                     
                     
-                      <a href="/articles/73cbfd2.html">
+                      <a href="/articles/73cbfd2.html" title="p4环境配置">
                         <span class="hidden-mobile">p4环境配置</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -614,16 +532,12 @@ src="https://img-blog.csdnimg.cn/img_convert/54b9e9bd65a55166a22ed51df9805558.pn
             </div>
 
             
-              <!-- Comments -->
-              <article class="comments" id="comments" lazyload>
-                
-                  
-                
-                
+  <article id="comments" lazyload>
+    
   <div id="valine"></div>
   <script type="text/javascript">
     Fluid.utils.loadComments('#valine', function() {
-      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.4.16/Valine.min.js', function() {
         var options = Object.assign(
           {"appId":"QJrJTbyaKnLTXazIyFvWAIt9-MdYXbMMI","appKey":"lgeXgcTuS1TMcW5EFm0UwF9S","path":"window.location.pathname","placeholder":"可匿名评论，可不填写邮箱，建议填写邮箱，这样当别人回复你时，会受到邮箱提醒，欢迎评论~","avatar":"retro","meta":["nick","mail"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":true,"serverURLs":"https://qjrjtbya.api.lncldglobal.com","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
           {
@@ -633,7 +547,9 @@ src="https://img-blog.csdnimg.cn/img_convert/54b9e9bd65a55166a22ed51df9805558.pn
         )
         new Valine(options);
         Fluid.utils.waitElementVisible('#valine .vcontent', () => {
-          Fluid.plugins.initFancyBox('#valine .vcontent img:not(.vemoji)');
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
         })
       });
     });
@@ -641,25 +557,62 @@ src="https://img-blog.csdnimg.cn/img_convert/54b9e9bd65a55166a22ed51df9805558.pn
   <noscript>Please enable JavaScript to view the comments</noscript>
 
 
-              </article>
-            
+  </article>
+
+
           </article>
         </div>
       </div>
     </div>
-    
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
   <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
   <div class="toc-body" id="toc-body"></div>
 </div>
 
-      </div>
-    
+
+
+  </aside>
+
+
+    </div>
   </div>
 </div>
 
-<!-- Custom -->
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
 
 
     
@@ -684,59 +637,61 @@ src="https://img-blog.csdnimg.cn/img_convert/54b9e9bd65a55166a22ed51df9805558.pn
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
   </div>
 </div>
+
     
 
     
   </main>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
-  </div>
+  <footer>
+    <div class="footer-inner">
   
-  <div class="statistics">
-    
-    
-
-    
-      
-        <!-- 不蒜子统计PV -->
-        <span id="busuanzi_container_site_pv" style="display: none">
-            总访问量 
-            <span id="busuanzi_value_site_pv"></span>
-             次
-          </span>
-      
-      
-        <!-- 不蒜子统计UV -->
-        <span id="busuanzi_container_site_uv" style="display: none">
-            总访客数 
-            <span id="busuanzi_value_site_uv"></span>
-             人
-          </span>
-      
-    
-  </div>
-
-
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
   
 
   
-</footer>
-
-
-  <!-- SCRIPTS -->
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
   
-  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
 
   <script>
     NProgress.configure({"showSpinner":false,"trickleSpeed":100})
@@ -747,15 +702,57 @@ src="https://img-blog.csdnimg.cn/img_convert/54b9e9bd65a55166a22ed51df9805558.pn
   </script>
 
 
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-<!-- Plugins -->
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
 
 
-  <script  src="/js/local-search.js" ></script>
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?76a2c58225b952233d541c471171b458";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -765,118 +762,179 @@ src="https://img-blog.csdnimg.cn/img_convert/54b9e9bd65a55166a22ed51df9805558.pn
 
 
 
+
   
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.0/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script>
+  (function() {
+    var enableLang = CONFIG.code_language.enable && CONFIG.code_language.default;
+    var enableCopy = CONFIG.copy_btn;
+    if (!enableLang && !enableCopy) {
+      return;
+    }
+
+    function getBgClass(ele) {
+      return Fluid.utils.getBackgroundLightness(ele) >= 0 ? 'code-widget-light' : 'code-widget-dark';
+    }
+
+    var copyTmpl = '';
+    copyTmpl += '<div class="code-widget">';
+    copyTmpl += 'LANG';
+    copyTmpl += '</div>';
+    jQuery('.markdown-body pre').each(function() {
+      var $pre = jQuery(this);
+      if ($pre.find('code.mermaid').length > 0) {
+        return;
+      }
+      if ($pre.find('span.line').length > 0) {
+        return;
+      }
+
+      var lang = '';
+
+      if (enableLang) {
+        lang = CONFIG.code_language.default;
+        if ($pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2 && $pre.children().hasClass('hljs')) {
+          lang = $pre[0].children[0].classList[1];
+        } else if ($pre[0].getAttribute('data-language')) {
+          lang = $pre[0].getAttribute('data-language');
+        } else if ($pre.parent().hasClass('sourceCode') && $pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2) {
+          lang = $pre[0].children[0].classList[1];
+          $pre.parent().addClass('code-wrapper');
+        } else if ($pre.parent().hasClass('markdown-body') && $pre[0].classList.length === 0) {
+          $pre.wrap('<div class="code-wrapper"></div>');
+        }
+        lang = lang.toUpperCase().replace('NONE', CONFIG.code_language.default);
+      }
+      $pre.append(copyTmpl.replace('LANG', lang).replace('code-widget">',
+        getBgClass($pre[0]) + (enableCopy ? ' code-widget copy-btn" data-clipboard-snippet><i class="iconfont icon-copy"></i>' : ' code-widget">')));
+
+      if (enableCopy) {
+        Fluid.utils.createScript('https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js', function() {
+          var clipboard = new window.ClipboardJS('.copy-btn', {
+            target: function(trigger) {
+              var nodes = trigger.parentNode.childNodes;
+              for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].tagName === 'CODE') {
+                  return nodes[i];
+                }
+              }
+            }
+          });
+          clipboard.on('success', function(e) {
+            e.clearSelection();
+            e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-copy', 'icon-success');
+            setTimeout(function() {
+              e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-success', 'icon-copy');
+            }, 2000);
+          });
+        });
+      }
+    });
+  })();
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        MathJax = {
+          tex    : {
+            inlineMath: { '[+]': [['$', '$']] }
+          },
+          loader : {
+            load: ['ui/lazy']
+          },
+          options: {
+            renderActions: {
+              findScript    : [10, doc => {
+                document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                  const display = !!node.type.match(/; *mode=display/);
+                  const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                  const text = document.createTextNode('');
+                  node.parentNode.replaceChild(text, node);
+                  math.start = { node: text, delim: '', n: 0 };
+                  math.end = { node: text, delim: '', n: 0 };
+                  doc.math.push(math);
+                });
+              }, '', false],
+              insertedScript: [200, () => {
+                document.querySelectorAll('mjx-container').forEach(node => {
+                  let target = node.parentNode;
+                  if (target.nodeName.toLowerCase() === 'li') {
+                    target.parentNode.classList.add('has-jax');
+                  }
+                });
+              }, '', false]
+            }
+          }
+        };
+      </script>
     
-  
 
+  <script  src="https://lib.baomitu.com/mathjax/3.2.0/es5/tex-mml-chtml.js" ></script>
 
-
-  
-    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
-  
-  
-    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
-  
-  
-    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
-  
-  
-    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
-  
-
-
+  <script  src="/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
-
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-        typing(title);
-      
-    })(window, document);
-  </script>
-
-
-
-
-
-  
-
-  
-    <!-- MathJax -->
-    <script>
-      MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
-        },
-        loader: {
-          load: ['ui/lazy']
-        },
-        options: {
-          renderActions: {
-            findScript: [10, doc => {
-              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-                const display = !!node.type.match(/; *mode=display/);
-                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-                const text = document.createTextNode('');
-                node.parentNode.replaceChild(text, node);
-                math.start = { node: text, delim: '', n: 0 };
-                math.end = { node: text, delim: '', n: 0 };
-                doc.math.push(math);
-              });
-            }, '', false],
-            insertedScript: [200, () => {
-              document.querySelectorAll('mjx-container').forEach(node => {
-                let target = node.parentNode;
-                if (target.nodeName.toLowerCase() === 'li') {
-                  target.parentNode.classList.add('has-jax');
-                }
-              });
-            }, '', false]
-          }
-        }
-      };
-    </script>
-
-    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" ></script>
-
-  
-
-
-
-
-
-
-
-
-  
-    <!-- Baidu Analytics -->
-    <script defer>
-      var _hmt = _hmt || [];
-      (function () {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?76a2c58225b952233d541c471171b458";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-      })();
-    </script>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
 
 
@@ -887,9 +945,15 @@ src="https://img-blog.csdnimg.cn/img_convert/54b9e9bd65a55166a22ed51df9805558.pn
 
 
 
-<!-- 主题的启动项 保持在最底部 -->
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
 <script  src="/js/boot.js" ></script>
 
 
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>
