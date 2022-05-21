@@ -19,7 +19,7 @@
     <meta name="description" content="最近学机器学习的时候，看到这样一段代码：x.reshape(-1,1)，一直搞不懂参数-1是什么意思。最后就去看了看官方文档：   我们主要看一下红框框里面的内容：  The new shape should be compatible with the original shape. If an integer, then the result will be a 1-D array">
 <meta property="og:type" content="article">
 <meta property="og:title" content="numpy中reshap函数参数为-1的情况分析">
-<meta property="og:url" content="http://example.com/articles/bcfbebe4.html">
+<meta property="og:url" content="http://weijian-m.github.io/articles/bcfbebe4.html">
 <meta property="og:site_name" content="WeiJian-M">
 <meta property="og:description" content="最近学机器学习的时候，看到这样一段代码：x.reshape(-1,1)，一直搞不懂参数-1是什么意思。最后就去看了看官方文档：   我们主要看一下红框框里面的内容：  The new shape should be compatible with the original shape. If an integer, then the result will be a 1-D array">
 <meta property="og:locale" content="zh_CN">
@@ -27,8 +27,8 @@
 <meta property="article:published_time" content="2020-05-08T03:23:06.000Z">
 <meta property="article:modified_time" content="2022-05-16T13:13:26.609Z">
 <meta property="article:author" content="WeiJian-M">
-<meta property="article:tag" content="python">
 <meta property="article:tag" content="numpy">
+<meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20201027105911442.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
   
@@ -78,7 +78,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"⭐","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":1},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":false,"baidu":"76a2c58225b952233d541c471171b458","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"weijian-m.github.io","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"⭐","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"❡"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":1},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":false,"baidu":"76a2c58225b952233d541c471171b458","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -393,9 +393,9 @@ alt="在这里插入图片描述" />
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/python/">#python</a>
-      
         <a href="/tags/numpy/">#numpy</a>
+      
+        <a href="/tags/python/">#python</a>
       
     </div>
   
@@ -408,7 +408,7 @@ alt="在这里插入图片描述" />
   <div class="license-box my-3">
     <div class="license-title">
       <div>numpy中reshap函数参数为-1的情况分析</div>
-      <div>http://example.com/articles/bcfbebe4.html</div>
+      <div>http://weijian-m.github.io/articles/bcfbebe4.html</div>
     </div>
     <div class="license-meta">
       
@@ -455,15 +455,21 @@ alt="在这里插入图片描述" />
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/articles/61ec06a7.html" title="python爬取糗事百科段子并发送到邮箱">
+                      <a href="/articles/b471d43b.html" title="python opencv读取灰度图并用matplotlib显示灰度图的正确做法">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">python爬取糗事百科段子并发送到邮箱</span>
+                        <span class="hidden-mobile">python opencv读取灰度图并用matplotlib显示灰度图的正确做法</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/articles/61ec06a7.html" title="python爬取糗事百科段子并发送到邮箱">
+                        <span class="hidden-mobile">python爬取糗事百科段子并发送到邮箱</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
