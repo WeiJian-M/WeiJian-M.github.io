@@ -450,20 +450,21 @@ target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment
             
   <article id="comments" lazyload>
     
-  <div id="valine"></div>
+  <div id="waline"></div>
   <script type="text/javascript">
-    Fluid.utils.loadComments('#valine', function() {
-      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.4.16/Valine.min.js', function() {
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://lib.baomitu.com/waline/2.3.2/waline.min.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/waline/2.3.2/waline.min.js', function() {
         var options = Object.assign(
-          {"appId":"QJrJTbyaKnLTXazIyFvWAIt9-MdYXbMMI","appKey":"lgeXgcTuS1TMcW5EFm0UwF9S","path":"window.location.pathname","placeholder":"可匿名评论，可不填写邮箱，建议填写邮箱，这样当别人回复你时，会受到邮箱提醒，欢迎评论~","avatar":"retro","meta":["nick","mail"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":true,"serverURLs":"https://qjrjtbya.api.lncldglobal.com","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {"serverURL":"waline-comment-email-o2mvi81is-weijian-m.vercel.app","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":[],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":[1,1024],"pageSize":10},
           {
-            el: "#valine",
+            el: '#waline',
             path: window.location.pathname
           }
         )
-        new Valine(options);
-        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
-          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+        Waline.init(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
           Fluid.plugins.imageCaption(imgSelector);
           Fluid.plugins.fancyBox(imgSelector);
         })
