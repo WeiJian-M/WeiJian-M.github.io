@@ -16,27 +16,23 @@
   <meta name="author" content="WeiJian-M">
   <meta name="keywords" content="">
   
-    <meta name="description" content="最近学机器学习的时候，看到这样一段代码：x.reshape(-1,1)，一直搞不懂参数-1是什么意思。最后就去看了看官方文档：   我们主要看一下红框框里面的内容：  The new shape should be compatible with the original shape. If an integer, then the result will be a 1-D array">
+    <meta name="description" content="考研回忆 成绩：数学二115、英语二85、专业课（408）114、政治78 数学二 3.1-6.30（基础阶段） 所用资料（无序）：  金榜时代的那本数学复习全书（例题全做） 同济课本（高数上下+线代）（做了线代的课后习题） 同济线代的那本习题解答 汤家凤1800（只做了基础部分，两遍）  视频课：  高数没看视频课，线代看了李永乐的基础课程视频  注：基础阶段过后要">
 <meta property="og:type" content="article">
-<meta property="og:title" content="numpy中reshap函数参数为-1的情况分析">
-<meta property="og:url" content="http://weijian-m.github.io/articles/bcfbebe4.html">
+<meta property="og:title" content="考研回忆">
+<meta property="og:url" content="http://weijian-m.github.io/articles/d56de1eb.html">
 <meta property="og:site_name" content="WeiJian-M">
-<meta property="og:description" content="最近学机器学习的时候，看到这样一段代码：x.reshape(-1,1)，一直搞不懂参数-1是什么意思。最后就去看了看官方文档：   我们主要看一下红框框里面的内容：  The new shape should be compatible with the original shape. If an integer, then the result will be a 1-D array">
+<meta property="og:description" content="考研回忆 成绩：数学二115、英语二85、专业课（408）114、政治78 数学二 3.1-6.30（基础阶段） 所用资料（无序）：  金榜时代的那本数学复习全书（例题全做） 同济课本（高数上下+线代）（做了线代的课后习题） 同济线代的那本习题解答 汤家凤1800（只做了基础部分，两遍）  视频课：  高数没看视频课，线代看了李永乐的基础课程视频  注：基础阶段过后要">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20201027105911442.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="article:published_time" content="2020-05-08T03:23:06.000Z">
-<meta property="article:modified_time" content="2022-05-16T13:13:26.609Z">
+<meta property="article:published_time" content="2022-05-30T03:23:06.000Z">
+<meta property="article:modified_time" content="2022-05-31T11:19:59.268Z">
 <meta property="article:author" content="WeiJian-M">
-<meta property="article:tag" content="python">
-<meta property="article:tag" content="numpy">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20201027105911442.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>numpy中reshap函数参数为-1的情况分析 - WeiJian-M</title>
+  <title>考研回忆 - WeiJian-M</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -243,7 +239,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="numpy中reshap函数参数为-1的情况分析"></span>
+            <span id="subtitle" data-typed-text="考研回忆"></span>
           
         </div>
 
@@ -259,8 +255,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2020-05-08 11:23" pubdate>
-          2020年5月8日 上午
+        <time datetime="2022-05-30 11:23" pubdate>
+          2022年5月30日 上午
         </time>
       </span>
     
@@ -271,7 +267,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          560 字
+          1.4k 字
         
       </span>
     
@@ -282,7 +278,7 @@
         
         
         
-          3 分钟
+          6 分钟
         
       </span>
     
@@ -328,39 +324,95 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">numpy中reshap函数参数为-1的情况分析</h1>
+            <h1 style="display: none">考研回忆</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年5月16日 晚上
+                    本文最后更新于：2022年5月31日 晚上
                   
                 
               </p>
             
             <div class="markdown-body">
               
-              <p>最近学机器学习的时候，看到这样一段代码：<code>x.reshape(-1,1)</code>，一直搞不懂参数-1是什么意思。最后就去看了看官方文档：</p>
-<center>
-<p><img src="https://img-blog.csdnimg.cn/20201027105911442.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" srcset="/img/loading.gif" lazyload width="60%"></p>
-<p>我们主要看一下红框框里面的内容：</p>
-<blockquote>
-<p>The new shape should be compatible with the original shape. If an
-integer, then the result will be a 1-D array of that length. One shape
-dimension can be -1. In this case, the value is inferred from the length
-of the array and remaining dimensions.</p>
-</blockquote>
-<p>翻译：</p>
-<p>新形状应与原形状兼容。如果是整数，那么结果将是该长度的1-D数组。一个形状维数可以是-1，该值是从数组的长度和其余维数推断出来的。</p>
-<p>人话：</p>
-<p>这里我们用一个例子来说明，假如一个数组的shape是<code>(3,4)</code>，这里<code>3*4=12</code>，对这个数组进行<code>reshape</code>操作后，新数组的<code>shape</code>中各维度的乘积也应为12。如果其中一个参数是-1，另一个参数是2，也就是<code>(-1,2)</code>，那么这个新数组的shape就是<code>(12/2,2)</code>，即<code>(6,2)</code>；如果另一个参数是1，那么这个新数组的shape就是<code>(12/1,1)</code>，即<code>(12,1)</code>.</p>
-<p>更多的情况用下面的代码实现：</p>
-<figure>
-<img
-src="https://img-blog.csdnimg.cn/2020102711161051.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTQ3NjUwMg==,size_16,color_FFFFFF,t_70#pic_center" srcset="/img/loading.gif" lazyload
-alt="在这里插入图片描述" />
-<figcaption aria-hidden="true">在这里插入图片描述</figcaption>
-</figure>
+              <h2 id="考研回忆">考研回忆</h2>
+<p>成绩：数学二115、英语二85、专业课（408）114、政治78</p>
+<h3 id="数学二">数学二</h3>
+<h4 id="基础阶段"><strong>3.1-6.30（基础阶段）</strong></h4>
+<p>所用资料（无序）：</p>
+<ol type="1">
+<li><p>金榜时代的那本数学复习全书（例题全做）</p></li>
+<li><p>同济课本（高数上下+线代）（做了线代的课后习题）</p></li>
+<li><p>同济线代的那本习题解答</p></li>
+<li><p>汤家凤1800（只做了基础部分，两遍）</p></li>
+</ol>
+<p>视频课：</p>
+<ol type="1">
+<li>高数没看视频课，线代看了李永乐的基础课程视频</li>
+</ol>
+<p>注：基础阶段过后要熟悉每一个知识点，不会的地方要当场解决，不然后面很难受</p>
+<h4 id="强化阶段"><strong>7.1-9.10（强化阶段）</strong></h4>
+<p>所用资料（无序）：</p>
+<ol type="1">
+<li><p>高等数学辅导讲义+严选题1遍</p></li>
+<li><p>线性代数辅导讲义+严选题1遍</p></li>
+<li><p>660两遍</p></li>
+<li><p>张宇1000题一遍</p></li>
+<li><p>汤家凤强化测试十套卷（错题做两遍）</p></li>
+<li><p>李林880（没做完，挑了一部分题做）</p></li>
+</ol>
+<p>视频课：</p>
+<ol type="1">
+<li><p>武忠祥高数强化课（边听边在辅导讲义上做笔记）</p></li>
+<li><p>李永乐线代强化课（边听边在辅导讲义上做笔记）</p></li>
+</ol>
+<h4 id="月初再强化冲刺"><strong>9.11-12月初（再强化+冲刺）</strong></h4>
+<p>这个时间段我没有再做习题集了，直接开始做真题和套卷了</p>
+<p>所用资料（无序）：</p>
+<ol type="1">
+<li><p>1987-2008年真题（一遍）</p></li>
+<li><p>2009-2021年真题（两遍，12月份做的第二遍）</p></li>
+<li><p>李林六、四套卷（两遍）</p></li>
+<li><p>李林108（一遍）</p></li>
+<li><p>李正元预测卷（两遍）</p></li>
+<li><p>张宇8、4套卷（两遍）</p></li>
+<li><p>李永乐6套卷（错题两遍）</p></li>
+<li><p>森哥（余炳森）五套卷（错题两遍）</p></li>
+<li><p>李艳芳三套卷（一遍，太难了，不建议做）</p></li>
+<li><p>合工大超越共创（大概十套卷左右，但是出的太晚了，只做了一遍）</p></li>
+</ol>
+<p>注：除了真题，李林、李正元、合工大的试卷质量较高，建议做一下合工大往年的题，当时我发现的太晚了，就没有做，甚至有点后悔没做。</p>
+<p>关于要不要整理错题本：看个人吧。我当时整理了一段时间错题本，但是感觉效率太低了就没再整理了，后面就直接在试卷上标注。</p>
+<h3 id="英语二">英语二</h3>
+<h4 id="背单词"><strong>背单词</strong></h4>
+<p>我一共背了大概15遍左右吧，记不太清了，就按15遍吧。从准备考研开始，每天都在背。</p>
+<p>单词书：</p>
+<ol type="1">
+<li><p>5500</p></li>
+<li><p>扇贝单词</p></li>
+<li><p>十天搞定考研词汇</p></li>
+</ol>
+<p>第1遍：花的时间最长，大概40天左右，用的那本5500单词书</p>
+<p>第2-7遍：扇贝单词软件</p>
+<p>第8-15遍：十天搞定考研词汇（用书里面的小卡片遮住汉语，看着英语背）</p>
+<h4 id="阅读完型新题型"><strong>阅读+完型+新题型</strong></h4>
+<p>4月份到暑假放假之前：</p>
+<p>我先看了刘晓燕的语法长难句视频课程，记了一本笔记，然后经常翻看。看完视频课之后做了英一08年之前的真题，每天一篇阅读，分析每一个句子。然后选看了唐迟的阅读视频课。</p>
+<p>暑假期间：</p>
+<p>看了田静的语法课，没认真看，就大致看了一遍，也没记笔记。</p>
+<p>二刷英一08年之前的真题，手译了01-04年的阅读，感觉效率太低就没继续了</p>
+<p>一刷英二10-14年真题阅读，只分析了长难句，把每天分析的长难句记下来，第二天背单词之前复习</p>
+<p>看了宋逸轩的完形填空课程，网上都说完形填空很难，我做了几年的真题，感觉还好，就没继续学习了</p>
+<p>英二的新题型很简单，没有看课，直接做的</p>
+<p>暑假开学之后：只做了英二15-19年的真题，每天1-2篇阅读（或完型或新题型），后面又二刷了10-19年的真题。</p>
+<h4 id="翻译"><strong>翻译</strong></h4>
+<p>翻译我是9月份开始的我看的唐静的视频课，把他的讲义打印了下来，然后跟着课做笔记，每天背单词之前复习笔记。听完课之后就直接上真题了。</p>
+<h4 id="作文"><strong>作文</strong></h4>
+<p>十月份开始的。</p>
+<p>听了刘晓燕的作文课，记了一本笔记，并且把笔记背了两遍。</p>
+<p>听完课之后就是练习了，每天一篇大作文或者小作文，然后再把它背了，一直到11月份</p>
+<p>11月份开始，每两天一篇大作文一篇小作文，写在答题卡上，当作模拟考试，限时，衡水体，一天写，一天背，每周三轮。一直到12月份</p>
 
               
             </div>
@@ -368,36 +420,6 @@ alt="在这里插入图片描述" />
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/python/" class="category-chain-item">python</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/python/">#python</a>
-      
-        <a href="/tags/numpy/">#numpy</a>
-      
-    </div>
   
 </div>
 
@@ -407,8 +429,8 @@ alt="在这里插入图片描述" />
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>numpy中reshap函数参数为-1的情况分析</div>
-      <div>http://weijian-m.github.io/articles/bcfbebe4.html</div>
+      <div>考研回忆</div>
+      <div>http://weijian-m.github.io/articles/d56de1eb.html</div>
     </div>
     <div class="license-meta">
       
@@ -420,13 +442,13 @@ alt="在这里插入图片描述" />
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2020年5月8日</div>
+          <div>2022年5月30日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年5月16日</div>
+          <div>2022年5月31日</div>
         </div>
       
       <div class="license-meta-item">
@@ -450,23 +472,6 @@ alt="在这里插入图片描述" />
 
 
 
-              
-                <div class="post-prevnext my-3">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/articles/61ec06a7.html" title="python爬取糗事百科段子并发送到邮箱">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">python爬取糗事百科段子并发送到邮箱</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                  </article>
-                </div>
               
             </div>
 
