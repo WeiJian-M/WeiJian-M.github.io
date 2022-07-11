@@ -16,15 +16,15 @@
   <meta name="author" content="WeiJian-M">
   <meta name="keywords" content="">
   
-    <meta name="description" content="SAT问题简介： SAT问题简介 - 知乎 (zhihu.com) 一些关于SAT问题的学习总结（一）：基本概念知识 - 知乎 (zhihu.com) DPLL CDCL： 【试译】冲突驱动子句学习 （Conflict Driven Clause Learning） - 知乎 (zhihu.com) Conflict Driven Clause Learning (cse442-">
+    <meta name="description" content="SAT问题 SAT问题即可满足性问题，简单来说，可满足性问题就是对一个合取范式的变量作任意赋值，如果存在某个赋值使得结果为真，那么就说该合取范式是可满足的，否则是不可满足的。 例如，对于如下合取范式 \[ f&#x3D;(\neg x_1\vee \neg x_2 \vee x_3) \land(\neg x_3 \vee x_4) \] 如果令 \(x_1&#x3D;x_2&#x3D;x_3&#x3D;x_4&#x3D; false">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SAT问题简介及求解方法">
 <meta property="og:url" content="http://weijian-m.github.io/articles/3a0a5bca.html">
 <meta property="og:site_name" content="WeiJian-M">
-<meta property="og:description" content="SAT问题简介： SAT问题简介 - 知乎 (zhihu.com) 一些关于SAT问题的学习总结（一）：基本概念知识 - 知乎 (zhihu.com) DPLL CDCL： 【试译】冲突驱动子句学习 （Conflict Driven Clause Learning） - 知乎 (zhihu.com) Conflict Driven Clause Learning (cse442-">
+<meta property="og:description" content="SAT问题 SAT问题即可满足性问题，简单来说，可满足性问题就是对一个合取范式的变量作任意赋值，如果存在某个赋值使得结果为真，那么就说该合取范式是可满足的，否则是不可满足的。 例如，对于如下合取范式 \[ f&#x3D;(\neg x_1\vee \neg x_2 \vee x_3) \land(\neg x_3 \vee x_4) \] 如果令 \(x_1&#x3D;x_2&#x3D;x_3&#x3D;x_4&#x3D; false">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-10T08:44:18.000Z">
-<meta property="article:modified_time" content="2022-07-10T08:49:57.562Z">
+<meta property="article:modified_time" content="2022-07-11T08:16:23.138Z">
 <meta property="article:author" content="WeiJian-M">
 <meta property="article:tag" content="SAT">
 <meta name="twitter:card" content="summary_large_image">
@@ -268,7 +268,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          182 字
+          667 字
         
       </span>
     
@@ -279,7 +279,7 @@
         
         
         
-          1 分钟
+          3 分钟
         
       </span>
     
@@ -330,26 +330,42 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年7月10日 下午
+                    本文最后更新于：2022年7月11日 下午
                   
                 
               </p>
             
             <div class="markdown-body">
               
-              <p>SAT问题简介：</p>
+              <h1 id="sat问题">SAT问题</h1>
+<p>SAT问题即<strong>可满足性问题</strong>，简单来说，可满足性问题就是对一个合取范式的变量作任意赋值，如果存在某个赋值使得结果为真，那么就说该合取范式是可满足的，否则是不可满足的。</p>
+<p>例如，对于如下合取范式</p>
+<p><span class="math display">\[
+f=(\neg x_1\vee \neg x_2 \vee x_3) \land(\neg x_3 \vee x_4)
+\]</span></p>
+<p>如果令 <span class="math inline">\(x_1=x_2=x_3=x_4= false\)</span>
+，则 <span class="math inline">\(\neg x_1\vee \neg x_2 \vee
+x_3=true\)</span> ， <span class="math inline">\(\neg x_3 \vee
+x_4=true\)</span> ，<span class="math inline">\(f=true\)</span>，所以
+<span class="math inline">\(f\)</span> 是可满足的。</p>
+<h1 id="sat问题求解方法">SAT问题求解方法</h1>
+<p>SAT问题的求解算法大致可以分为两类：完备性算法和非完备性算法。</p>
+<p>完备性算法是指逐个判定所有情况的赋值结果，直到找到问题的解为止（当然，如果一个范式是不可满足的，我们可能也找不到问题的解）。完备性算法可能会花很长的时间才能找到结果。</p>
+<p>非完备性算法，通常是指局部搜索算法，它只能判定某个赋值是可满足的，但它可以很快地判定SAT问题。</p>
+<p>这里我学习了<strong>DPLL算法</strong>和<strong>CDCL算法</strong>，参考了<a
+target="_blank" rel="noopener" href="https://cse442-17f.github.io/Conflict-Driven-Clause-Learning/">这篇文章</a>，里面的例子非常生动地展现了算法的计算过程，推荐大家学一下。</p>
+<h1 id="reference">Reference</h1>
+<p><a
+target="_blank" rel="noopener" href="https://cse442-17f.github.io/Conflict-Driven-Clause-Learning/">Conflict
+Driven Clause Learning (cse442-17f.github.io)</a></p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/432853785">SAT问题简介 - 知乎
 (zhihu.com)</a></p>
 <p><a><a
 target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/206465770">一些关于SAT问题的学习总结（一）：基本概念知识
 - 知乎 (zhihu.com)</a></a></p>
-<p>DPLL CDCL：</p>
 <p><a
 target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/92659252">【试译】冲突驱动子句学习
 （Conflict Driven Clause Learning） - 知乎 (zhihu.com)</a></p>
-<p><a
-target="_blank" rel="noopener" href="https://cse442-17f.github.io/Conflict-Driven-Clause-Learning/">Conflict
-Driven Clause Learning (cse442-17f.github.io)</a></p>
 
               
             </div>
@@ -392,7 +408,7 @@ Driven Clause Learning (cse442-17f.github.io)</a></p>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年7月10日</div>
+          <div>2022年7月11日</div>
         </div>
       
       <div class="license-meta-item">
@@ -509,6 +525,12 @@ Driven Clause Learning (cse442-17f.github.io)</a></p>
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -814,6 +836,44 @@ Driven Clause Learning (cse442-17f.github.io)</a></p>
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        MathJax = {
+          tex    : {
+            inlineMath: { '[+]': [['$', '$']] }
+          },
+          loader : {
+            load: ['ui/lazy']
+          },
+          options: {
+            renderActions: {
+              findScript    : [10, doc => {
+                document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                  const display = !!node.type.match(/; *mode=display/);
+                  const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                  const text = document.createTextNode('');
+                  node.parentNode.replaceChild(text, node);
+                  math.start = { node: text, delim: '', n: 0 };
+                  math.end = { node: text, delim: '', n: 0 };
+                  doc.math.push(math);
+                });
+              }, '', false],
+              insertedScript: [200, () => {
+                document.querySelectorAll('mjx-container').forEach(node => {
+                  let target = node.parentNode;
+                  if (target.nodeName.toLowerCase() === 'li') {
+                    target.parentNode.classList.add('has-jax');
+                  }
+                });
+              }, '', false]
+            }
+          }
+        };
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.0/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
