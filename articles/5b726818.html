@@ -16,25 +16,29 @@
   <meta name="author" content="WeiJian-M">
   <meta name="keywords" content="">
   
-    <meta name="description" content="代码如下： 1234567891011121314151617181920212223242526272829303132333435363738394041#coding&#x3D;utf-8import smtplibfrom email.mime.text import MIMETextfrom email.utils import formataddrimport requestsfrom bs4">
+    <meta name="description" content="Getting started Step one Build a circuit with no inputs and one output. That output should always drive 1 (or logic high).              Hint: We want to assign 1 to the output one.            12">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python爬取糗事百科段子并发送到邮箱">
-<meta property="og:url" content="http://weijian-m.github.io/articles/61ec06a7.html">
+<meta property="og:title" content="Verilog HDLBits 刷题笔记">
+<meta property="og:url" content="http://weijian-m.github.io/articles/5b726818.html">
 <meta property="og:site_name" content="WeiJian-M">
-<meta property="og:description" content="代码如下： 1234567891011121314151617181920212223242526272829303132333435363738394041#coding&#x3D;utf-8import smtplibfrom email.mime.text import MIMETextfrom email.utils import formataddrimport requestsfrom bs4">
+<meta property="og:description" content="Getting started Step one Build a circuit with no inputs and one output. That output should always drive 1 (or logic high).              Hint: We want to assign 1 to the output one.            12">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-05-08T03:23:06.000Z">
-<meta property="article:modified_time" content="2022-05-13T13:27:04.715Z">
+<meta property="og:image" content="https://hdlbits.01xz.net/mw/images/7/77/Wire.png">
+<meta property="og:image" content="https://hdlbits.01xz.net/mw/images/1/15/Wire4.png">
+<meta property="og:image" content="https://hdlbits.01xz.net/mw/images/5/5b/Norgate.png">
+<meta property="article:published_time" content="2022-07-15T10:40:24.000Z">
+<meta property="article:modified_time" content="2022-07-15T11:18:19.293Z">
 <meta property="article:author" content="WeiJian-M">
-<meta property="article:tag" content="python">
-<meta property="article:tag" content="爬虫">
+<meta property="article:tag" content="Verilog">
+<meta property="article:tag" content="FPGA">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://hdlbits.01xz.net/mw/images/7/77/Wire.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>python爬取糗事百科段子并发送到邮箱 - WeiJian-M</title>
+  <title>Verilog HDLBits 刷题笔记 - WeiJian-M</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -241,7 +245,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="python爬取糗事百科段子并发送到邮箱"></span>
+            <span id="subtitle" data-typed-text="Verilog HDLBits 刷题笔记"></span>
           
         </div>
 
@@ -257,8 +261,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2020-05-08 11:23" pubdate>
-          2020年5月8日 上午
+        <time datetime="2022-07-15 18:40" pubdate>
+          2022年7月15日 晚上
         </time>
       </span>
     
@@ -269,7 +273,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          6.7k 字
         
       </span>
     
@@ -280,7 +284,7 @@
         
         
         
-          7 分钟
+          28 分钟
         
       </span>
     
@@ -326,20 +330,199 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">python爬取糗事百科段子并发送到邮箱</h1>
+            <h1 style="display: none">Verilog HDLBits 刷题笔记</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年5月13日 晚上
+                    本文最后更新于：2022年7月15日 晚上
                   
                 
               </p>
             
             <div class="markdown-body">
               
-              <p>代码如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#coding=utf-8</span><br><span class="hljs-keyword">import</span> smtplib<br><span class="hljs-keyword">from</span> email.mime.text <span class="hljs-keyword">import</span> MIMEText<br><span class="hljs-keyword">from</span> email.utils <span class="hljs-keyword">import</span> formataddr<br><span class="hljs-keyword">import</span> requests<br><span class="hljs-keyword">from</span> bs4 <span class="hljs-keyword">import</span> BeautifulSoup<br><br>r = requests.get(<span class="hljs-string">&#x27;https://www.qiushibaike.com/text/page/1/&#x27;</span>)<br>soup = BeautifulSoup(r.content,<span class="hljs-string">&#x27;lxml&#x27;</span>)<br><br>contentUrl = soup.find(<span class="hljs-string">&#x27;div&#x27;</span>,class_=<span class="hljs-string">&#x27;col1 old-style-col1&#x27;</span>).find(<span class="hljs-string">&#x27;div&#x27;</span>,class_=<span class="hljs-string">&quot;article block untagged mb15 typs_long&quot;</span>).find(<span class="hljs-string">&#x27;a&#x27;</span>,class_=<span class="hljs-string">&quot;contentHerf&quot;</span>).get(<span class="hljs-string">&#x27;href&#x27;</span>)<br><br>textUrl = <span class="hljs-string">&#x27;https://www.qiushibaike.com&#x27;</span> + contentUrl<br><br>textR = requests.get(textUrl)<br>textSoup = BeautifulSoup(textR.content, <span class="hljs-string">&#x27;lxml&#x27;</span>)<br>text = textSoup.find(<span class="hljs-string">&#x27;div&#x27;</span>,class_=<span class="hljs-string">&quot;content&quot;</span>).text<br><br>my_sender=<span class="hljs-string">&#x27;*********@qq.com&#x27;</span>  <span class="hljs-comment"># 发件人邮箱账号</span><br>my_pass = <span class="hljs-string">&#x27;werprgqmxaadbasd&#x27;</span>   <span class="hljs-comment"># 发件人邮箱授权码</span><br>my_user=<span class="hljs-string">&#x27;*********@163.com&#x27;</span>   <span class="hljs-comment"># 收件人邮箱</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">mail</span>():<br>  ret=<span class="hljs-literal">True</span><br>  <span class="hljs-keyword">try</span>:<br>    msg=MIMEText(text,<span class="hljs-string">&#x27;plain&#x27;</span>,<span class="hljs-string">&#x27;utf-8&#x27;</span>) <span class="hljs-comment">#填写邮件内容</span><br>    msg[<span class="hljs-string">&#x27;From&#x27;</span>]=formataddr([<span class="hljs-string">&quot;发件人昵称&quot;</span>,my_sender]) <span class="hljs-comment"># 括号里的对应发件人邮箱昵称、发件人邮箱账号</span><br>    msg[<span class="hljs-string">&#x27;To&#x27;</span>]=formataddr([<span class="hljs-string">&quot;收件人昵称&quot;</span>,my_user])       <span class="hljs-comment"># 括号里的对应收件人邮箱昵称、收件人邮箱账号</span><br>    msg[<span class="hljs-string">&#x27;Subject&#x27;</span>]=<span class="hljs-string">&quot;每日笑话&quot;</span>        <span class="hljs-comment"># 邮件的主题，也可以说是标题</span><br> <br>    server=smtplib.SMTP_SSL(<span class="hljs-string">&quot;smtp.qq.com&quot;</span>, <span class="hljs-number">465</span>) <span class="hljs-comment"># 发件人邮箱中的SMTP服务器，端口是25</span><br>    server.login(my_sender, my_pass) <span class="hljs-comment"># 括号中对应的是发件人邮箱账号、邮箱密码</span><br>    server.sendmail(my_sender,[my_user,],msg.as_string()) <span class="hljs-comment"># 括号中对应的是发件人邮箱账号、收件人邮箱账号、发送邮件</span><br>    server.quit() <span class="hljs-comment"># 关闭连接</span><br>  <span class="hljs-keyword">except</span> Exception: <span class="hljs-comment"># 如果 try 中的语句没有执行，则会执行下面的 ret=False</span><br>    ret=<span class="hljs-literal">False</span><br>  <span class="hljs-keyword">return</span> ret<br>ret=mail()<br><span class="hljs-keyword">if</span> ret:<br>  <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;邮件发送成功&quot;</span>)<br><span class="hljs-keyword">else</span>:<br>  <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;邮件发送失败&quot;</span>)<br></code></pre></td></tr></table></figure>
+              <h1 id="getting-started">Getting started</h1>
+<h2 id="step-one">Step one</h2>
+<p>Build a circuit with no inputs and one output. That output should
+always drive 1 (or logic high).</p>
+<div class="note note-primary">
+            <p>Hint: We want to assign 1 to the output one.</p>
+          </div>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module( <span class="hljs-keyword">output</span> one );<br><br><span class="hljs-comment">// Insert your code here</span><br>    <span class="hljs-keyword">assign</span> one = <span class="hljs-number">1&#x27;b1</span>;<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h2 id="zero">Zero</h2>
+<p>Build a circuit with no inputs and one output that outputs a
+constant 0.</p>
+<p>Now that you've worked through the previous problem, let's see if you
+can do a simple problem without the hints.</p>
+<div class="note note-primary">
+            <p>Hint: Fun fact: For Quartus synthesis, not assigning a value to asignal usually results in 0. This problem is actually easier than theprevious one.</p>
+          </div>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module(<br>    <span class="hljs-keyword">output</span> zero<br>);<span class="hljs-comment">// Module body starts after semicolon</span><br><br>    <span class="hljs-keyword">assign</span> zero = <span class="hljs-number">1&#x27;b0</span>;<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h1 id="verilog-language">Verilog Language</h1>
+<h2 id="basics">Basics</h2>
+<h3 id="wire">Wire</h3>
+<p>Create a module with one input and one output that behaves like a
+wire.</p>
+<p>Unlike physical wires, wires (and other signals) in Verilog
+are <em>directional</em>. This means information flows in only one
+direction, from (usually one) <em>source</em> to the <em>sinks</em> (The
+source is also often called a <em>driver</em> that <em>drives</em> a
+value onto a wire). In a Verilog "continuous assignment"
+(<code>assign left_side = right_side;</code>), the value of the signal
+on the right side is driven onto the wire on the left side. The
+assignment is "continuous" because the assignment continues all the time
+even if the right side's value changes. A continuous assignment is not a
+one-time event.</p>
+<p>The ports on a module also have a direction (usually input or
+output). An input port is <em>driven by</em> something from outside the
+module, while an output port <em>drives</em> something outside. When
+viewed from inside the module, an input port is a driver or source,
+while an output port is a sink.</p>
+<p>The diagram below illustrates how each part of the circuit
+corresponds to each bit of Verilog code. The module and port
+declarations create the black portions of the circuit. Your task is to
+create a wire (in green) by adding an <code>assign</code> statement to
+connect <code>in</code> to <code>out</code>. The parts outside the box
+are not your concern, but you should know that your circuit is tested by
+connecting signals from our test harness to the ports on
+your <code>top_module</code>.</p>
+<p><img src="https://hdlbits.01xz.net/mw/images/7/77/Wire.png" srcset="/img/loading.gif" lazyload /></p>
+<div class="note note-primary">
+            <p>Hint: A <em>continuous</em> assignment assigns the right side to theleft side <em>continuously</em>, so any change to the RHS is immediatelyseen in the LHS.</p>
+          </div>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module( <span class="hljs-keyword">input</span> in, <span class="hljs-keyword">output</span> out );<br>    <span class="hljs-keyword">assign</span> out = in;<br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h3 id="wire4">Wire4</h3>
+<p>Create a module with 3 inputs and 4 outputs that behaves like wires
+that makes these connections:</p>
+<p>a -&gt; w</p>
+<p>b -&gt; x</p>
+<p>b -&gt; y</p>
+<p>c -&gt; z</p>
+<p>The diagram below illustrates how each part of the circuit
+corresponds to each bit of Verilog code. From outside the module, there
+are three input ports and four output ports.</p>
+<p>When you have multiple assign statements,
+the <strong>order</strong> in which they appear in the code <strong>does
+not matter</strong>. Unlike a programming language, assign statements
+("continuous assignments") describe <em>connections</em> between things,
+not the <em>action</em> of copying a value from one thing to
+another.</p>
+<p>One potential source of confusion that should perhaps be clarified
+now: The green arrows here represent connections <em>between</em> wires,
+but are not wires in themselves. The module itself <em>already</em> has
+7 wires declared (named a, b, c, w, x, y, and z). This is
+because <code>input</code> and <code>output</code> declarations actually
+declare a wire unless otherwise specified.
+Writing <code>input wire a</code> is the same as <code>input a</code>.
+Thus, the <code>assign</code> statements are not creating wires, they
+are creating the connections between the 7 wires that already exist.</p>
+<div class="note note-primary">
+            <p>The concatenationoperator <code>{ signal1, signal2, signal3, ... }</code> would be usefulhere.</p>
+          </div>
+<p><img src="https://hdlbits.01xz.net/mw/images/1/15/Wire4.png" srcset="/img/loading.gif" lazyload /></p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module( <br>    <span class="hljs-keyword">input</span> a,b,c,<br>    <span class="hljs-keyword">output</span> w,x,y,z );<br>    <br>    <span class="hljs-keyword">assign</span> w = a;<br>    <span class="hljs-keyword">assign</span> x = b;<br>    <span class="hljs-keyword">assign</span> y = b;<br>    <span class="hljs-keyword">assign</span> z = c;<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h3 id="notgate">Notgate</h3>
+<p>Create a module that implements a NOT gate.</p>
+<p>This circuit is similar to <a
+target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/wire" title="wire">wire</a>, but
+with a slight difference. When making the connection from the
+wire <code>in</code> to the wire <code>out</code> we're going to
+implement an inverter (or "NOT-gate") instead of a plain wire.</p>
+<p>Use an assign statement. The <code>assign</code> statement
+will <em>continuously drive</em> the inverse of <code>in</code> onto
+wire <code>out</code>.</p>
+<p><a target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/File:Notgate.png"><img
+src="https://hdlbits.01xz.net/mw/images/9/9e/Notgate.png" srcset="/img/loading.gif" lazyload
+alt="Notgate.png" /></a></p>
+<div class="note note-primary">
+            <p>Verilog has separate bitwise-NOT (<code>~</code>) and logical-NOT(<code>!</code>) operators, like C. Since we're working with a one-bithere, it doesn't matter which we choose.</p>
+          </div>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module( <span class="hljs-keyword">input</span> in, <span class="hljs-keyword">output</span> out );<br>    <span class="hljs-keyword">assign</span> out = ~in;<br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h3 id="andgate">Andgate</h3>
+<p>Create a module that implements an AND gate.</p>
+<p>This circuit now has three wires (<code>a</code>, <code>b</code>,
+and <code>out</code>). Wires <code>a</code> and <code>b</code> already
+have values driven onto them by the input ports. But
+wire <code>out</code> currently is not driven by anything. Write
+an <code>assign</code> statement that drives <code>out</code> with the
+AND of signals <code>a</code> and <code>b</code>.</p>
+<p>Note that this circuit is very similar to the <a
+target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/notgate" title="notgate">NOT
+gate</a>, just with one more input. If it sounds different, it's because
+I've started describing signals as being <em>driven</em> (has a known
+value determined by something attached to it) or <em>not driven</em> by
+something. <code>Input wires</code> are driven by something outside the
+module. <code>assign</code> statements will drive a logic level onto a
+wire. As you might expect, a wire cannot have more than one driver (what
+is its logic level if there is?), and a wire that has no drivers will
+have an undefined value (often treated as 0 when synthesizing
+hardware).</p>
+<p><a target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/File:Andgate.png"><img
+src="https://hdlbits.01xz.net/mw/images/7/78/Andgate.png" srcset="/img/loading.gif" lazyload
+alt="Andgate.png" /></a></p>
+<div class="note note-primary">
+            <p>Verilog has separate bitwise-AND (<code>&amp;</code>) and logical-AND(<code>&amp;&amp;</code>) operators, like C. Since we're working with aone-bit here, it doesn't matter which we choose.</p>
+          </div>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module( <br>    <span class="hljs-keyword">input</span> a, <br>    <span class="hljs-keyword">input</span> b, <br>    <span class="hljs-keyword">output</span> out );<br>    <br>    <span class="hljs-keyword">assign</span> out = a&amp;b;<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h3 id="norgate">Norgate</h3>
+<p>Create a module that implements a NOR gate. A NOR gate is an OR gate
+with its output inverted. A NOR function needs two operators when
+written in Verilog.</p>
+<p>An <code>assign</code> statement drives a wire (or "net", as it's
+more formally called) with a value. This value can be as complex a
+function as you want, as long as it's a <em>combinational</em> (i.e.,
+memory-less, with no hidden state) function.
+An <code>assign</code> statement is a <em>continuous
+assignment</em> because the output is "recomputed" whenever any of its
+inputs change, forever, much like a simple logic gate.</p>
+<p><img src="https://hdlbits.01xz.net/mw/images/5/5b/Norgate.png" srcset="/img/loading.gif" lazyload /></p>
+<div class="note note-primary">
+            <p>Verilog has separate bitwise-OR (<code>|</code>) and logical-OR(<code>||</code>) operators, like C. Since we're working with a one-bithere, it doesn't matter which we choose.</p>
+          </div>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module( <br>    <span class="hljs-keyword">input</span> a, <br>    <span class="hljs-keyword">input</span> b, <br>    <span class="hljs-keyword">output</span> out );<br>    <br>    <span class="hljs-keyword">assign</span> out = ~(a | b);<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h3 id="xnorgate">Xnorgate</h3>
+<p>Create a module that implements an XNOR gate.</p>
+<p><a target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/File:Xnorgate.png"><img
+src="https://hdlbits.01xz.net/mw/images/6/6d/Xnorgate.png" srcset="/img/loading.gif" lazyload
+alt="Xnorgate.png" /></a></p>
+<div class="note note-primary">
+            <p>The bitwise-XOR operator is <code>^</code>. There is no logical-XORoperator.</p>
+          </div>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module( <br>    <span class="hljs-keyword">input</span> a, <br>    <span class="hljs-keyword">input</span> b, <br>    <span class="hljs-keyword">output</span> out );<br>    <br>    <span class="hljs-keyword">assign</span> out = ~(a^b);<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h3 id="wire-decl">Wire decl</h3>
+<p>Implement the following circuit. Create two intermediate wires (named
+anything you want) to connect the AND and OR gates together. Note that
+the wire that feeds the NOT gate is really wire out, so you do not
+necessarily need to declare a third wire here. Notice how wires are
+driven by exactly one source (output of a gate), but can feed multiple
+inputs.</p>
+<p>If you're following the circuit structure in the diagram, you should
+end up with four assign statements, as there are four signals that need
+a value assigned.</p>
+<p>(Yes, it is possible to create a circuit with the same functionality
+without the intermediate wires.)</p>
+<p><a target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/File:Wiredecl2.png"><img
+src="https://hdlbits.01xz.net/mw/images/3/3a/Wiredecl2.png" srcset="/img/loading.gif" lazyload
+alt="Wiredecl2.png" /></a></p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-meta">`<span class="hljs-keyword">default_nettype</span> none</span><br><span class="hljs-keyword">module</span> top_module(<br>    <span class="hljs-keyword">input</span> a,<br>    <span class="hljs-keyword">input</span> b,<br>    <span class="hljs-keyword">input</span> c,<br>    <span class="hljs-keyword">input</span> d,<br>    <span class="hljs-keyword">output</span> out,<br>    <span class="hljs-keyword">output</span> out_n   ); <br>    <br>    <span class="hljs-keyword">wire</span> and_1;<br>    <span class="hljs-keyword">wire</span> and_2;<br>    <br>    <span class="hljs-keyword">assign</span> and_1 = a&amp;b;<br>    <span class="hljs-keyword">assign</span> and_2 = c&amp;d;<br>    <span class="hljs-keyword">assign</span> out = and_1 | and_2;<br>    <span class="hljs-keyword">assign</span> out_n = ~(and_1 | and_2);<br>  <br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h3 id="section">7458</h3>
+<p>The 7458 is a chip with four AND gates and two OR gates. This problem
+is slightly more complex than <a
+target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/7420" title="7420">7420</a>.</p>
+<p>Create a module with the same functionality as the 7458 chip. It has
+10 inputs and 2 outputs. You may choose to use
+an <code>assign</code> statement to drive each of the output wires, or
+you may choose to declare (four) wires for use as intermediate signals,
+where each internal wire is driven by the output of one of the AND
+gates. For extra practice, try it both ways.</p>
+<p><a target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/File:7458.png"><img
+src="https://hdlbits.01xz.net/mw/images/e/e1/7458.png" srcset="/img/loading.gif" lazyload
+alt="7458.png" /></a></p>
+<div class="note note-primary">
+            <p>You need to drive two signals (<code>p1y</code> and <code>p2y</code>)with a value.</p>
+          </div>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module ( <br>    <span class="hljs-keyword">input</span> p1a, p1b, p1c, p1d, p1e, p1f,<br>    <span class="hljs-keyword">output</span> p1y,<br>    <span class="hljs-keyword">input</span> p2a, p2b, p2c, p2d,<br>    <span class="hljs-keyword">output</span> p2y );<br>    <br>    <span class="hljs-keyword">wire</span> a1, a2, a3, a4;<br>    <br>    <span class="hljs-keyword">assign</span> a1 = p2a &amp; p2b;<br>    <span class="hljs-keyword">assign</span> a2 = p2c &amp; p2d;<br>    <span class="hljs-keyword">assign</span> a3 = p1a &amp; p1c &amp; p1b;<br>    <span class="hljs-keyword">assign</span> a4 = p1f &amp; p1e &amp; p1d;<br>    <br>    <span class="hljs-keyword">assign</span> p2y = a1 | a2;<br>    <span class="hljs-keyword">assign</span> p1y = a3 | a4;<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
 
               
             </div>
@@ -357,7 +540,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/python/" class="category-chain-item">python</a>
+  <a href="/categories/FPGA/" class="category-chain-item">FPGA</a>
   
   
 
@@ -372,9 +555,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/python/">#python</a>
+        <a href="/tags/Verilog/">#Verilog</a>
       
-        <a href="/tags/%E7%88%AC%E8%99%AB/">#爬虫</a>
+        <a href="/tags/FPGA/">#FPGA</a>
       
     </div>
   
@@ -386,8 +569,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>python爬取糗事百科段子并发送到邮箱</div>
-      <div>http://weijian-m.github.io/articles/61ec06a7.html</div>
+      <div>Verilog HDLBits 刷题笔记</div>
+      <div>http://weijian-m.github.io/articles/5b726818.html</div>
     </div>
     <div class="license-meta">
       
@@ -399,13 +582,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2020年5月8日</div>
+          <div>2022年7月15日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年5月13日</div>
+          <div>2022年7月15日</div>
         </div>
       
       <div class="license-meta-item">
@@ -434,15 +617,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/articles/bcfbebe4.html" title="numpy中reshap函数参数为-1的情况分析">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">numpy中reshap函数参数为-1的情况分析</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/articles/3a0a5bca.html" title="SAT问题简介及求解方法">
+                        <span class="hidden-mobile">SAT问题简介及求解方法</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
