@@ -27,7 +27,7 @@
 <meta property="og:image" content="https://hdlbits.01xz.net/mw/images/1/15/Wire4.png">
 <meta property="og:image" content="https://hdlbits.01xz.net/mw/images/5/5b/Norgate.png">
 <meta property="article:published_time" content="2022-07-15T10:40:24.000Z">
-<meta property="article:modified_time" content="2022-07-15T11:18:19.293Z">
+<meta property="article:modified_time" content="2022-07-17T10:53:57.053Z">
 <meta property="article:author" content="WeiJian-M">
 <meta property="article:tag" content="Verilog">
 <meta property="article:tag" content="FPGA">
@@ -273,7 +273,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          6.7k 字
+          19k 字
         
       </span>
     
@@ -284,7 +284,7 @@
         
         
         
-          28 分钟
+          81 分钟
         
       </span>
     
@@ -335,7 +335,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年7月15日 晚上
+                    本文最后更新于：2022年7月17日 晚上
                   
                 
               </p>
@@ -421,7 +421,7 @@ are creating the connections between the 7 wires that already exist.</p>
             <p>The concatenationoperator <code>{ signal1, signal2, signal3, ... }</code> would be usefulhere.</p>
           </div>
 <p><img src="https://hdlbits.01xz.net/mw/images/1/15/Wire4.png" srcset="/img/loading.gif" lazyload /></p>
-<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module( <br>    <span class="hljs-keyword">input</span> a,b,c,<br>    <span class="hljs-keyword">output</span> w,x,y,z );<br>    <br>    <span class="hljs-keyword">assign</span> w = a;<br>    <span class="hljs-keyword">assign</span> x = b;<br>    <span class="hljs-keyword">assign</span> y = b;<br>    <span class="hljs-keyword">assign</span> z = c;<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module( <br>    <span class="hljs-keyword">input</span> a,b,c,<br>    <span class="hljs-keyword">output</span> w,x,y,z );<br><br>    <span class="hljs-keyword">assign</span> w = a;<br>    <span class="hljs-keyword">assign</span> x = b;<br>    <span class="hljs-keyword">assign</span> y = b;<br>    <span class="hljs-keyword">assign</span> z = c;<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
 <h3 id="notgate">Notgate</h3>
 <p>Create a module that implements a NOT gate.</p>
 <p>This circuit is similar to <a
@@ -464,7 +464,7 @@ alt="Andgate.png" /></a></p>
 <div class="note note-primary">
             <p>Verilog has separate bitwise-AND (<code>&amp;</code>) and logical-AND(<code>&amp;&amp;</code>) operators, like C. Since we're working with aone-bit here, it doesn't matter which we choose.</p>
           </div>
-<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module( <br>    <span class="hljs-keyword">input</span> a, <br>    <span class="hljs-keyword">input</span> b, <br>    <span class="hljs-keyword">output</span> out );<br>    <br>    <span class="hljs-keyword">assign</span> out = a&amp;b;<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module( <br>    <span class="hljs-keyword">input</span> a, <br>    <span class="hljs-keyword">input</span> b, <br>    <span class="hljs-keyword">output</span> out );<br><br>    <span class="hljs-keyword">assign</span> out = a&amp;b;<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
 <h3 id="norgate">Norgate</h3>
 <p>Create a module that implements a NOR gate. A NOR gate is an OR gate
 with its output inverted. A NOR function needs two operators when
@@ -480,7 +480,7 @@ inputs change, forever, much like a simple logic gate.</p>
 <div class="note note-primary">
             <p>Verilog has separate bitwise-OR (<code>|</code>) and logical-OR(<code>||</code>) operators, like C. Since we're working with a one-bithere, it doesn't matter which we choose.</p>
           </div>
-<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module( <br>    <span class="hljs-keyword">input</span> a, <br>    <span class="hljs-keyword">input</span> b, <br>    <span class="hljs-keyword">output</span> out );<br>    <br>    <span class="hljs-keyword">assign</span> out = ~(a | b);<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module( <br>    <span class="hljs-keyword">input</span> a, <br>    <span class="hljs-keyword">input</span> b, <br>    <span class="hljs-keyword">output</span> out );<br><br>    <span class="hljs-keyword">assign</span> out = ~(a | b);<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
 <h3 id="xnorgate">Xnorgate</h3>
 <p>Create a module that implements an XNOR gate.</p>
 <p><a target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/File:Xnorgate.png"><img
@@ -489,7 +489,7 @@ alt="Xnorgate.png" /></a></p>
 <div class="note note-primary">
             <p>The bitwise-XOR operator is <code>^</code>. There is no logical-XORoperator.</p>
           </div>
-<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module( <br>    <span class="hljs-keyword">input</span> a, <br>    <span class="hljs-keyword">input</span> b, <br>    <span class="hljs-keyword">output</span> out );<br>    <br>    <span class="hljs-keyword">assign</span> out = ~(a^b);<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module( <br>    <span class="hljs-keyword">input</span> a, <br>    <span class="hljs-keyword">input</span> b, <br>    <span class="hljs-keyword">output</span> out );<br><br>    <span class="hljs-keyword">assign</span> out = ~(a^b);<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
 <h3 id="wire-decl">Wire decl</h3>
 <p>Implement the following circuit. Create two intermediate wires (named
 anything you want) to connect the AND and OR gates together. Note that
@@ -505,7 +505,7 @@ without the intermediate wires.)</p>
 <p><a target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/File:Wiredecl2.png"><img
 src="https://hdlbits.01xz.net/mw/images/3/3a/Wiredecl2.png" srcset="/img/loading.gif" lazyload
 alt="Wiredecl2.png" /></a></p>
-<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-meta">`<span class="hljs-keyword">default_nettype</span> none</span><br><span class="hljs-keyword">module</span> top_module(<br>    <span class="hljs-keyword">input</span> a,<br>    <span class="hljs-keyword">input</span> b,<br>    <span class="hljs-keyword">input</span> c,<br>    <span class="hljs-keyword">input</span> d,<br>    <span class="hljs-keyword">output</span> out,<br>    <span class="hljs-keyword">output</span> out_n   ); <br>    <br>    <span class="hljs-keyword">wire</span> and_1;<br>    <span class="hljs-keyword">wire</span> and_2;<br>    <br>    <span class="hljs-keyword">assign</span> and_1 = a&amp;b;<br>    <span class="hljs-keyword">assign</span> and_2 = c&amp;d;<br>    <span class="hljs-keyword">assign</span> out = and_1 | and_2;<br>    <span class="hljs-keyword">assign</span> out_n = ~(and_1 | and_2);<br>  <br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-meta">`<span class="hljs-keyword">default_nettype</span> none</span><br><span class="hljs-keyword">module</span> top_module(<br>    <span class="hljs-keyword">input</span> a,<br>    <span class="hljs-keyword">input</span> b,<br>    <span class="hljs-keyword">input</span> c,<br>    <span class="hljs-keyword">input</span> d,<br>    <span class="hljs-keyword">output</span> out,<br>    <span class="hljs-keyword">output</span> out_n   ); <br><br>    <span class="hljs-keyword">wire</span> and_1;<br>    <span class="hljs-keyword">wire</span> and_2;<br><br>    <span class="hljs-keyword">assign</span> and_1 = a&amp;b;<br>    <span class="hljs-keyword">assign</span> and_2 = c&amp;d;<br>    <span class="hljs-keyword">assign</span> out = and_1 | and_2;<br>    <span class="hljs-keyword">assign</span> out_n = ~(and_1 | and_2);<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
 <h3 id="section">7458</h3>
 <p>The 7458 is a chip with four AND gates and two OR gates. This problem
 is slightly more complex than <a
@@ -522,7 +522,311 @@ alt="7458.png" /></a></p>
 <div class="note note-primary">
             <p>You need to drive two signals (<code>p1y</code> and <code>p2y</code>)with a value.</p>
           </div>
-<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module ( <br>    <span class="hljs-keyword">input</span> p1a, p1b, p1c, p1d, p1e, p1f,<br>    <span class="hljs-keyword">output</span> p1y,<br>    <span class="hljs-keyword">input</span> p2a, p2b, p2c, p2d,<br>    <span class="hljs-keyword">output</span> p2y );<br>    <br>    <span class="hljs-keyword">wire</span> a1, a2, a3, a4;<br>    <br>    <span class="hljs-keyword">assign</span> a1 = p2a &amp; p2b;<br>    <span class="hljs-keyword">assign</span> a2 = p2c &amp; p2d;<br>    <span class="hljs-keyword">assign</span> a3 = p1a &amp; p1c &amp; p1b;<br>    <span class="hljs-keyword">assign</span> a4 = p1f &amp; p1e &amp; p1d;<br>    <br>    <span class="hljs-keyword">assign</span> p2y = a1 | a2;<br>    <span class="hljs-keyword">assign</span> p1y = a3 | a4;<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module ( <br>    <span class="hljs-keyword">input</span> p1a, p1b, p1c, p1d, p1e, p1f,<br>    <span class="hljs-keyword">output</span> p1y,<br>    <span class="hljs-keyword">input</span> p2a, p2b, p2c, p2d,<br>    <span class="hljs-keyword">output</span> p2y );<br><br>    <span class="hljs-keyword">wire</span> a1, a2, a3, a4;<br><br>    <span class="hljs-keyword">assign</span> a1 = p2a &amp; p2b;<br>    <span class="hljs-keyword">assign</span> a2 = p2c &amp; p2d;<br>    <span class="hljs-keyword">assign</span> a3 = p1a &amp; p1c &amp; p1b;<br>    <span class="hljs-keyword">assign</span> a4 = p1f &amp; p1e &amp; p1d;<br><br>    <span class="hljs-keyword">assign</span> p2y = a1 | a2;<br>    <span class="hljs-keyword">assign</span> p1y = a3 | a4;<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h2 id="vectors">Vectors</h2>
+<h3 id="vector0">Vector0</h3>
+<p>Vectors are used to group related signals using one name to make it
+more convenient to manipulate. For example, wire [7:0] w; declares an
+8-bit vector named w that is functionally equivalent to having 8
+separate wires.</p>
+<p>Notice that the <em>declaration</em> of a vector places the
+dimensions <em>before</em> the name of the vector, which is unusual
+compared to C syntax. However, the <em>part select</em> has the
+dimensions <em>after</em> the vector name as you would expect.</p>
+<p><code>wire **[99:0]** my_vector; // Declare a 100-element vector assign out = my_vector**[10]**; // Part-select one bit out of the vector</code></p>
+<p>Build a circuit that has one 3-bit input, then outputs the same
+vector, and also splits it into three separate 1-bit outputs. Connect
+output <code>o0</code> to the input vector's position
+0, <code>o1</code> to position 1, etc.</p>
+<p>In a diagram, a tick mark with a number next to it indicates the
+width of the vector (or "bus"), rather than drawing a separate line for
+each bit in the vector.</p>
+<p><a target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/File:Vector0.png"><img
+src="https://hdlbits.01xz.net/mw/images/a/ae/Vector0.png" srcset="/img/loading.gif" lazyload
+alt="Vector0.png" /></a></p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module ( <br>    <span class="hljs-keyword">input</span> <span class="hljs-keyword">wire</span> [<span class="hljs-number">2</span>:<span class="hljs-number">0</span>] vec,<br>    <span class="hljs-keyword">output</span> <span class="hljs-keyword">wire</span> [<span class="hljs-number">2</span>:<span class="hljs-number">0</span>] outv,<br>    <span class="hljs-keyword">output</span> <span class="hljs-keyword">wire</span> o2,<br>    <span class="hljs-keyword">output</span> <span class="hljs-keyword">wire</span> o1,<br>    <span class="hljs-keyword">output</span> <span class="hljs-keyword">wire</span> o0  ); <span class="hljs-comment">// Module body starts after module declaration</span><br><br>    <span class="hljs-keyword">assign</span> outv = vec;<br><br>    <span class="hljs-keyword">assign</span> o0 = vec[<span class="hljs-number">0</span>];<br>    <span class="hljs-keyword">assign</span> o1 = vec[<span class="hljs-number">1</span>];<br>    <span class="hljs-keyword">assign</span> o2 = vec[<span class="hljs-number">2</span>];<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h3 id="vector1">Vector1</h3>
+<p>Build a combinational circuit that splits an input half-word (16
+bits, [15:0] ) into lower [7:0] and upper [15:8] bytes.</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-meta">`<span class="hljs-keyword">default_nettype</span> none     </span><span class="hljs-comment">// Disable implicit nets. Reduces some types of bugs.</span><br><span class="hljs-keyword">module</span> top_module( <br>    <span class="hljs-keyword">input</span> <span class="hljs-keyword">wire</span> [<span class="hljs-number">15</span>:<span class="hljs-number">0</span>] in,<br>    <span class="hljs-keyword">output</span> <span class="hljs-keyword">wire</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] out_hi,<br>    <span class="hljs-keyword">output</span> <span class="hljs-keyword">wire</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] out_lo );<br><br>    <span class="hljs-keyword">assign</span> out_hi = in[<span class="hljs-number">15</span>:<span class="hljs-number">8</span>];<br>    <span class="hljs-keyword">assign</span> out_lo = in[<span class="hljs-number">7</span>:<span class="hljs-number">0</span>];<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h3 id="vector2">Vector2</h3>
+<p>A 32-bit vector can be viewed as containing 4 bytes (bits [31:24],
+[23:16], etc.). Build a circuit that will reverse
+the <em>byte</em> ordering of the 4-byte word.</p>
+<p>AaaaaaaaBbbbbbbbCcccccccDddddddd =&gt;
+DdddddddCcccccccBbbbbbbbAaaaaaaa</p>
+<p>This operation is often used when the <a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Endianness">endianness</a> of a
+piece of data needs to be swapped, for example between little-endian x86
+systems and the big-endian formats used in many Internet protocols.</p>
+<div class="note note-primary">
+            <p>Part-select can be used on both the left side and right side of anassignment.</p>
+          </div>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module( <br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] in,<br>    <span class="hljs-keyword">output</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] out );<span class="hljs-comment">//</span><br>    <br>    <span class="hljs-keyword">assign</span> out[<span class="hljs-number">31</span>:<span class="hljs-number">24</span>] = in[<span class="hljs-number">7</span>:<span class="hljs-number">0</span>];<br>    <span class="hljs-keyword">assign</span> out[<span class="hljs-number">23</span>:<span class="hljs-number">16</span>] = in[<span class="hljs-number">15</span>:<span class="hljs-number">8</span>];<br>    <span class="hljs-keyword">assign</span> out[<span class="hljs-number">15</span>:<span class="hljs-number">8</span>] = in[<span class="hljs-number">23</span>:<span class="hljs-number">16</span>];<br>    <span class="hljs-keyword">assign</span> out[<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] = in[<span class="hljs-number">31</span>:<span class="hljs-number">24</span>];<br><br>    <span class="hljs-comment">// assign out[31:24] = ...;</span><br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h3 id="vectorgates">Vectorgates</h3>
+<p>Build a circuit that has two 3-bit inputs that computes the
+bitwise-OR of the two vectors, the logical-OR of the two vectors, and
+the inverse (NOT) of both vectors. Place the inverse
+of <code>b</code> in the upper half of <code>out_not</code> (i.e., bits
+[5:3]), and the inverse of <code>a</code> in the lower half.</p>
+<div class="note note-primary">
+            <p>Even though you cannot <code>assign</code> to a wire more than once,you can use a part select on the left-hand-side ofan <code>assign</code>. You don't need to assign to the entire vectorall in one statement.</p>
+          </div>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module( <br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">2</span>:<span class="hljs-number">0</span>] a,<br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">2</span>:<span class="hljs-number">0</span>] b,<br>    <span class="hljs-keyword">output</span> [<span class="hljs-number">2</span>:<span class="hljs-number">0</span>] out_or_bitwise,<br>    <span class="hljs-keyword">output</span> out_or_logical,<br>    <span class="hljs-keyword">output</span> [<span class="hljs-number">5</span>:<span class="hljs-number">0</span>] out_not<br>);<br>    <br>    <span class="hljs-keyword">assign</span> out_or_bitwise[<span class="hljs-number">2</span>] = a[<span class="hljs-number">2</span>] | b[<span class="hljs-number">2</span>];<br>    <span class="hljs-keyword">assign</span> out_or_bitwise[<span class="hljs-number">1</span>] = a[<span class="hljs-number">1</span>] | b[<span class="hljs-number">1</span>];<br>    <span class="hljs-keyword">assign</span> out_or_bitwise[<span class="hljs-number">0</span>] = a[<span class="hljs-number">0</span>] | b[<span class="hljs-number">0</span>];<br>    <br>    <span class="hljs-keyword">assign</span> out_or_logical = a || b;<br>    <br>    <span class="hljs-keyword">assign</span> out_not[<span class="hljs-number">5</span>] = ~b[<span class="hljs-number">2</span>];<br>    <span class="hljs-keyword">assign</span> out_not[<span class="hljs-number">4</span>] = ~b[<span class="hljs-number">1</span>];<br>    <span class="hljs-keyword">assign</span> out_not[<span class="hljs-number">3</span>] = ~b[<span class="hljs-number">0</span>];<br>    <span class="hljs-keyword">assign</span> out_not[<span class="hljs-number">2</span>] = ~a[<span class="hljs-number">2</span>];<br>    <span class="hljs-keyword">assign</span> out_not[<span class="hljs-number">1</span>] = ~a[<span class="hljs-number">1</span>];<br>    <span class="hljs-keyword">assign</span> out_not[<span class="hljs-number">0</span>] = ~a[<span class="hljs-number">0</span>];<br>    <br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module(<br>	<span class="hljs-keyword">input</span> [<span class="hljs-number">2</span>:<span class="hljs-number">0</span>] a, <br>	<span class="hljs-keyword">input</span> [<span class="hljs-number">2</span>:<span class="hljs-number">0</span>] b, <br>	<span class="hljs-keyword">output</span> [<span class="hljs-number">2</span>:<span class="hljs-number">0</span>] out_or_bitwise,<br>	<span class="hljs-keyword">output</span> out_or_logical,<br>	<span class="hljs-keyword">output</span> [<span class="hljs-number">5</span>:<span class="hljs-number">0</span>] out_not<br>);<br>	<br>	<span class="hljs-keyword">assign</span> out_or_bitwise = a | b;<br>	<span class="hljs-keyword">assign</span> out_or_logical = a || b;<br><br>	<span class="hljs-keyword">assign</span> out_not[<span class="hljs-number">2</span>:<span class="hljs-number">0</span>] = ~a;	<span class="hljs-comment">// Part-select on left side is o.</span><br>	<span class="hljs-keyword">assign</span> out_not[<span class="hljs-number">5</span>:<span class="hljs-number">3</span>] = ~b;	<span class="hljs-comment">//Assigning to [5:3] does not conflict with [2:0]</span><br>	<br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h3 id="gates4">Gates4</h3>
+<p>Build a combinational circuit with four inputs, in[3:0].</p>
+<p>There are 3 outputs:</p>
+<ul>
+<li>out_and: output of a 4-input AND gate.</li>
+<li>out_or: output of a 4-input OR gate.</li>
+<li>out_xor: output of a 4-input XOR gate.</li>
+</ul>
+<p>To review the AND, OR, and XOR operators, see <a
+target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/andgate"
+title="andgate">andgate</a>, <a
+target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/norgate"
+title="norgate">norgate</a>, and <a
+target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/xnorgate"
+title="xnorgate">xnorgate</a>.</p>
+<p>See also: <a target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/gates100"
+title="gates100">Even wider gates</a>.</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module( <br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">3</span>:<span class="hljs-number">0</span>] in,<br>    <span class="hljs-keyword">output</span> out_and,<br>    <span class="hljs-keyword">output</span> out_or,<br>    <span class="hljs-keyword">output</span> out_xor<br>);<br>    <br>    <span class="hljs-keyword">assign</span> out_and = in[<span class="hljs-number">3</span>] &amp; in[<span class="hljs-number">2</span>] &amp; in[<span class="hljs-number">1</span>] &amp; in[<span class="hljs-number">0</span>];<br>    <span class="hljs-keyword">assign</span> out_or = in[<span class="hljs-number">3</span>] | in[<span class="hljs-number">2</span>] | in[<span class="hljs-number">1</span>] | in[<span class="hljs-number">0</span>];<br>    <span class="hljs-keyword">assign</span> out_xor = in[<span class="hljs-number">3</span>] ^ in[<span class="hljs-number">2</span>] ^ in[<span class="hljs-number">1</span>] ^ in[<span class="hljs-number">0</span>];<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h3 id="vector3">Vector3</h3>
+<p>Given several input vectors, concatenate them together then split
+them up into several output vectors. There are six 5-bit input vectors:
+a, b, c, d, e, and f, for a total of 30 bits of input. There are four
+8-bit output vectors: w, x, y, and z, for 32 bits of output. The output
+should be a concatenation of the input vectors followed by
+two 1 bits:</p>
+<p><a target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/File:Vector3.png"><img
+src="https://hdlbits.01xz.net/mw/images/0/0c/Vector3.png" srcset="/img/loading.gif" lazyload
+alt="Vector3.png" /></a></p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module (<br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">4</span>:<span class="hljs-number">0</span>] a, b, c, d, e, f,<br>    <span class="hljs-keyword">output</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] w, x, y, z );<span class="hljs-comment">//</span><br><br>    <span class="hljs-comment">// assign &#123; ... &#125; = &#123; ... &#125;;</span><br>    <span class="hljs-keyword">assign</span> w = &#123;a[<span class="hljs-number">4</span>:<span class="hljs-number">0</span>], b[<span class="hljs-number">4</span>:<span class="hljs-number">2</span>]&#125;;<br>    <span class="hljs-keyword">assign</span> x = &#123;b[<span class="hljs-number">1</span>:<span class="hljs-number">0</span>], c[<span class="hljs-number">4</span>:<span class="hljs-number">0</span>], d[<span class="hljs-number">4</span>:<span class="hljs-number">4</span>]&#125;;<br>    <span class="hljs-keyword">assign</span> y = &#123;d[<span class="hljs-number">3</span>:<span class="hljs-number">0</span>], e[<span class="hljs-number">4</span>:<span class="hljs-number">1</span>]&#125;;<br>    <span class="hljs-keyword">assign</span> z[<span class="hljs-number">7</span>:<span class="hljs-number">2</span>] = &#123;e[<span class="hljs-number">0</span>:<span class="hljs-number">0</span>], f[<span class="hljs-number">4</span>:<span class="hljs-number">0</span>]&#125;;<br>    <span class="hljs-keyword">assign</span> z[<span class="hljs-number">1</span>] = <span class="hljs-number">1&#x27;b1</span>;<br>    <span class="hljs-keyword">assign</span> z[<span class="hljs-number">0</span>] = <span class="hljs-number">1&#x27;b1</span>;<br>    <br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module (<br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">4</span>:<span class="hljs-number">0</span>] a, b, c, d, e, f,<br>    <span class="hljs-keyword">output</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] w, x, y, z );<span class="hljs-comment">//</span><br><br>    <span class="hljs-comment">// assign &#123; ... &#125; = &#123; ... &#125;;</span><br>    <span class="hljs-keyword">assign</span> &#123;w, x, y, z&#125; = &#123;a, b, c, d, e, f, <span class="hljs-number">2&#x27;b11</span>&#125;;<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h3 id="vectorr">Vectorr</h3>
+<p>Given an 8-bit input vector [7:0], reverse its bit ordering.</p>
+<p>See also: <a target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/Vector100r"
+title="Vector100r">Reversing a longer vector</a>.</p>
+<div class="note note-primary">
+            <ul><li>assign out[7:0] = in[0:7]; does not work because Verilog does notallow vector bit ordering to be flipped.</li><li>The concatenation operator may save a bit of coding, allowing for 1assign statement instead of 8.</li></ul>
+          </div>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module( <br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] in,<br>    <span class="hljs-keyword">output</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] out<br>);<br>    <br>    <span class="hljs-keyword">assign</span> out[<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] = &#123;in[<span class="hljs-number">0</span>], in[<span class="hljs-number">1</span>], in[<span class="hljs-number">2</span>], in[<span class="hljs-number">3</span>], in[<span class="hljs-number">4</span>], in[<span class="hljs-number">5</span>], in[<span class="hljs-number">6</span>], in[<span class="hljs-number">7</span>]&#125;; <br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h3 id="vector4">Vector4</h3>
+<p>Build a circuit that sign-extends an 8-bit number to 32 bits. This
+requires a concatenation of 24 copies of the sign bit (i.e., replicate
+bit[7] 24 times) followed by the 8-bit number itself.</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module (<br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] in,<br>    <span class="hljs-keyword">output</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] out );<span class="hljs-comment">//</span><br><br>    <span class="hljs-comment">// assign out = &#123; replicate-sign-bit , the-input &#125;;</span><br>    <span class="hljs-keyword">assign</span> out = &#123;&#123;<span class="hljs-number">24</span>&#123;in[<span class="hljs-number">7</span>]&#125;&#125;, in&#125;;<br>    <br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h3 id="vector5">Vector5</h3>
+<p>Given five 1-bit signals (a, b, c, d, and e), compute all 25 pairwise
+one-bit comparisons in the 25-bit output vector. The output should be 1
+if the two bits being compared are equal.</p>
+<p>out[24] = ~a ^ a; // a == a, so out[24] is always 1. out[23] = ~a ^
+b; out[22] = ~a ^ c; ... out[ 1] = ~e ^ d; out[ 0] = ~e ^ e;</p>
+<p><a target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/File:Vector5.png"><img
+src="https://hdlbits.01xz.net/mw/images/a/ac/Vector5.png" srcset="/img/loading.gif" lazyload
+alt="Vector5.png" /></a></p>
+<p>As the diagram shows, this can be done more easily using the <a
+target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/Vector4"
+title="Vector4">replication</a> and concatenation operators.</p>
+<ul>
+<li>The top vector is a concatenation of 5 repeats of each input</li>
+<li>The bottom vector is 5 repeats of a concatenation of the 5
+inputs</li>
+</ul>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module (<br>    <span class="hljs-keyword">input</span> a, b, c, d, e,<br>    <span class="hljs-keyword">output</span> [<span class="hljs-number">24</span>:<span class="hljs-number">0</span>] out );<span class="hljs-comment">//</span><br><br>    <span class="hljs-comment">// The output is XNOR of two vectors created by </span><br>    <span class="hljs-comment">// concatenating and replicating the five inputs.</span><br>    <span class="hljs-comment">// assign out = ~&#123; ... &#125; ^ &#123; ... &#125;;</span><br>    <span class="hljs-keyword">assign</span> out = ~&#123;&#123;<span class="hljs-number">5</span>&#123;a&#125;&#125;, &#123;<span class="hljs-number">5</span>&#123;b&#125;&#125;, &#123;<span class="hljs-number">5</span>&#123;c&#125;&#125;, &#123;<span class="hljs-number">5</span>&#123;d&#125;&#125;, &#123;<span class="hljs-number">5</span>&#123;e&#125;&#125;&#125;^&#123;<span class="hljs-number">5</span>&#123;a,b,c,d,e&#125;&#125;;<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h2 id="modules-hierarchy">Modules Hierarchy</h2>
+<h3 id="module">Module</h3>
+<p>By now, you're familiar with a <code>module</code>, which is a
+circuit that interacts with its outside through input and output ports.
+Larger, more complex circuits are built by <em>composing</em> bigger
+modules out of smaller modules and other pieces (such as assign
+statements and always blocks) connected together. This forms a
+hierarchy, as modules can contain instances of other modules.</p>
+<p>The figure below shows a very simple circuit with a sub-module. In
+this exercise, create one <em>instance</em> of
+module <code>**mod_a**</code>, then connect the module's three pins
+(<code>in1</code>, <code>in2</code>, and <code>out</code>) to your
+top-level module's three ports (wires <code>a</code>, <code>b</code>,
+and <code>out</code>). The module <code>mod_a</code> is provided for you
+— you must instantiate it.</p>
+<p>When connecting modules, only the ports on the module are important.
+You do not need to know the code inside the module. The code for
+module <code>mod_a</code> looks like this:</p>
+<p><a target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/File:Module_moda.png"><embed
+src="https://hdlbits.01xz.net/mw/thumb.php?f=Module_moda.png&amp;width=101" /></a></p>
+<p>module mod_a ( input in1, input in2, output out ); // Module body
+endmodule</p>
+<p>The hierarchy of modules is created by instantiating one module
+inside another, as long as all of the modules used belong to the same
+project (so the compiler knows where to find the module). The code for
+one module is not written <em>inside</em> another module's body (Code
+for different modules are not nested).</p>
+<p>You may connect signals to the module by port name or port position.
+For extra practice, try both methods.</p>
+<p><a target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/File:Module.png"><img
+src="https://hdlbits.01xz.net/mw/images/c/c0/Module.png" srcset="/img/loading.gif" lazyload
+alt="Module.png" /></a></p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module ( <span class="hljs-keyword">input</span> a, <span class="hljs-keyword">input</span> b, <span class="hljs-keyword">output</span> out );<br>   <span class="hljs-comment">// mod_a inst1 (a, b, out);</span><br>    mod_a inst2(<span class="hljs-variable">.in1</span>(a), <span class="hljs-variable">.in2</span>(b), <span class="hljs-variable">.out</span>(out));<br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h3 id="module-pos">Module pos</h3>
+<p>This problem is similar to the previous one (<a
+target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/module" title="module">module</a>).
+You are given a module named <code>mod_a</code> that has 2 outputs and 4
+inputs, in that order. You must connect the 6 ports <em>by
+position</em> to your top-level module's
+ports <code>out1</code>, <code>out2</code>, <code>a</code>, <code>b</code>, <code>c</code>,
+and <code>d</code>, in that order.</p>
+<p>You are given the following module:</p>
+<p><code>module mod_a ( output, output, input, input, input, input );</code></p>
+<p><a target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/File:Module_pos.png"><img
+src="https://hdlbits.01xz.net/mw/images/b/b7/Module_pos.png" srcset="/img/loading.gif" lazyload
+alt="Module pos.png" /></a></p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module ( <br>    <span class="hljs-keyword">input</span> a, <br>    <span class="hljs-keyword">input</span> b, <br>    <span class="hljs-keyword">input</span> c,<br>    <span class="hljs-keyword">input</span> d,<br>    <span class="hljs-keyword">output</span> out1,<br>    <span class="hljs-keyword">output</span> out2<br>);<br>    <br>    mod_a inst (out1, out2, a, b, c, d);<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h3 id="module-name">Module name</h3>
+<p>This problem is similar to <a
+target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/module" title="module">module</a>.
+You are given a module named <code>mod_a</code> that has 2 outputs and 4
+inputs, in some order. You must connect the 6 ports <em>by name</em> to
+your top-level module's ports:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Port in <strong>mod_a</strong></th>
+<th>Port in <strong>top_module</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>output out1</code></td>
+<td><code>out1</code></td>
+</tr>
+<tr class="even">
+<td><code>output out2</code></td>
+<td><code>out2</code></td>
+</tr>
+<tr class="odd">
+<td><code>input in1</code></td>
+<td><code>a</code></td>
+</tr>
+<tr class="even">
+<td><code>input in2</code></td>
+<td><code>b</code></td>
+</tr>
+<tr class="odd">
+<td><code>input in3</code></td>
+<td><code>c</code></td>
+</tr>
+<tr class="even">
+<td><code>input in4</code></td>
+<td><code>d</code></td>
+</tr>
+</tbody>
+</table>
+<p>You are given the following module:</p>
+<p><code>module mod_a ( output out1, output out2, input in1, input in2, input in3, input in4);</code></p>
+<p><a target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/File:Module_name.png"><img
+src="https://hdlbits.01xz.net/mw/images/d/dd/Module_name.png" srcset="/img/loading.gif" lazyload
+alt="Module name.png" /></a></p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module ( <br>    <span class="hljs-keyword">input</span> a, <br>    <span class="hljs-keyword">input</span> b, <br>    <span class="hljs-keyword">input</span> c,<br>    <span class="hljs-keyword">input</span> d,<br>    <span class="hljs-keyword">output</span> out1,<br>    <span class="hljs-keyword">output</span> out2<br>);<br>    <br>    mod_a(<span class="hljs-variable">.out1</span>(out1), <span class="hljs-variable">.out2</span>(out2), <span class="hljs-variable">.in1</span>(a), <span class="hljs-variable">.in2</span>(b), <span class="hljs-variable">.in3</span>(c), <span class="hljs-variable">.in4</span>(d));<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h3 id="module-shift">Module shift</h3>
+<p>You are given a module <code>my_dff</code> with two inputs and one
+output (that implements a D flip-flop). Instantiate three of them, then
+chain them together to make a shift register of length 3.
+The <code>clk</code> port needs to be connected to all instances.</p>
+<p>The module provided to you
+is: <code>module my_dff ( input clk, input d, output q );</code></p>
+<p>Note that to make the internal connections, you will need to declare
+some wires. Be careful about naming your wires and module instances: the
+names must be unique.</p>
+<p><a target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/File:Module_shift.png"><img
+src="https://hdlbits.01xz.net/mw/images/6/60/Module_shift.png" srcset="/img/loading.gif" lazyload
+alt="Module shift.png" /></a></p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module ( <span class="hljs-keyword">input</span> clk, <span class="hljs-keyword">input</span> d, <span class="hljs-keyword">output</span> q );<br>    <br>    <span class="hljs-keyword">wire</span> out_dff1, out_dff2;<br>    <br>    my_dff dff1 (clk, d, out_dff1);<br>    my_dff dff2 (clk, out_dff1, out_dff2);<br>    my_dff dff3 (clk, out_dff2, q);<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h3 id="module-shift8">Module shift8</h3>
+<p>This exercise is an extension of <a
+target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/module_shift"
+title="module_shift">module_shift</a>. Instead of module ports being
+only single pins, we now have modules with vectors as ports, to which
+you will attach wire vectors instead of plain wires. Like everywhere
+else in Verilog, the vector length of the port does not have to match
+the wire connecting to it, but this will cause zero-padding or trucation
+of the vector. This exercise does not use connections with mismatched
+vector lengths.</p>
+<p>You are given a module <code>my_dff8</code> with two inputs and one
+output (that implements a set of 8 D flip-flops). Instantiate three of
+them, then chain them together to make a 8-bit wide shift register of
+length 3. In addition, create a 4-to-1 multiplexer (not provided) that
+chooses what to output depending on <code>sel[1:0]</code>: The value at
+the input d, after the first, after the second, or after the third D
+flip-flop. (Essentially, <code>sel</code> selects how many cycles to
+delay the input, from zero to three clock cycles.)</p>
+<p>The module provided to you
+is: <code>module my_dff8 ( input clk, input [7:0] d, output [7:0] q );</code></p>
+<p>The multiplexer is not provided. One possible way to write one is
+inside an <code>always</code> block with a <code>case</code> statement
+inside. (See also: <a target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/mux9to1v"
+title="mux9to1v">mux9to1v</a>)</p>
+<p><a target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/File:Module_shift8.png"><img
+src="https://hdlbits.01xz.net/mw/images/7/76/Module_shift8.png" srcset="/img/loading.gif" lazyload
+alt="Module shift8.png" /></a></p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module ( <br>    <span class="hljs-keyword">input</span> clk, <br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] d, <br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">1</span>:<span class="hljs-number">0</span>] sel, <br>    <span class="hljs-keyword">output</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] q <br>);<br>    <br>    <span class="hljs-keyword">wire</span>[<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] a, b, c;<br>    <br>    my_dff8 inst1 (clk, d, a);<br>    my_dff8 inst2 (clk, a, b);<br>    my_dff8 inst3 (clk, b, c);<br>    <br>    <span class="hljs-keyword">reg</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>]     sout_t ;<br>    <span class="hljs-keyword">always</span> @(*)<br>        <span class="hljs-keyword">case</span>(sel)<br>            <span class="hljs-number">2&#x27;b00</span>:       sout_t = d ;<br>            <span class="hljs-number">2&#x27;b01</span>:       sout_t = a ;<br>            <span class="hljs-number">2&#x27;b10</span>:       sout_t = b ;<br>            <span class="hljs-number">2&#x27;b11</span>:       sout_t = c ;<br>        <span class="hljs-keyword">endcase</span><br>    <span class="hljs-keyword">assign</span> q = sout_t ;<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h3 id="module-add">Module add</h3>
+<p>You are given a module <code>add16</code> that performs a 16-bit
+addition. Instantiate two of them to create a 32-bit adder. One add16
+module computes the lower 16 bits of the addition result, while the
+second add16 module computes the upper 16 bits of the result, after
+receiving the carry-out from the first adder. Your 32-bit adder does not
+need to handle carry-in (assume 0) or carry-out (ignored), but the
+internal modules need to in order to function correctly. (In other
+words, the <code>add16</code> module performs 16-bit a + b + cin, while
+your module performs 32-bit a + b).</p>
+<p>Connect the modules together as shown in the diagram below. The
+provided module <code>add16</code> has the following declaration:</p>
+<p><code>module add16 ( input[15:0] **a**, input[15:0] **b**, input **cin**, output[15:0] **sum**, output **cout** );</code></p>
+<p><a target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/File:Module_add.png"><img
+src="https://hdlbits.01xz.net/mw/images/a/a3/Module_add.png" srcset="/img/loading.gif" lazyload
+alt="Module add.png" /></a></p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module(<br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] a,<br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] b,<br>    <span class="hljs-keyword">output</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] sum<br>);<br>    <br>    <span class="hljs-keyword">wire</span>[<span class="hljs-number">15</span>:<span class="hljs-number">0</span>] sum1, sum2;<br>    <span class="hljs-keyword">wire</span> co1, co2;<br>    <br>    add16 inst1 (a[<span class="hljs-number">15</span>:<span class="hljs-number">0</span>], b[<span class="hljs-number">15</span>:<span class="hljs-number">0</span>], <span class="hljs-number">1&#x27;b0</span>, sum1, co1);<br>    add16 inst2 (a[<span class="hljs-number">31</span>:<span class="hljs-number">16</span>], b[<span class="hljs-number">31</span>:<span class="hljs-number">16</span>], co1, sum2, co2);<br>    <br>    <span class="hljs-keyword">assign</span> sum = &#123;sum2, sum1&#125;;<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h3 id="module-fadd">Module fadd</h3>
+<p>In this exercise, you will create a circuit with two levels of
+hierarchy. Your <code>top_module</code> will instantiate two copies
+of <code>add16</code> (provided), each of which will instantiate 16
+copies of <code>add1</code> (which you must write). Thus, you must
+write <em>two</em> modules: <code>top_module</code> and <code>add1</code>.</p>
+<p>Like <a target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/module_add"
+title="module_add">module_add</a>, you are given a
+module <code>add16</code> that performs a 16-bit addition. You must
+instantiate two of them to create a 32-bit adder.
+One <code>add16</code> module computes the lower 16 bits of the addition
+result, while the second <code>add16</code> module computes the upper 16
+bits of the result. Your 32-bit adder does not need to handle carry-in
+(assume 0) or carry-out (ignored).</p>
+<p>Connect the <code>add16</code> modules together as shown in the
+diagram below. The provided module <code>add16</code> has the following
+declaration:</p>
+<p><code>module add16 ( input[15:0] **a**, input[15:0] **b**, input **cin**, output[15:0] **sum**, output **cout** );</code></p>
+<p>Within each <code>add16</code>, 16 full adders
+(module <code>add1</code>, not provided) are instantiated to actually
+perform the addition. You must write the full adder module that has the
+following declaration:</p>
+<p><code>module add1 ( input a, input b, input cin, output sum, output cout );</code></p>
+<p>Recall that a full adder computes the sum and carry-out of
+a+b+cin.</p>
+<p>In summary, there are three modules in this design:</p>
+<ul>
+<li><code>top_module</code> — Your top-level module that contains two
+of...</li>
+<li><code>add16</code>, provided — A 16-bit adder module that is
+composed of 16 of...</li>
+<li><code>add1</code> — A 1-bit full adder module.</li>
+</ul>
+<p>If your submission is missing a <code>module add1</code>, you will
+get an error message that
+says <code>Error (12006): Node instance "user_fadd[0].a1" instantiates undefined entity "add1"</code>.</p>
+<p><a target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/File:Module_fadd.png"><img
+src="https://hdlbits.01xz.net/mw/images/f/f3/Module_fadd.png" srcset="/img/loading.gif" lazyload
+alt="Module fadd.png" /></a></p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module (<br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] a,<br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] b,<br>    <span class="hljs-keyword">output</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] sum<br>);<span class="hljs-comment">//</span><br>    <br>    <span class="hljs-keyword">wire</span>[<span class="hljs-number">15</span>:<span class="hljs-number">0</span>] sum1, sum2;<br>    <span class="hljs-keyword">wire</span> cout1, cout2;<br>    <br>    add16 inst1 (a[<span class="hljs-number">15</span>:<span class="hljs-number">0</span>], b[<span class="hljs-number">15</span>:<span class="hljs-number">0</span>], <span class="hljs-number">1&#x27;b0</span>, sum1, cout1);<br>    add16 inst2 (a[<span class="hljs-number">31</span>:<span class="hljs-number">16</span>], b[<span class="hljs-number">31</span>:<span class="hljs-number">16</span>], cout1, sum2, cout2);<br>    <br>    <span class="hljs-keyword">assign</span> sum = &#123;sum2, sum1&#125;;<br><br><span class="hljs-keyword">endmodule</span><br><br><span class="hljs-keyword">module</span> add1 ( <span class="hljs-keyword">input</span> a, <span class="hljs-keyword">input</span> b, <span class="hljs-keyword">input</span> cin,   <span class="hljs-keyword">output</span> sum, <span class="hljs-keyword">output</span> cout );<br><br><span class="hljs-comment">// Full adder module here</span><br>    <span class="hljs-keyword">assign</span> sum = a^b^cin;<br>    <span class="hljs-keyword">assign</span> cout = a&amp;b | a&amp;cin | b&amp;cin;<br><br><span class="hljs-keyword">endmodule</span><br><br></code></pre></td></tr></table></figure>
 
               
             </div>
@@ -588,7 +892,7 @@ alt="7458.png" /></a></p>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年7月15日</div>
+          <div>2022年7月17日</div>
         </div>
       
       <div class="license-meta-item">
