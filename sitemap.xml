@@ -110,21 +110,7 @@
 
   
   <url>
-    <loc>http://weijian-m.github.io/tags/numpy/</loc>
-    <lastmod>2022-07-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://weijian-m.github.io/tags/python/</loc>
-    <lastmod>2022-07-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://weijian-m.github.io/tags/SAT/</loc>
     <lastmod>2022-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -138,6 +124,13 @@
   </url>
   
   <url>
+    <loc>http://weijian-m.github.io/tags/numpy/</loc>
+    <lastmod>2022-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://weijian-m.github.io/tags/Latex/</loc>
     <lastmod>2022-07-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -145,14 +138,7 @@
   </url>
   
   <url>
-    <loc>http://weijian-m.github.io/tags/hexo/</loc>
-    <lastmod>2022-07-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://weijian-m.github.io/tags/butterfly/</loc>
+    <loc>http://weijian-m.github.io/tags/SAT/</loc>
     <lastmod>2022-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -167,6 +153,20 @@
   
   <url>
     <loc>http://weijian-m.github.io/tags/FPGA/</loc>
+    <lastmod>2022-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://weijian-m.github.io/tags/hexo/</loc>
+    <lastmod>2022-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://weijian-m.github.io/tags/butterfly/</loc>
     <lastmod>2022-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -203,14 +203,14 @@
   </url>
   
   <url>
-    <loc>http://weijian-m.github.io/categories/hexo%E6%95%99%E7%A8%8B/</loc>
+    <loc>http://weijian-m.github.io/categories/FPGA/</loc>
     <lastmod>2022-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://weijian-m.github.io/categories/FPGA/</loc>
+    <loc>http://weijian-m.github.io/categories/hexo%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2022-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
