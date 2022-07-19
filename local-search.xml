@@ -227,6 +227,33 @@
   
   
   <entry>
+    <title>numpy中reshap函数参数为-1的情况分析</title>
+    <link href="/articles/bcfbebe4.html"/>
+    <url>/articles/bcfbebe4.html</url>
+    
+    <content type="html"><![CDATA[<p>最近学机器学习的时候，看到这样一段代码：<code>x.reshape(-1,1)</code>，一直搞不懂参数-1是什么意思。最后就去看了看官方文档：</p><center><p><img src="https://img-blog.csdnimg.cn/20201027105911442.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="60%"></p><p>我们主要看一下红框框里面的内容：</p><blockquote><p>The new shape should be compatible with the original shape. If aninteger, then the result will be a 1-D array of that length. One shapedimension can be -1. In this case, the value is inferred from the lengthof the array and remaining dimensions.</p></blockquote><p>翻译：</p><p>新形状应与原形状兼容。如果是整数，那么结果将是该长度的1-D数组。一个形状维数可以是-1，该值是从数组的长度和其余维数推断出来的。</p><p>人话：</p><p>这里我们用一个例子来说明，假如一个数组的shape是<code>(3,4)</code>，这里<code>3*4=12</code>，对这个数组进行<code>reshape</code>操作后，新数组的<code>shape</code>中各维度的乘积也应为12。如果其中一个参数是-1，另一个参数是2，也就是<code>(-1,2)</code>，那么这个新数组的shape就是<code>(12/2,2)</code>，即<code>(6,2)</code>；如果另一个参数是1，那么这个新数组的shape就是<code>(12/1,1)</code>，即<code>(12,1)</code>.</p><p>更多的情况用下面的代码实现：</p><figure><imgsrc="https://img-blog.csdnimg.cn/2020102711161051.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTQ3NjUwMg==,size_16,color_FFFFFF,t_70#pic_center"alt="在这里插入图片描述" /><figcaption aria-hidden="true">在这里插入图片描述</figcaption></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>python</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>numpy</tag>
+      
+      <tag>python</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>python爬取糗事百科段子并发送到邮箱</title>
     <link href="/articles/61ec06a7.html"/>
     <url>/articles/61ec06a7.html</url>
@@ -246,33 +273,6 @@
       <tag>python</tag>
       
       <tag>爬虫</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>numpy中reshap函数参数为-1的情况分析</title>
-    <link href="/articles/bcfbebe4.html"/>
-    <url>/articles/bcfbebe4.html</url>
-    
-    <content type="html"><![CDATA[<p>最近学机器学习的时候，看到这样一段代码：<code>x.reshape(-1,1)</code>，一直搞不懂参数-1是什么意思。最后就去看了看官方文档：</p><center><p><img src="https://img-blog.csdnimg.cn/20201027105911442.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="60%"></p><p>我们主要看一下红框框里面的内容：</p><blockquote><p>The new shape should be compatible with the original shape. If aninteger, then the result will be a 1-D array of that length. One shapedimension can be -1. In this case, the value is inferred from the lengthof the array and remaining dimensions.</p></blockquote><p>翻译：</p><p>新形状应与原形状兼容。如果是整数，那么结果将是该长度的1-D数组。一个形状维数可以是-1，该值是从数组的长度和其余维数推断出来的。</p><p>人话：</p><p>这里我们用一个例子来说明，假如一个数组的shape是<code>(3,4)</code>，这里<code>3*4=12</code>，对这个数组进行<code>reshape</code>操作后，新数组的<code>shape</code>中各维度的乘积也应为12。如果其中一个参数是-1，另一个参数是2，也就是<code>(-1,2)</code>，那么这个新数组的shape就是<code>(12/2,2)</code>，即<code>(6,2)</code>；如果另一个参数是1，那么这个新数组的shape就是<code>(12/1,1)</code>，即<code>(12,1)</code>.</p><p>更多的情况用下面的代码实现：</p><figure><imgsrc="https://img-blog.csdnimg.cn/2020102711161051.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTQ3NjUwMg==,size_16,color_FFFFFF,t_70#pic_center"alt="在这里插入图片描述" /><figcaption aria-hidden="true">在这里插入图片描述</figcaption></figure>]]></content>
-    
-    
-    <categories>
-      
-      <category>python</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>python</tag>
-      
-      <tag>numpy</tag>
       
     </tags>
     
