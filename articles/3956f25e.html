@@ -16,25 +16,23 @@
   <meta name="author" content="WeiJian-M">
   <meta name="keywords" content="">
   
-    <meta name="description" content="代码如下： 1234567891011121314151617181920212223242526272829303132333435363738394041#coding&#x3D;utf-8import smtplibfrom email.mime.text import MIMETextfrom email.utils import formataddrimport requestsfrom bs4">
-<meta property="og:type" content="article">
-<meta property="og:title" content="python爬取糗事百科段子并发送到邮箱">
-<meta property="og:url" content="http://weijian-m.github.io/articles/61ec06a7.html">
+    <meta property="og:type" content="article">
+<meta property="og:title" content="Verilog-HDLBits-刷题笔记（二）">
+<meta property="og:url" content="http://weijian-m.github.io/articles/3956f25e.html">
 <meta property="og:site_name" content="WeiJian-M">
-<meta property="og:description" content="代码如下： 1234567891011121314151617181920212223242526272829303132333435363738394041#coding&#x3D;utf-8import smtplibfrom email.mime.text import MIMETextfrom email.utils import formataddrimport requestsfrom bs4">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-05-08T03:23:06.000Z">
-<meta property="article:modified_time" content="2022-05-13T13:27:04.715Z">
+<meta property="article:published_time" content="2022-07-18T08:18:43.000Z">
+<meta property="article:modified_time" content="2022-07-18T08:20:33.543Z">
 <meta property="article:author" content="WeiJian-M">
-<meta property="article:tag" content="python">
-<meta property="article:tag" content="爬虫">
+<meta property="article:tag" content="Verilog">
+<meta property="article:tag" content="FPGA">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>python爬取糗事百科段子并发送到邮箱 - WeiJian-M</title>
+  <title>Verilog-HDLBits-刷题笔记（二） - WeiJian-M</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -241,7 +239,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="python爬取糗事百科段子并发送到邮箱"></span>
+            <span id="subtitle" data-typed-text="Verilog-HDLBits-刷题笔记（二）"></span>
           
         </div>
 
@@ -257,8 +255,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2020-05-08 11:23" pubdate>
-          2020年5月8日 上午
+        <time datetime="2022-07-18 16:18" pubdate>
+          2022年7月18日 下午
         </time>
       </span>
     
@@ -269,7 +267,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          0 字
         
       </span>
     
@@ -280,7 +278,7 @@
         
         
         
-          7 分钟
+          1 分钟
         
       </span>
     
@@ -326,20 +324,19 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">python爬取糗事百科段子并发送到邮箱</h1>
+            <h1 style="display: none">Verilog-HDLBits-刷题笔记（二）</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年5月13日 晚上
+                    本文最后更新于：2022年7月18日 下午
                   
                 
               </p>
             
             <div class="markdown-body">
               
-              <p>代码如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#coding=utf-8</span><br><span class="hljs-keyword">import</span> smtplib<br><span class="hljs-keyword">from</span> email.mime.text <span class="hljs-keyword">import</span> MIMEText<br><span class="hljs-keyword">from</span> email.utils <span class="hljs-keyword">import</span> formataddr<br><span class="hljs-keyword">import</span> requests<br><span class="hljs-keyword">from</span> bs4 <span class="hljs-keyword">import</span> BeautifulSoup<br><br>r = requests.get(<span class="hljs-string">&#x27;https://www.qiushibaike.com/text/page/1/&#x27;</span>)<br>soup = BeautifulSoup(r.content,<span class="hljs-string">&#x27;lxml&#x27;</span>)<br><br>contentUrl = soup.find(<span class="hljs-string">&#x27;div&#x27;</span>,class_=<span class="hljs-string">&#x27;col1 old-style-col1&#x27;</span>).find(<span class="hljs-string">&#x27;div&#x27;</span>,class_=<span class="hljs-string">&quot;article block untagged mb15 typs_long&quot;</span>).find(<span class="hljs-string">&#x27;a&#x27;</span>,class_=<span class="hljs-string">&quot;contentHerf&quot;</span>).get(<span class="hljs-string">&#x27;href&#x27;</span>)<br><br>textUrl = <span class="hljs-string">&#x27;https://www.qiushibaike.com&#x27;</span> + contentUrl<br><br>textR = requests.get(textUrl)<br>textSoup = BeautifulSoup(textR.content, <span class="hljs-string">&#x27;lxml&#x27;</span>)<br>text = textSoup.find(<span class="hljs-string">&#x27;div&#x27;</span>,class_=<span class="hljs-string">&quot;content&quot;</span>).text<br><br>my_sender=<span class="hljs-string">&#x27;*********@qq.com&#x27;</span>  <span class="hljs-comment"># 发件人邮箱账号</span><br>my_pass = <span class="hljs-string">&#x27;werprgqmxaadbasd&#x27;</span>   <span class="hljs-comment"># 发件人邮箱授权码</span><br>my_user=<span class="hljs-string">&#x27;*********@163.com&#x27;</span>   <span class="hljs-comment"># 收件人邮箱</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">mail</span>():<br>  ret=<span class="hljs-literal">True</span><br>  <span class="hljs-keyword">try</span>:<br>    msg=MIMEText(text,<span class="hljs-string">&#x27;plain&#x27;</span>,<span class="hljs-string">&#x27;utf-8&#x27;</span>) <span class="hljs-comment">#填写邮件内容</span><br>    msg[<span class="hljs-string">&#x27;From&#x27;</span>]=formataddr([<span class="hljs-string">&quot;发件人昵称&quot;</span>,my_sender]) <span class="hljs-comment"># 括号里的对应发件人邮箱昵称、发件人邮箱账号</span><br>    msg[<span class="hljs-string">&#x27;To&#x27;</span>]=formataddr([<span class="hljs-string">&quot;收件人昵称&quot;</span>,my_user])       <span class="hljs-comment"># 括号里的对应收件人邮箱昵称、收件人邮箱账号</span><br>    msg[<span class="hljs-string">&#x27;Subject&#x27;</span>]=<span class="hljs-string">&quot;每日笑话&quot;</span>        <span class="hljs-comment"># 邮件的主题，也可以说是标题</span><br> <br>    server=smtplib.SMTP_SSL(<span class="hljs-string">&quot;smtp.qq.com&quot;</span>, <span class="hljs-number">465</span>) <span class="hljs-comment"># 发件人邮箱中的SMTP服务器，端口是25</span><br>    server.login(my_sender, my_pass) <span class="hljs-comment"># 括号中对应的是发件人邮箱账号、邮箱密码</span><br>    server.sendmail(my_sender,[my_user,],msg.as_string()) <span class="hljs-comment"># 括号中对应的是发件人邮箱账号、收件人邮箱账号、发送邮件</span><br>    server.quit() <span class="hljs-comment"># 关闭连接</span><br>  <span class="hljs-keyword">except</span> Exception: <span class="hljs-comment"># 如果 try 中的语句没有执行，则会执行下面的 ret=False</span><br>    ret=<span class="hljs-literal">False</span><br>  <span class="hljs-keyword">return</span> ret<br>ret=mail()<br><span class="hljs-keyword">if</span> ret:<br>  <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;邮件发送成功&quot;</span>)<br><span class="hljs-keyword">else</span>:<br>  <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;邮件发送失败&quot;</span>)<br></code></pre></td></tr></table></figure>
+              
 
               
             </div>
@@ -357,7 +354,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/python/" class="category-chain-item">python</a>
+  <a href="/categories/FPGA/" class="category-chain-item">FPGA</a>
   
   
 
@@ -372,9 +369,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/python/">#python</a>
+        <a href="/tags/Verilog/">#Verilog</a>
       
-        <a href="/tags/%E7%88%AC%E8%99%AB/">#爬虫</a>
+        <a href="/tags/FPGA/">#FPGA</a>
       
     </div>
   
@@ -386,8 +383,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>python爬取糗事百科段子并发送到邮箱</div>
-      <div>http://weijian-m.github.io/articles/61ec06a7.html</div>
+      <div>Verilog-HDLBits-刷题笔记（二）</div>
+      <div>http://weijian-m.github.io/articles/3956f25e.html</div>
     </div>
     <div class="license-meta">
       
@@ -399,13 +396,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2020年5月8日</div>
+          <div>2022年7月18日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年5月13日</div>
+          <div>2022年7月18日</div>
         </div>
       
       <div class="license-meta-item">
@@ -434,15 +431,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/articles/bcfbebe4.html" title="numpy中reshap函数参数为-1的情况分析">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">numpy中reshap函数参数为-1的情况分析</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/articles/5b726818.html" title="Verilog HDLBits 刷题笔记（一）">
+                        <span class="hidden-mobile">Verilog HDLBits 刷题笔记（一）</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>

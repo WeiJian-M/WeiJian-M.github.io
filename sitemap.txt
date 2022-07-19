@@ -1,4 +1,5 @@
 http://weijian-m.github.io/articles/5b726818.html
+http://weijian-m.github.io/articles/3956f25e.html
 http://weijian-m.github.io/articles/3a0a5bca.html
 http://weijian-m.github.io/articles/b471d43b.html
 http://weijian-m.github.io/guestbook/index.html
@@ -10,9 +11,9 @@ http://weijian-m.github.io/articles/4a17b156.html
 http://weijian-m.github.io/articles/61ec06a7.html
 http://weijian-m.github.io/about/index.html
 http://weijian-m.github.io/
+http://weijian-m.github.io/tags/numpy/
 http://weijian-m.github.io/tags/python/
 http://weijian-m.github.io/tags/%E7%88%AC%E8%99%AB/
-http://weijian-m.github.io/tags/numpy/
 http://weijian-m.github.io/tags/Latex/
 http://weijian-m.github.io/tags/SAT/
 http://weijian-m.github.io/tags/Verilog/
