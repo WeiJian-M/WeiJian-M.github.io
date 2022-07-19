@@ -16,35 +16,25 @@
   <meta name="author" content="WeiJian-M">
   <meta name="keywords" content="">
   
-    <meta name="description" content="最近在学图像处理，遇到了这样一个问题，如何用matplotlib 正确显示opencv读取的灰度图？ 如果我们用python opencv读取图片并转换成灰度图，再把它显示出来，我们可以很容易的利用下面这段代码实现： 以这幅图片为例：    代码： 12345678910111213141516&amp;#x27;&amp;#x27;&amp;#x27;Description: Author: Weij">
+    <meta name="description" content="由逻辑表达式列真值表 \[ F(A,B,C)&#x3D;AB+BC \] 直接法 将A，B，C三变量的所有取值的组合（共8种），分别代入函数式，注意计算函数值，填入真值表中。    A B C F     0 0 0 0   0 0 1 0   0 1 0 0   0 1 1 1   1 0 0 0   1 0">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python opencv读取灰度图并用matplotlib显示灰度图的正确做法">
-<meta property="og:url" content="http://weijian-m.github.io/articles/b471d43b.html">
+<meta property="og:title" content="真值表与逻辑表达式的转换">
+<meta property="og:url" content="http://weijian-m.github.io/articles/23d52a23.html">
 <meta property="og:site_name" content="WeiJian-M">
-<meta property="og:description" content="最近在学图像处理，遇到了这样一个问题，如何用matplotlib 正确显示opencv读取的灰度图？ 如果我们用python opencv读取图片并转换成灰度图，再把它显示出来，我们可以很容易的利用下面这段代码实现： 以这幅图片为例：    代码： 12345678910111213141516&amp;#x27;&amp;#x27;&amp;#x27;Description: Author: Weij">
+<meta property="og:description" content="由逻辑表达式列真值表 \[ F(A,B,C)&#x3D;AB+BC \] 直接法 将A，B，C三变量的所有取值的组合（共8种），分别代入函数式，注意计算函数值，填入真值表中。    A B C F     0 0 0 0   0 0 1 0   0 1 0 0   0 1 1 1   1 0 0 0   1 0">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20201015151031545.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20201015151548278.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20201015152148772.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20201015152932418.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/202010151536226.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20201015183730895.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20201015184137600.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20201015184211640.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20201015185248520.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="article:published_time" content="2022-05-08T03:23:06.000Z">
-<meta property="article:modified_time" content="2022-05-31T11:11:33.515Z">
+<meta property="article:published_time" content="2022-07-19T07:36:58.000Z">
+<meta property="article:modified_time" content="2022-07-19T08:21:44.261Z">
 <meta property="article:author" content="WeiJian-M">
-<meta property="article:tag" content="python">
-<meta property="article:tag" content="图像处理">
+<meta property="article:tag" content="Verilog">
+<meta property="article:tag" content="FPGA">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20201015151031545.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>python opencv读取灰度图并用matplotlib显示灰度图的正确做法 - WeiJian-M</title>
+  <title>真值表与逻辑表达式的转换 - WeiJian-M</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -251,7 +241,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="python opencv读取灰度图并用matplotlib显示灰度图的正确做法"></span>
+            <span id="subtitle" data-typed-text="真值表与逻辑表达式的转换"></span>
           
         </div>
 
@@ -267,8 +257,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-05-08 11:23" pubdate>
-          2022年5月8日 上午
+        <time datetime="2022-07-19 15:36" pubdate>
+          2022年7月19日 下午
         </time>
       </span>
     
@@ -279,7 +269,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3k 字
+          1.1k 字
         
       </span>
     
@@ -290,7 +280,7 @@
         
         
         
-          13 分钟
+          5 分钟
         
       </span>
     
@@ -336,76 +326,305 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">python opencv读取灰度图并用matplotlib显示灰度图的正确做法</h1>
+            <h1 style="display: none">真值表与逻辑表达式的转换</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年5月31日 晚上
+                    本文最后更新于：2022年7月19日 下午
                   
                 
               </p>
             
             <div class="markdown-body">
               
-              <p>最近在学图像处理，遇到了这样一个问题，如何用matplotlib
-正确显示opencv读取的灰度图？</p>
-<p>如果我们用python
-opencv读取图片并转换成灰度图，再把它显示出来，我们可以很容易的利用下面这段代码实现：</p>
-<p>以这幅图片为例：</p>
-<center>
-<img src="https://img-blog.csdnimg.cn/20201015151031545.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" srcset="/img/loading.gif" lazyload width="40%">
-</center>
-<p>代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">Description: </span><br><span class="hljs-string">Author: Weijian Ma</span><br><span class="hljs-string">Date: 2020-10-13 15:50:15</span><br><span class="hljs-string">LastEditTime: 2020-10-15 15:13:52</span><br><span class="hljs-string">LastEditors: Weijian Ma</span><br><span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> cv2<br><br><span class="hljs-comment">## 读取图片并转换成灰度图</span><br>img = cv2.imread(<span class="hljs-string">&quot;img01.png&quot;</span>,<span class="hljs-number">0</span>)<br><br><span class="hljs-comment">##显示图片</span><br>cv2.imshow(<span class="hljs-string">&quot;img&quot;</span>,img)<br>cv2.waitKey()<br></code></pre></td></tr></table></figure>
-<p>结果：</p>
-<center>
-<img src="https://img-blog.csdnimg.cn/20201015151548278.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" srcset="/img/loading.gif" lazyload width="40%">
-</center>
-<p>然而，在很多情况下，为了便于观察，我们需要在一个窗口中显示多张图像，比如下面这张图片，在一个窗口中显示一张图像和它的直方图，这就需要我们用到python的第三方库matplotlib了。</p>
-<center>
-<img src="https://img-blog.csdnimg.cn/20201015152148772.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" srcset="/img/loading.gif" lazyload width="80%">
-</center>
-<p>那么我们应当如何<strong>利用matplotlib显示灰度图</strong>呢？
-搜索很多大佬们的解决办法，发现他们都是用下面的代码实现的:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">Description: </span><br><span class="hljs-string">Author: Weijian Ma</span><br><span class="hljs-string">Date: 2020-10-13 15:50:15</span><br><span class="hljs-string">LastEditTime: 2020-10-15 15:26:49</span><br><span class="hljs-string">LastEditors: Weijian Ma</span><br><span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> cv2<br><br><span class="hljs-comment">## 读取图片并转换成灰度图</span><br>img = cv2.imread(<span class="hljs-string">&quot;img01.png&quot;</span>,<span class="hljs-number">0</span>)<br><br><span class="hljs-comment">##显示图片</span><br>plt.imshow(img,cmap=<span class="hljs-string">&quot;gray&quot;</span>)<br>plt.show()<br></code></pre></td></tr></table></figure>
-<p>在显示图片的时候，加上<code>camp="gray"</code>。</p>
-<p>结果：</p>
-<center>
-<img src="https://img-blog.csdnimg.cn/20201015152932418.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" srcset="/img/loading.gif" lazyload width="60%">
-</center>
-<p>乍一看并没有什么问题，但是这并不是我们想要的那种256灰度级的灰度图，说到这里，你可能会不理解，下面的这个例子会告诉你一切真相：</p>
-<p>比如，我们要显示一张256灰度级的灰度图，用矩阵可以表示为：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">img = np.array([[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>],<br>                [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>],<br>                [<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>],<br>                [<span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>],<br>                [<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>]])<br></code></pre></td></tr></table></figure>
-<p>利用matplotlib，用上面的方法显示出来：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">Description: </span><br><span class="hljs-string">Author: Weijian Ma</span><br><span class="hljs-string">Date: 2020-10-13 10:09:21</span><br><span class="hljs-string">LastEditTime: 2020-10-15 15:36:34</span><br><span class="hljs-string">LastEditors: Weijian Ma</span><br><span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><br>plt.rcParams[<span class="hljs-string">&#x27;font.sans-serif&#x27;</span>]=[<span class="hljs-string">&#x27;SimHei&#x27;</span>]   <span class="hljs-comment"># 用黑体显示中文</span><br>plt.rcParams[<span class="hljs-string">&#x27;axes.unicode_minus&#x27;</span>]=<span class="hljs-literal">False</span>     <span class="hljs-comment"># 正常显示负号</span><br><br>img = np.array([[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>],<br>                [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>],<br>                [<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>],<br>                [<span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>],<br>                [<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>]])<br><br>plt.imshow(img,cmap=<span class="hljs-string">&quot;gray&quot;</span>)<br>plt.colorbar()<br>plt.show()<br></code></pre></td></tr></table></figure>
-<center>
-<img src="https://img-blog.csdnimg.cn/202010151536226.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" srcset="/img/loading.gif" lazyload width="40%">
-</center>
-<p>很显然，这里灰度级为4的像素是白色，并不是我们想要的结果，而且，在很多情况下，我们会发现，利用这种方法显示灰度图会和利用opencv显示灰度图有些许差别，特别是一些较暗的图像，如果我们用matplotlib的<code>plt.imshow(img,cmap="gray")</code>显示图像，会和真实的灰度图有明差别。</p>
-<p>原始图像：</p>
-<center>
-<img src="https://img-blog.csdnimg.cn/20201015183730895.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" srcset="/img/loading.gif" lazyload width="40%">
-</center>
-<p>运行以下代码，分别用opencv的 <code>cv2.imshow("img", img)</code>和
-matplotlib的 <code>plt.imshow(img, cmap="gray")</code>显示灰度图。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">Description: </span><br><span class="hljs-string">Author: Weijian Ma</span><br><span class="hljs-string">Date: 2020-10-13 15:50:15</span><br><span class="hljs-string">LastEditTime: 2020-10-15 18:40:30</span><br><span class="hljs-string">LastEditors: Weijian Ma</span><br><span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> cv2<br><br><span class="hljs-comment">## 读取图片并转换成灰度图</span><br>img = cv2.imread(<span class="hljs-string">&quot;result.png&quot;</span>,<span class="hljs-number">0</span>)<br><br><span class="hljs-comment">## 用opencv显示图片</span><br>cv2.imshow(<span class="hljs-string">&quot;img&quot;</span>, img)<br><br><span class="hljs-comment">## 用matplotlib显示图片</span><br>plt.imshow(img, cmap=<span class="hljs-string">&quot;gray&quot;</span>)<br><br>plt.show()<br>cv2.waitKey()<br></code></pre></td></tr></table></figure>
-<p>结果： opencv的 <code>cv2.imshow("img", img)</code>显示：</p>
-<center>
-<img src="https://img-blog.csdnimg.cn/20201015184137600.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" srcset="/img/loading.gif" lazyload width="40%">
-</center>
-<p>matplotlib的 <code>plt.imshow(img, cmap="gray")</code>显示：</p>
-<center>
-<p><img src="https://img-blog.csdnimg.cn/20201015184211640.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" srcset="/img/loading.gif" lazyload width="50%"></p>
-<p>可以发现，上面两张图片有明显的差别，而第一张才是我们想要的灰度图。</p>
-<p>那么，应该如何解决这个问题呢？</p>
-<p>通过查阅matplotlib的官方文档发现，<code>plt.imshow()</code>不能直接显示单通道的灰度图，而<code>cv2.imread("result.png",0)</code>所读取的灰度图是单通道的灰度图，正确显示灰度图的方法是显示三通道的灰度图，所以，如果我们想要正确显示上面的灰度图，要先把<code>cv2.imread("result.png",0)</code>读到的单通道的灰度图转换成三通道的灰度图，然后再用<code>plt.imshow()</code>显示出来。</p>
-<p>代码如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">Description: </span><br><span class="hljs-string">Author: Weijian Ma</span><br><span class="hljs-string">Date: 2020-10-13 15:50:15</span><br><span class="hljs-string">LastEditTime: 2020-10-15 18:51:36</span><br><span class="hljs-string">LastEditors: Weijian Ma</span><br><span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> cv2<br><br><span class="hljs-comment">## 读取图片并转换成灰度图</span><br>img = cv2.imread(<span class="hljs-string">&quot;result.png&quot;</span>,<span class="hljs-number">0</span>)<br><br><span class="hljs-comment">## 把单通道的灰度图转换成三通道的灰度图</span><br>imgOfThree = np.concatenate((np.expand_dims(img, axis=<span class="hljs-number">2</span>), np.expand_dims(img, axis=<span class="hljs-number">2</span>), np.expand_dims(img, axis=<span class="hljs-number">2</span>)), axis=-<span class="hljs-number">1</span>)<br><br><span class="hljs-comment">## 用matplotlib显示图片</span><br>plt.imshow(imgOfThree)<br><br>plt.show()<br></code></pre></td></tr></table></figure>
-<p>结果：</p>
-<center>
-<img src="https://img-blog.csdnimg.cn/20201015185248520.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" srcset="/img/loading.gif" lazyload width="60%">
-</center>
+              <h1 id="由逻辑表达式列真值表">由逻辑表达式列真值表</h1>
+<p><span class="math display">\[
+F(A,B,C)=AB+BC
+\]</span></p>
+<h2 id="直接法">直接法</h2>
+<p>将A，B，C三变量的所有取值的组合（共8种），分别代入函数式，注意计算函数值，填入真值表中。</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">A</th>
+<th style="text-align: center;">B</th>
+<th style="text-align: center;">C</th>
+<th style="text-align: center;">F</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="最小项法">最小项法</h2>
+<p>先将逻辑表达式F表示为最小项之和的形式， <span class="math display">\[
+\begin{equation}
+    \begin{aligned}
+        F(A,B,C) &amp;= AB(C+\overline{C})+BC(A+\overline{A})\\
+          &amp;= ABC+AB\overline{C}+\overline{A}BC\\
+          &amp;= \sum m(3,6,7)
+    \end{aligned}
+\end{equation}
+\]</span>
+根据最小项的性质，在真值表中对应于ABC取值为011、110、111处填“1”，其他位置填“0”。</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">A</th>
+<th style="text-align: center;">B</th>
+<th style="text-align: center;">C</th>
+<th style="text-align: center;">F</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="观察法">观察法</h2>
+<p>根据函数表达式F的含义，直接填表。</p>
+<p>函数F=AB+BC表示的含义为：</p>
+<p>（1）当A和B同时为“1”时，F=1</p>
+<p>（2）当B和C同时为“1”时，F=1</p>
+<p>（3）当不满足上面两种情况时，F=0</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">A</th>
+<th style="text-align: center;">B</th>
+<th style="text-align: center;">C</th>
+<th style="text-align: center;">F</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+<h1 id="由真值表写逻辑表达式">由真值表写逻辑表达式</h1>
+<h2 id="最小项之和">最小项之和</h2>
+<p>根据前面学过的最小项的性质，可以得到如下方法，由真值表得到最小项之和的表达式形式。</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">A</th>
+<th style="text-align: center;">B</th>
+<th style="text-align: center;">C</th>
+<th style="text-align: center;">F</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+<p>由真值表可见，当ABC取001、011、100、111时，F为“1”。 $$ <span
+class="math display">\[\begin{equation}
+    \begin{aligned}
+        F(A,B,C) &amp;= \sum m(1,3,4,7)\\
+          &amp;= \overline{A}\overline{B}C+\overline{A}BC+
+A\overline{B}\overline{C} +ABC\\
+
+    \end{aligned}
+\end{equation}\]</span> $$</p>
+<h2 id="最大项之积">最大项之积</h2>
+<p>根据前面学过的最大项的性质，可以得到如下方法，由真值表得到最大项之积的表达式形式。</p>
+<p>由真值表可见，当ABC取000、010、101、110时，F为“0”。 <span
+class="math display">\[
+\begin{equation}
+    \begin{aligned}
+        F(A,B,C) &amp;= \prod M(0,2,5,6)\\
+          &amp;=
+(A+B+C)(A+\overline{B}+C)(\overline{A}+B+\overline{C})(\overline{A}+\overline{B}+C)
+    \end{aligned}
+\end{equation}
+\]</span></p>
 
               
             </div>
@@ -423,8 +642,15 @@ matplotlib的 <code>plt.imshow(img, cmap="gray")</code>显示灰度图。</p>
     
       <span class="category-chain">
         
-  <a href="/categories/python/" class="category-chain-item">python</a>
+  <a href="/categories/FPGA/" class="category-chain-item">FPGA</a>
   
+  
+    <span>></span>
+    
+  <a href="/categories/FPGA/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80/" class="category-chain-item">数字电子技术基础</a>
+  
+  
+
   
 
       </span>
@@ -438,9 +664,9 @@ matplotlib的 <code>plt.imshow(img, cmap="gray")</code>显示灰度图。</p>
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/python/">#python</a>
+        <a href="/tags/Verilog/">#Verilog</a>
       
-        <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">#图像处理</a>
+        <a href="/tags/FPGA/">#FPGA</a>
       
     </div>
   
@@ -452,8 +678,8 @@ matplotlib的 <code>plt.imshow(img, cmap="gray")</code>显示灰度图。</p>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>python opencv读取灰度图并用matplotlib显示灰度图的正确做法</div>
-      <div>http://weijian-m.github.io/articles/b471d43b.html</div>
+      <div>真值表与逻辑表达式的转换</div>
+      <div>http://weijian-m.github.io/articles/23d52a23.html</div>
     </div>
     <div class="license-meta">
       
@@ -465,13 +691,13 @@ matplotlib的 <code>plt.imshow(img, cmap="gray")</code>显示灰度图。</p>
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年5月8日</div>
+          <div>2022年7月19日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年5月31日</div>
+          <div>2022年7月19日</div>
         </div>
       
       <div class="license-meta-item">
@@ -500,18 +726,12 @@ matplotlib的 <code>plt.imshow(img, cmap="gray")</code>显示灰度图。</p>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/articles/db692c86.html" title="hexo + github + butterfly 搭建你的个人博客保姆级教程（无需云服务器）">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">hexo + github + butterfly 搭建你的个人博客保姆级教程（无需云服务器）</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/articles/61ec06a7.html" title="python爬取糗事百科段子并发送到邮箱">
-                        <span class="hidden-mobile">python爬取糗事百科段子并发送到邮箱</span>
+                      <a href="/articles/3956f25e.html" title="Verilog-HDLBits-刷题笔记（二）">
+                        <span class="hidden-mobile">Verilog-HDLBits-刷题笔记（二）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
