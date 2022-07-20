@@ -4,6 +4,56 @@
   
   
   <entry>
+    <title>补码相加溢出判断</title>
+    <link href="/articles/d03a6a8d.html"/>
+    <url>/articles/d03a6a8d.html</url>
+    
+    <content type="html"><![CDATA[<p><strong>溢出</strong>：运算结果超出机器数所能表示的范围。</p><div class="note note-success">            <p>加法： 整数： [A]补 + [B]补 = [A+B]补 （mod 2^(n+1)） 小数： [A]补 +[B]补 = [A+B]补 （mod 2）</p><p>减法： 整数： [A-B]补 = [A]补 + [-B]补 （mod 2^(n+1)） 小数： [A-B]补= [A]补 + [-B]补（mod 2） [-B]补的求法就是[B]补的连同符号位在内，每位求反加1</p>          </div><p><strong>补码加法运算如何判断溢出？</strong></p><p><strong>方法一</strong></p><p>Xf、Yf分别两个数的符号位,Zf为运算结果符号位。 当Xf =Yf=0（两数同为正）,而Zf=1(结果为负)时,负溢出； 当出现Xf =Yf=1（两数同为负）,而Zf=0（结果为正），正溢出.</p><p><strong>方法二</strong></p><p>Cs表示符号位的进位，Cp表示最高数值位进位，⊕表示异或。 若 Cs⊕Cp =0，无溢出； 若 Cs⊕Cp =1 ，有溢出。</p><p><strong>方法三</strong></p><p>用变形补码进行双符号位运算（正数符为00,负数符号以11）若运算结果的符号位为"01",则正溢； 若结果双符号为10,则负溢出；若结果的双符号位为00或11，无溢出</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>FPGA</category>
+      
+      <category>数字电子技术</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Verilog-HDLBits-刷题笔记（四）</title>
+    <link href="/articles/c3654869.html"/>
+    <url>/articles/c3654869.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="circuits">Circuits</h1><h2 id="combinational-logic">Combinational Logic</h2><h3 id="arithmetic-circuits">Arithmetic Circuits</h3><h4 id="hadd">Hadd</h4><p>Create a half adder. A half adder adds two bits (with no carry-in)and produces a sum and carry-out.</p><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module( <br>    <span class="hljs-keyword">input</span> a, b,<br>    <span class="hljs-keyword">output</span> cout, sum );<br>    <br>    <span class="hljs-keyword">assign</span> &#123;cout, sum&#125; = a + b;<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure><h4 id="fadd">Fadd</h4><p>Create a full adder. A full adder adds three bits (includingcarry-in) and produces a sum and carry-out.</p><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module( <br>    <span class="hljs-keyword">input</span> a, b, cin,<br>    <span class="hljs-keyword">output</span> cout, sum );<br>    <br>    <span class="hljs-keyword">assign</span> &#123;cout, sum&#125; = a + b + cin;<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure><h4 id="adder3">Adder3</h4><p>Now that you know how to build a <ahref="https://hdlbits.01xz.net/wiki/Fadd">full adder</a>, make 3instances of it to create a 3-bit binary ripple-carry adder. The adderadds two 3-bit numbers and a carry-in to produce a 3-bit sum and carryout. To encourage you to actually instantiate full adders, also outputthe carry-out from <em>each</em> full adder in the ripple-carry adder.cout[2] is the final carry-out from the last full adder, and is thecarry-out you usually see.</p><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module( <br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">2</span>:<span class="hljs-number">0</span>] a, b,<br>    <span class="hljs-keyword">input</span> cin,<br>    <span class="hljs-keyword">output</span> [<span class="hljs-number">2</span>:<span class="hljs-number">0</span>] cout,<br>    <span class="hljs-keyword">output</span> [<span class="hljs-number">2</span>:<span class="hljs-number">0</span>] sum );<br>    <br>    fadd inst1 (a[<span class="hljs-number">0</span>], b[<span class="hljs-number">0</span>], cin, cout[<span class="hljs-number">0</span>], sum[<span class="hljs-number">0</span>]);<br>    fadd inst2 (a[<span class="hljs-number">1</span>], b[<span class="hljs-number">1</span>], cout[<span class="hljs-number">0</span>], cout[<span class="hljs-number">1</span>], sum[<span class="hljs-number">1</span>]);<br>    fadd inst3 (a[<span class="hljs-number">2</span>], b[<span class="hljs-number">2</span>], cout[<span class="hljs-number">1</span>], cout[<span class="hljs-number">2</span>], sum[<span class="hljs-number">2</span>]);<br><br><span class="hljs-keyword">endmodule</span><br><br><br><span class="hljs-keyword">module</span> fadd( <br>    <span class="hljs-keyword">input</span> a, b, cin,<br>    <span class="hljs-keyword">output</span> cout, sum );<br>    <br>    <span class="hljs-keyword">assign</span> &#123;cout, sum&#125; = a + b + cin;<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure><h4 id="examsm2014-q4j">Exams/m2014 q4j</h4><p>Implement the following circuit:</p><p><a href="https://hdlbits.01xz.net/wiki/File:Exams_m2014q4j.png"><imgsrc="https://hdlbits.01xz.net/mw/images/d/d2/Exams_m2014q4j.png"alt="Exams m2014q4j.png" /></a></p><p>("FA" is a full adder)</p><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module (<br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">3</span>:<span class="hljs-number">0</span>] x,<br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">3</span>:<span class="hljs-number">0</span>] y, <br>    <span class="hljs-keyword">output</span> [<span class="hljs-number">4</span>:<span class="hljs-number">0</span>] sum);<br>    <br>    <span class="hljs-keyword">wire</span>[<span class="hljs-number">2</span>:<span class="hljs-number">0</span>] cout;<br>    <br>    FA inst1 (x[<span class="hljs-number">0</span>], y[<span class="hljs-number">0</span>], <span class="hljs-number">1&#x27;b0</span>, cout[<span class="hljs-number">0</span>], sum[<span class="hljs-number">0</span>]);<br>    FA inst2 (x[<span class="hljs-number">1</span>], y[<span class="hljs-number">1</span>], cout[<span class="hljs-number">0</span>], cout[<span class="hljs-number">1</span>], sum[<span class="hljs-number">1</span>]);<br>    FA inst3 (x[<span class="hljs-number">2</span>], y[<span class="hljs-number">2</span>], cout[<span class="hljs-number">1</span>], cout[<span class="hljs-number">2</span>], sum[<span class="hljs-number">2</span>]);<br>    FA inst4 (x[<span class="hljs-number">3</span>], y[<span class="hljs-number">3</span>], cout[<span class="hljs-number">2</span>], sum[<span class="hljs-number">4</span>], sum[<span class="hljs-number">3</span>]);<br><br><span class="hljs-keyword">endmodule</span><br><br><span class="hljs-keyword">module</span> FA( <br>    <span class="hljs-keyword">input</span> a, b, cin,<br>    <span class="hljs-keyword">output</span> cout, sum );<br>    <br>    <span class="hljs-keyword">assign</span> &#123;cout, sum&#125; = a + b + cin;<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure><h4 id="examsece241-2014-q1c">Exams/ece241 2014 q1c</h4><p>Assume that you have two 8-bit 2's complement numbers, a[7:0] andb[7:0]. These numbers are added to produce s[7:0]. Also compute whethera (signed) overflow has occurred.</p><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module (<br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] a,<br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] b,<br>    <span class="hljs-keyword">output</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] s,<br>    <span class="hljs-keyword">output</span> overflow<br>); <span class="hljs-comment">//</span><br> <br>    <span class="hljs-keyword">assign</span> s = a + b;<br>    <span class="hljs-keyword">assign</span> overflow = ~a[<span class="hljs-number">7</span>]&amp;~b[<span class="hljs-number">7</span>]&amp;s[<span class="hljs-number">7</span>] | a[<span class="hljs-number">7</span>]&amp;b[<span class="hljs-number">7</span>]&amp;~s[<span class="hljs-number">7</span>];<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure><h4 id="adder100">Adder100</h4><p>（被降维打击）</p><p>Create a 100-bit binary adder. The adder adds two 100-bit numbers anda carry-in to produce a 100-bit sum and carry out.</p><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module( <br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">99</span>:<span class="hljs-number">0</span>] a, b,<br>    <span class="hljs-keyword">input</span> cin,<br>    <span class="hljs-keyword">output</span> cout,<br>    <span class="hljs-keyword">output</span> [<span class="hljs-number">99</span>:<span class="hljs-number">0</span>] sum );<br>    <br>    <span class="hljs-keyword">assign</span> &#123;cout, sum&#125; = a + b + cin;<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure><h4 id="bcdadd4">Bcdadd4</h4><p>You are provided with a BCD (binary-coded decimal) one-digit addernamed <code>bcd_fadd</code> that adds two BCD digits and carry-in, andproduces a sum and carry-out.</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs css">module bcd_fadd (<br>    <span class="hljs-selector-tag">input</span> <span class="hljs-selector-attr">[3:0]</span> <span class="hljs-selector-tag">a</span>,<br>    <span class="hljs-selector-tag">input</span> <span class="hljs-selector-attr">[3:0]</span> <span class="hljs-selector-tag">b</span>,<br>    <span class="hljs-selector-tag">input</span>     cin,<br>    output   cout,<br>    output <span class="hljs-selector-attr">[3:0]</span> sum );<br></code></pre></td></tr></table></figure><p>Instantiate 4 copies of <code>bcd_fadd</code> to create a 4-digit BCDripple-carry adder. Your adder should add two 4-digit BCD numbers(packed into 16-bit vectors) and a carry-in to produce a 4-digit sum andcarry out.</p><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module ( <br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">15</span>:<span class="hljs-number">0</span>] a, b,<br>    <span class="hljs-keyword">input</span> cin,<br>    <span class="hljs-keyword">output</span> cout,<br>    <span class="hljs-keyword">output</span> [<span class="hljs-number">15</span>:<span class="hljs-number">0</span>] sum );<br>    <br>    <span class="hljs-keyword">wire</span>[<span class="hljs-number">3</span>:<span class="hljs-number">0</span>] co;<br>    <br>    bcd_fadd inst0 (a[<span class="hljs-number">3</span>:<span class="hljs-number">0</span>], b[<span class="hljs-number">3</span>:<span class="hljs-number">0</span>], cin, co[<span class="hljs-number">0</span>], sum[<span class="hljs-number">3</span>:<span class="hljs-number">0</span>]);<br>    bcd_fadd inst1 (a[<span class="hljs-number">7</span>:<span class="hljs-number">4</span>], b[<span class="hljs-number">7</span>:<span class="hljs-number">4</span>], co[<span class="hljs-number">0</span>], co[<span class="hljs-number">1</span>], sum[<span class="hljs-number">7</span>:<span class="hljs-number">4</span>]);<br>    bcd_fadd inst2 (a[<span class="hljs-number">11</span>:<span class="hljs-number">8</span>], b[<span class="hljs-number">11</span>:<span class="hljs-number">8</span>], co[<span class="hljs-number">1</span>], co[<span class="hljs-number">2</span>], sum[<span class="hljs-number">11</span>:<span class="hljs-number">8</span>]);<br>    bcd_fadd inst3 (a[<span class="hljs-number">15</span>:<span class="hljs-number">12</span>], b[<span class="hljs-number">15</span>:<span class="hljs-number">12</span>], co[<span class="hljs-number">2</span>], co[<span class="hljs-number">3</span>], sum[<span class="hljs-number">15</span>:<span class="hljs-number">12</span>]);<br>    <br>    <span class="hljs-keyword">assign</span> cout = co[<span class="hljs-number">3</span>];<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure><p>测试通过了，但是不知道为啥会出现下面的警告。</p><div class="note note-warning">            <p>Warning (10230): Verilog HDL assignment warning at tb_modules.sv(8):truncated value with size 32 to match size of target (4) File:/home/h/work/hdlbits.6349369/tb_modules.sv Line: 8</p><p>Truncating values occur when the right side of an assignment is widerthan the left side and the upper bits are cut off. This can indicate abug if there is a truncation you didn't expect, so check thesecarefully. The most common case where this <em>isn't</em> a bug is whenyou're using literals without a width (32 bits is implied), e.g., using<code>assign a[1:0] = 1;</code> instead of<code>assign a[1:0] = 2'd1;</code>.</p>          </div>]]></content>
+    
+    
+    <categories>
+      
+      <category>FPGA</category>
+      
+      <category>Verilog</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Verilog</tag>
+      
+      <tag>FPGA</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Verilog-HDLBits-刷题笔记（三）</title>
     <link href="/articles/7448510c.html"/>
     <url>/articles/7448510c.html</url>
@@ -256,33 +306,6 @@
   
   
   <entry>
-    <title>numpy中reshap函数参数为-1的情况分析</title>
-    <link href="/articles/bcfbebe4.html"/>
-    <url>/articles/bcfbebe4.html</url>
-    
-    <content type="html"><![CDATA[<p>最近学机器学习的时候，看到这样一段代码：<code>x.reshape(-1,1)</code>，一直搞不懂参数-1是什么意思。最后就去看了看官方文档：</p><center><p><img src="https://img-blog.csdnimg.cn/20201027105911442.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="60%"></p><p>我们主要看一下红框框里面的内容：</p><blockquote><p>The new shape should be compatible with the original shape. If aninteger, then the result will be a 1-D array of that length. One shapedimension can be -1. In this case, the value is inferred from the lengthof the array and remaining dimensions.</p></blockquote><p>翻译：</p><p>新形状应与原形状兼容。如果是整数，那么结果将是该长度的1-D数组。一个形状维数可以是-1，该值是从数组的长度和其余维数推断出来的。</p><p>人话：</p><p>这里我们用一个例子来说明，假如一个数组的shape是<code>(3,4)</code>，这里<code>3*4=12</code>，对这个数组进行<code>reshape</code>操作后，新数组的<code>shape</code>中各维度的乘积也应为12。如果其中一个参数是-1，另一个参数是2，也就是<code>(-1,2)</code>，那么这个新数组的shape就是<code>(12/2,2)</code>，即<code>(6,2)</code>；如果另一个参数是1，那么这个新数组的shape就是<code>(12/1,1)</code>，即<code>(12,1)</code>.</p><p>更多的情况用下面的代码实现：</p><figure><imgsrc="https://img-blog.csdnimg.cn/2020102711161051.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTQ3NjUwMg==,size_16,color_FFFFFF,t_70#pic_center"alt="在这里插入图片描述" /><figcaption aria-hidden="true">在这里插入图片描述</figcaption></figure>]]></content>
-    
-    
-    <categories>
-      
-      <category>python</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>numpy</tag>
-      
-      <tag>python</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>python爬取糗事百科段子并发送到邮箱</title>
     <link href="/articles/61ec06a7.html"/>
     <url>/articles/61ec06a7.html</url>
@@ -302,6 +325,33 @@
       <tag>python</tag>
       
       <tag>爬虫</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>numpy中reshap函数参数为-1的情况分析</title>
+    <link href="/articles/bcfbebe4.html"/>
+    <url>/articles/bcfbebe4.html</url>
+    
+    <content type="html"><![CDATA[<p>最近学机器学习的时候，看到这样一段代码：<code>x.reshape(-1,1)</code>，一直搞不懂参数-1是什么意思。最后就去看了看官方文档：</p><center><p><img src="https://img-blog.csdnimg.cn/20201027105911442.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="60%"></p><p>我们主要看一下红框框里面的内容：</p><blockquote><p>The new shape should be compatible with the original shape. If aninteger, then the result will be a 1-D array of that length. One shapedimension can be -1. In this case, the value is inferred from the lengthof the array and remaining dimensions.</p></blockquote><p>翻译：</p><p>新形状应与原形状兼容。如果是整数，那么结果将是该长度的1-D数组。一个形状维数可以是-1，该值是从数组的长度和其余维数推断出来的。</p><p>人话：</p><p>这里我们用一个例子来说明，假如一个数组的shape是<code>(3,4)</code>，这里<code>3*4=12</code>，对这个数组进行<code>reshape</code>操作后，新数组的<code>shape</code>中各维度的乘积也应为12。如果其中一个参数是-1，另一个参数是2，也就是<code>(-1,2)</code>，那么这个新数组的shape就是<code>(12/2,2)</code>，即<code>(6,2)</code>；如果另一个参数是1，那么这个新数组的shape就是<code>(12/1,1)</code>，即<code>(12,1)</code>.</p><p>更多的情况用下面的代码实现：</p><figure><imgsrc="https://img-blog.csdnimg.cn/2020102711161051.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTQ3NjUwMg==,size_16,color_FFFFFF,t_70#pic_center"alt="在这里插入图片描述" /><figcaption aria-hidden="true">在这里插入图片描述</figcaption></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>python</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>python</tag>
+      
+      <tag>numpy</tag>
       
     </tags>
     
