@@ -4,11 +4,82 @@
   
   
   <entry>
+    <title>布尔代数的性质</title>
+    <link href="/articles/e4e12467.html"/>
+    <url>/articles/e4e12467.html</url>
+    
+    <content type="html"><![CDATA[<ul><li><p><strong>Annulment law</strong></p><p>A.0 = 0</p><p>A + 1 = 1</p></li><li><p><strong>Identity law</strong></p><p>A.1 = A</p><p>A + 0 = A</p></li><li><p><strong>Idempotent law</strong></p><p>A + A = A</p><p>A.A = A</p></li><li><p><strong>Complement law</strong></p><p>A + A’ = 1</p><p>A.A’ = 0</p></li><li><p><strong>Double negation law</strong></p><p>((A)’)’=A</p></li><li><p><strong>Commutative law</strong></p><p>A + B = B + A</p><p>A.B = B.A</p></li><li><p><strong>Associative law</strong></p><p>A+(B+C) = (A+B)+C A.(B.C) = (A.B).C</p></li><li><p><strong>Distributive law</strong></p><p>A.(B+C) = (A.B)+(A.C)</p><p>A.(B+C) = (A.B)+(A.C)</p></li><li><p><strong>Absorption law</strong></p><p>A.(A+B) = A</p><p>A + AB = A</p><p>A+ A’B = A+B</p><p>A(A’ + B) = AB</p></li><li><p><strong>De Morgan law</strong></p><p>(A.B)’ = A’ + B’ (A+B)’ = A’.B’</p></li></ul><p>References:</p><p><ahref="https://www.geeksforgeeks.org/properties-of-boolean-algebra/?ref=lbp">Propertiesof Boolean Algebra - GeeksforGeeks</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>FPGA</category>
+      
+      <category>数字电子技术</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>卡诺图</title>
+    <link href="/articles/d4a0789c.html"/>
+    <url>/articles/d4a0789c.html</url>
+    
+    <content type="html"><![CDATA[<p>参考下文：</p><p><a href="https://zhuanlan.zhihu.com/p/158535749">逻辑函数的卡诺图化简|| 卡诺图 || 重点 || 数电 - 知乎 (zhihu.com)</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>FPGA</category>
+      
+      <category>数字电子技术</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Verilog-HDLBits-刷题笔记（五）</title>
+    <link href="/articles/acfb8d2e.html"/>
+    <url>/articles/acfb8d2e.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="circuits">Circuits</h1><h2 id="combinational-logic">Combinational Logic</h2><h3 id="karnaugh-map-to-circuit">Karnaugh Map to Circuit</h3><h4 id="kmap1">Kmap1</h4><p>Implement the circuit described by the Karnaugh map below.</p><p><a href="https://hdlbits.01xz.net/wiki/File:Kmap1.png"><imgsrc="https://hdlbits.01xz.net/mw/images/2/20/Kmap1.png"alt="Kmap1.png" /></a></p><p><em>Try to simplify the k-map before coding it. Try bothproduct-of-sums and sum-of-products forms. We can't check whether youhave the optimal simplification of the k-map. But we can check if yourreduction is equivalent, and we can check whether you can translate ak-map into a circuit.</em></p><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module(<br>    <span class="hljs-keyword">input</span> a,<br>    <span class="hljs-keyword">input</span> b,<br>    <span class="hljs-keyword">input</span> c,<br>    <span class="hljs-keyword">output</span> out  ); <br>    <br>    <span class="hljs-keyword">assign</span> out = a | b | c;<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure><h4 id="kmap2">Kmap2</h4><p>Implement the circuit described by the Karnaugh map below.</p><p><a href="https://hdlbits.01xz.net/wiki/File:Kmap2.png"><imgsrc="https://hdlbits.01xz.net/mw/images/4/4d/Kmap2.png"alt="Kmap2.png" /></a></p><p><em>Try to simplify the k-map before coding it. Try bothproduct-of-sums and sum-of-products forms. We can't check whether youhave the optimal simplification of the k-map. But we can check if yourreduction is equivalent, and we can check whether you can translate ak-map into a circuit.</em></p><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module(<br>    <span class="hljs-keyword">input</span> a,<br>    <span class="hljs-keyword">input</span> b,<br>    <span class="hljs-keyword">input</span> c,<br>    <span class="hljs-keyword">input</span> d,<br>    <span class="hljs-keyword">output</span> out  ); <br>    <br>    <span class="hljs-keyword">assign</span> out = ~a&amp;~d | ~b&amp;~c | b&amp;c&amp;d | a&amp;c&amp;d; <br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure><h4 id="kmap3">Kmap3</h4><p>Implement the circuit described by the Karnaugh map below.</p><p><a href="https://hdlbits.01xz.net/wiki/File:Kmap3.png"><imgsrc="https://hdlbits.01xz.net/mw/images/1/1f/Kmap3.png"alt="Kmap3.png" /></a></p><p><em>Try to simplify the k-map before coding it. Try bothproduct-of-sums and sum-of-products forms. We can't check whether youhave the optimal simplification of the k-map. But we can check if yourreduction is equivalent, and we can check whether you can translate ak-map into a circuit.</em></p><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module(<br>    <span class="hljs-keyword">input</span> a,<br>    <span class="hljs-keyword">input</span> b,<br>    <span class="hljs-keyword">input</span> c,<br>    <span class="hljs-keyword">input</span> d,<br>    <span class="hljs-keyword">output</span> out  ); <br>    <br>    <span class="hljs-keyword">assign</span> out = a | ~b&amp;c | b&amp;~c&amp;~d;<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure><h4 id="kmap4">Kmap4</h4><p>Implement the circuit described by the Karnaugh map below.</p><p><a href="https://hdlbits.01xz.net/wiki/File:Kmap4.png"><imgsrc="https://hdlbits.01xz.net/mw/images/9/98/Kmap4.png"alt="Kmap4.png" /></a></p><p>Hint: For this function, changing the value of any one input alwaysinverts the output. It is a simple logic function, but one that can't beeasily expressed as SOP nor POS forms.</p><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module(<br>    <span class="hljs-keyword">input</span> a,<br>    <span class="hljs-keyword">input</span> b,<br>    <span class="hljs-keyword">input</span> c,<br>    <span class="hljs-keyword">input</span> d,<br>    <span class="hljs-keyword">output</span> out  ); <br>    <br>    <span class="hljs-keyword">assign</span> out = a^b^c^d;<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>FPGA</category>
+      
+      <category>Verilog</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Verilog</tag>
+      
+      <tag>FPGA</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>补码相加溢出判断</title>
     <link href="/articles/d03a6a8d.html"/>
     <url>/articles/d03a6a8d.html</url>
     
-    <content type="html"><![CDATA[<p><strong>溢出</strong>：运算结果超出机器数所能表示的范围。</p><div class="note note-success">            <p>加法： 整数： [A]补 + [B]补 = [A+B]补 （mod 2^(n+1)） 小数： [A]补 +[B]补 = [A+B]补 （mod 2）</p><p>减法： 整数： [A-B]补 = [A]补 + [-B]补 （mod 2^(n+1)） 小数： [A-B]补= [A]补 + [-B]补（mod 2） [-B]补的求法就是[B]补的连同符号位在内，每位求反加1</p>          </div><p><strong>补码加法运算如何判断溢出？</strong></p><p><strong>方法一</strong></p><p>Xf、Yf分别两个数的符号位,Zf为运算结果符号位。 当Xf =Yf=0（两数同为正）,而Zf=1(结果为负)时,负溢出； 当出现Xf =Yf=1（两数同为负）,而Zf=0（结果为正），正溢出.</p><p><strong>方法二</strong></p><p>Cs表示符号位的进位，Cp表示最高数值位进位，⊕表示异或。 若 Cs⊕Cp =0，无溢出； 若 Cs⊕Cp =1 ，有溢出。</p><p><strong>方法三</strong></p><p>用变形补码进行双符号位运算（正数符为00,负数符号以11）若运算结果的符号位为"01",则正溢； 若结果双符号为10,则负溢出；若结果的双符号位为00或11，无溢出</p>]]></content>
+    <content type="html"><![CDATA[<p><strong>溢出</strong>：运算结果超出机器数所能表示的范围。</p><div class="note note-success">            <p>加法：</p><p>整数： [A]补 + [B]补 = [A+B]补 （mod 2^(n+1)）</p><p>小数： [A]补 + [B]补 = [A+B]补 （mod 2）</p><p>减法：</p><p>整数： [A-B]补 = [A]补 + [-B]补 （mod 2^(n+1)）</p><p>小数： [A-B]补 = [A]补 + [-B]补（mod 2）</p><p>[-B]补的求法就是 [B]补的连同符号位在内，每位求反加1</p>          </div><p><strong>补码加法运算如何判断溢出？</strong></p><p><strong>方法一</strong></p><p>Xf、Yf分别两个数的符号位,Zf为运算结果符号位。</p><p>当Xf =Yf =0（两数同为正）,而Zf=1(结果为负)时,负溢出；</p><p>当出现Xf =Yf =1（两数同为负）,而Zf=0（结果为正），正溢出.</p><p><strong>方法二</strong></p><p>Cs表示符号位的进位，Cp表示最高数值位进位，⊕表示异或。</p><p>若 Cs⊕Cp =0 ，无溢出；</p><p>若 Cs⊕Cp =1 ，有溢出。</p><p><strong>方法三</strong></p><p>用变形补码进行双符号位运算（正数符为00,负数符号以11）</p><p>若运算结果的符号位为"01",则正溢；</p><p>若结果双符号为10,则负溢出；</p><p>若结果的双符号位为00或11，无溢出</p>]]></content>
     
     
     <categories>
@@ -94,7 +165,7 @@
       
       <category>FPGA</category>
       
-      <category>数字电子技术基础</category>
+      <category>数字电子技术</category>
       
     </categories>
     
@@ -306,6 +377,33 @@
   
   
   <entry>
+    <title>numpy中reshap函数参数为-1的情况分析</title>
+    <link href="/articles/bcfbebe4.html"/>
+    <url>/articles/bcfbebe4.html</url>
+    
+    <content type="html"><![CDATA[<p>最近学机器学习的时候，看到这样一段代码：<code>x.reshape(-1,1)</code>，一直搞不懂参数-1是什么意思。最后就去看了看官方文档：</p><center><p><img src="https://img-blog.csdnimg.cn/20201027105911442.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="60%"></p><p>我们主要看一下红框框里面的内容：</p><blockquote><p>The new shape should be compatible with the original shape. If aninteger, then the result will be a 1-D array of that length. One shapedimension can be -1. In this case, the value is inferred from the lengthof the array and remaining dimensions.</p></blockquote><p>翻译：</p><p>新形状应与原形状兼容。如果是整数，那么结果将是该长度的1-D数组。一个形状维数可以是-1，该值是从数组的长度和其余维数推断出来的。</p><p>人话：</p><p>这里我们用一个例子来说明，假如一个数组的shape是<code>(3,4)</code>，这里<code>3*4=12</code>，对这个数组进行<code>reshape</code>操作后，新数组的<code>shape</code>中各维度的乘积也应为12。如果其中一个参数是-1，另一个参数是2，也就是<code>(-1,2)</code>，那么这个新数组的shape就是<code>(12/2,2)</code>，即<code>(6,2)</code>；如果另一个参数是1，那么这个新数组的shape就是<code>(12/1,1)</code>，即<code>(12,1)</code>.</p><p>更多的情况用下面的代码实现：</p><figure><imgsrc="https://img-blog.csdnimg.cn/2020102711161051.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTQ3NjUwMg==,size_16,color_FFFFFF,t_70#pic_center"alt="在这里插入图片描述" /><figcaption aria-hidden="true">在这里插入图片描述</figcaption></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>python</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>numpy</tag>
+      
+      <tag>python</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>python爬取糗事百科段子并发送到邮箱</title>
     <link href="/articles/61ec06a7.html"/>
     <url>/articles/61ec06a7.html</url>
@@ -325,33 +423,6 @@
       <tag>python</tag>
       
       <tag>爬虫</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>numpy中reshap函数参数为-1的情况分析</title>
-    <link href="/articles/bcfbebe4.html"/>
-    <url>/articles/bcfbebe4.html</url>
-    
-    <content type="html"><![CDATA[<p>最近学机器学习的时候，看到这样一段代码：<code>x.reshape(-1,1)</code>，一直搞不懂参数-1是什么意思。最后就去看了看官方文档：</p><center><p><img src="https://img-blog.csdnimg.cn/20201027105911442.png?watmark/2/text/aHR0cDovL2cuY3Nkbi5uZXQvV5bm1hbjIzMw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="60%"></p><p>我们主要看一下红框框里面的内容：</p><blockquote><p>The new shape should be compatible with the original shape. If aninteger, then the result will be a 1-D array of that length. One shapedimension can be -1. In this case, the value is inferred from the lengthof the array and remaining dimensions.</p></blockquote><p>翻译：</p><p>新形状应与原形状兼容。如果是整数，那么结果将是该长度的1-D数组。一个形状维数可以是-1，该值是从数组的长度和其余维数推断出来的。</p><p>人话：</p><p>这里我们用一个例子来说明，假如一个数组的shape是<code>(3,4)</code>，这里<code>3*4=12</code>，对这个数组进行<code>reshape</code>操作后，新数组的<code>shape</code>中各维度的乘积也应为12。如果其中一个参数是-1，另一个参数是2，也就是<code>(-1,2)</code>，那么这个新数组的shape就是<code>(12/2,2)</code>，即<code>(6,2)</code>；如果另一个参数是1，那么这个新数组的shape就是<code>(12/1,1)</code>，即<code>(12,1)</code>.</p><p>更多的情况用下面的代码实现：</p><figure><imgsrc="https://img-blog.csdnimg.cn/2020102711161051.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTQ3NjUwMg==,size_16,color_FFFFFF,t_70#pic_center"alt="在这里插入图片描述" /><figcaption aria-hidden="true">在这里插入图片描述</figcaption></figure>]]></content>
-    
-    
-    <categories>
-      
-      <category>python</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>python</tag>
-      
-      <tag>numpy</tag>
       
     </tags>
     
