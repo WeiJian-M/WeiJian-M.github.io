@@ -16,15 +16,15 @@
   <meta name="author" content="WeiJian-M">
   <meta name="keywords" content="">
   
-    <meta name="description" content="由逻辑表达式列真值表 \[ F(A,B,C)&#x3D;AB+BC \] 直接法 将A，B，C三变量的所有取值的组合（共8种），分别代入函数式，注意计算函数值，填入真值表中。    A B C F     0 0 0 0   0 0 1 0   0 1 0 0   0 1 1 1   1 0 0 0   1 0">
+    <meta name="description" content="Circuits Combinational Logic Multiplexers Mux2to1 Create a one-bit wide, 2-to-1 multiplexer. When sel&#x3D;0, choose a. When sel&#x3D;1, choose b. 1234567module top_module(     input a, b, sel,    output">
 <meta property="og:type" content="article">
-<meta property="og:title" content="真值表与逻辑表达式的转换">
-<meta property="og:url" content="http://weijian-m.github.io/articles/23d52a23.html">
+<meta property="og:title" content="Verilog-HDLBits-刷题笔记（三）">
+<meta property="og:url" content="http://weijian-m.github.io/articles/7448510c.html">
 <meta property="og:site_name" content="WeiJian-M">
-<meta property="og:description" content="由逻辑表达式列真值表 \[ F(A,B,C)&#x3D;AB+BC \] 直接法 将A，B，C三变量的所有取值的组合（共8种），分别代入函数式，注意计算函数值，填入真值表中。    A B C F     0 0 0 0   0 0 1 0   0 1 0 0   0 1 1 1   1 0 0 0   1 0">
+<meta property="og:description" content="Circuits Combinational Logic Multiplexers Mux2to1 Create a one-bit wide, 2-to-1 multiplexer. When sel&#x3D;0, choose a. When sel&#x3D;1, choose b. 1234567module top_module(     input a, b, sel,    output">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-19T07:36:58.000Z">
-<meta property="article:modified_time" content="2022-07-19T12:50:57.331Z">
+<meta property="article:published_time" content="2022-07-19T12:53:56.000Z">
+<meta property="article:modified_time" content="2022-07-20T05:36:58.211Z">
 <meta property="article:author" content="WeiJian-M">
 <meta property="article:tag" content="Verilog">
 <meta property="article:tag" content="FPGA">
@@ -34,7 +34,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>真值表与逻辑表达式的转换 - WeiJian-M</title>
+  <title>Verilog-HDLBits-刷题笔记（三） - WeiJian-M</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -241,7 +241,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="真值表与逻辑表达式的转换"></span>
+            <span id="subtitle" data-typed-text="Verilog-HDLBits-刷题笔记（三）"></span>
           
         </div>
 
@@ -257,8 +257,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-07-19 15:36" pubdate>
-          2022年7月19日 下午
+        <time datetime="2022-07-19 20:53" pubdate>
+          2022年7月19日 晚上
         </time>
       </span>
     
@@ -269,7 +269,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k 字
+          3.1k 字
         
       </span>
     
@@ -280,7 +280,7 @@
         
         
         
-          5 分钟
+          14 分钟
         
       </span>
     
@@ -326,305 +326,61 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">真值表与逻辑表达式的转换</h1>
+            <h1 style="display: none">Verilog-HDLBits-刷题笔记（三）</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年7月19日 晚上
+                    本文最后更新于：2022年7月20日 下午
                   
                 
               </p>
             
             <div class="markdown-body">
               
-              <h1 id="由逻辑表达式列真值表">由逻辑表达式列真值表</h1>
-<p><span class="math display">\[
-F(A,B,C)=AB+BC
-\]</span></p>
-<h2 id="直接法">直接法</h2>
-<p>将A，B，C三变量的所有取值的组合（共8种），分别代入函数式，注意计算函数值，填入真值表中。</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">A</th>
-<th style="text-align: center;">B</th>
-<th style="text-align: center;">C</th>
-<th style="text-align: center;">F</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-</tr>
-</tbody>
-</table>
-<h2 id="最小项法">最小项法</h2>
-<p>先将逻辑表达式F表示为最小项之和的形式， <span class="math display">\[
-\begin{equation}
-    \begin{aligned}
-        F(A,B,C) &amp;= AB(C+\overline{C})+BC(A+\overline{A})\\
-          &amp;= ABC+AB\overline{C}+\overline{A}BC\\
-          &amp;= \sum m(3,6,7)
-    \end{aligned}
-\end{equation}
-\]</span>
-根据最小项的性质，在真值表中对应于ABC取值为011、110、111处填“1”，其他位置填“0”。</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">A</th>
-<th style="text-align: center;">B</th>
-<th style="text-align: center;">C</th>
-<th style="text-align: center;">F</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-</tr>
-</tbody>
-</table>
-<h2 id="观察法">观察法</h2>
-<p>根据函数表达式F的含义，直接填表。</p>
-<p>函数F=AB+BC表示的含义为：</p>
-<p>（1）当A和B同时为“1”时，F=1</p>
-<p>（2）当B和C同时为“1”时，F=1</p>
-<p>（3）当不满足上面两种情况时，F=0</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">A</th>
-<th style="text-align: center;">B</th>
-<th style="text-align: center;">C</th>
-<th style="text-align: center;">F</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-</tr>
-</tbody>
-</table>
-<h1 id="由真值表写逻辑表达式">由真值表写逻辑表达式</h1>
-<h2 id="最小项之和">最小项之和</h2>
-<p>根据前面学过的最小项的性质，可以得到如下方法，由真值表得到最小项之和的表达式形式。</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">A</th>
-<th style="text-align: center;">B</th>
-<th style="text-align: center;">C</th>
-<th style="text-align: center;">F</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-</tr>
-</tbody>
-</table>
-<p>由真值表可见，当ABC取001、011、100、111时，F为“1”。 $$ <span
-class="math display">\[\begin{equation}
-    \begin{aligned}
-        F(A,B,C) &amp;= \sum m(1,3,4,7)\\
-          &amp;= \overline{A}\overline{B}C+\overline{A}BC+
-A\overline{B}\overline{C} +ABC\\
-
-    \end{aligned}
-\end{equation}\]</span> $$</p>
-<h2 id="最大项之积">最大项之积</h2>
-<p>根据前面学过的最大项的性质，可以得到如下方法，由真值表得到最大项之积的表达式形式。</p>
-<p>由真值表可见，当ABC取000、010、101、110时，F为“0”。 <span
-class="math display">\[
-\begin{equation}
-    \begin{aligned}
-        F(A,B,C) &amp;= \prod M(0,2,5,6)\\
-          &amp;=
-(A+B+C)(A+\overline{B}+C)(\overline{A}+B+\overline{C})(\overline{A}+\overline{B}+C)
-    \end{aligned}
-\end{equation}
-\]</span></p>
+              <h1 id="circuits">Circuits</h1>
+<h2 id="combinational-logic">Combinational Logic</h2>
+<h3 id="multiplexers">Multiplexers</h3>
+<h4 id="mux2to1">Mux2to1</h4>
+<p>Create a one-bit wide, 2-to-1 multiplexer. When sel=0, choose a. When
+sel=1, choose b.</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module( <br>    <span class="hljs-keyword">input</span> a, b, sel,<br>    <span class="hljs-keyword">output</span> out ); <br>    <br>    <span class="hljs-keyword">assign</span> out = sel?b:a;<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h4 id="mux2to1v">Mux2to1v</h4>
+<p>Create a 100-bit wide, 2-to-1 multiplexer. When sel=0, choose a. When
+sel=1, choose b.</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module( <br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">99</span>:<span class="hljs-number">0</span>] a, b,<br>    <span class="hljs-keyword">input</span> sel,<br>    <span class="hljs-keyword">output</span> [<span class="hljs-number">99</span>:<span class="hljs-number">0</span>] out );<br>    <br>    <span class="hljs-keyword">assign</span> out = sel?b:a;<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h4 id="mux9to1v">Mux9to1v</h4>
+<p>Create a 16-bit wide, 9-to-1 multiplexer. sel=0 chooses a, sel=1
+chooses b, etc. For the unused cases (sel=9 to 15), set all output bits
+to '1'.</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module( <br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">15</span>:<span class="hljs-number">0</span>] a, b, c, d, e, f, g, h, i,<br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">3</span>:<span class="hljs-number">0</span>] sel,<br>    <span class="hljs-keyword">output</span> [<span class="hljs-number">15</span>:<span class="hljs-number">0</span>] out );<br>    <br>    <span class="hljs-keyword">always</span> @(*) <span class="hljs-keyword">begin</span><br>        <span class="hljs-keyword">case</span> (sel)<br>            <span class="hljs-number">4&#x27;h0</span>: out = a;<br>            <span class="hljs-number">4&#x27;h1</span>: out = b;<br>            <span class="hljs-number">4&#x27;h2</span>: out = c;<br>            <span class="hljs-number">4&#x27;h3</span>: out = d;<br>            <span class="hljs-number">4&#x27;h4</span>: out = e;<br>            <span class="hljs-number">4&#x27;h5</span>: out = f;<br>            <span class="hljs-number">4&#x27;h6</span>: out = g;<br>            <span class="hljs-number">4&#x27;h7</span>: out = h;<br>            <span class="hljs-number">4&#x27;h8</span>: out = i;<br>            <span class="hljs-keyword">default</span>: out = &#123;<span class="hljs-number">16</span>&#123;<span class="hljs-number">1&#x27;b1</span>&#125;&#125;;<br>        <span class="hljs-keyword">endcase</span><br>    <span class="hljs-keyword">end</span><br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<p>下面时官方答案：</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module( <br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">15</span>:<span class="hljs-number">0</span>] a, b, c, d, e, f, g, h, i,<br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">3</span>:<span class="hljs-number">0</span>] sel,<br>    <span class="hljs-keyword">output</span> [<span class="hljs-number">15</span>:<span class="hljs-number">0</span>] out );<br>    <br><span class="hljs-comment">// Case statements can only be used inside procedural blocks (always block)</span><br>	<span class="hljs-comment">// This is a combinational circuit, so use a combinational always @(*) block.</span><br>	<span class="hljs-keyword">always</span> @(*) <span class="hljs-keyword">begin</span><br>		out = &#x27;<span class="hljs-number">1</span>;		<span class="hljs-comment">// &#x27;1 is a special literal syntax for a number with all bits set to 1.</span><br>						<span class="hljs-comment">// &#x27;0, &#x27;x, and &#x27;z are also valid.</span><br>						<span class="hljs-comment">// I prefer to assign a default value to &#x27;out&#x27; instead of using a</span><br>						<span class="hljs-comment">// default case.</span><br>		<span class="hljs-keyword">case</span> (sel)<br>			<span class="hljs-number">4&#x27;h0</span>: out = a;<br>			<span class="hljs-number">4&#x27;h1</span>: out = b;<br>			<span class="hljs-number">4&#x27;h2</span>: out = c;<br>			<span class="hljs-number">4&#x27;h3</span>: out = d;<br>			<span class="hljs-number">4&#x27;h4</span>: out = e;<br>			<span class="hljs-number">4&#x27;h5</span>: out = f;<br>			<span class="hljs-number">4&#x27;h6</span>: out = g;<br>			<span class="hljs-number">4&#x27;h7</span>: out = h;<br>			<span class="hljs-number">4&#x27;h8</span>: out = i;<br>		<span class="hljs-keyword">endcase</span><br>	<span class="hljs-keyword">end</span><br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h4 id="mux256to1">Mux256to1</h4>
+<p>Create a 1-bit wide, 256-to-1 multiplexer. The 256 inputs are all
+packed into a single 256-bit input vector. sel=0 should select
+<code>in[0]</code>, sel=1 selects bits <code>in[1]</code>, sel=2 selects
+bits <code>in[2]</code>, etc.</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module( <br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">255</span>:<span class="hljs-number">0</span>] in,<br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] sel,<br>    <span class="hljs-keyword">output</span> out );<br>    <br>    <span class="hljs-keyword">assign</span> out = in[sel];<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h4 id="mux256to1v">Mux256to1v</h4>
+<p>Create a 4-bit wide, 256-to-1 multiplexer. The 256 4-bit inputs are
+all packed into a single 1024-bit input vector. sel=0 should select bits
+<code>in[3:0]</code>, sel=1 selects bits <code>in[7:4]</code>, sel=2
+selects bits <code>in[11:8]</code>, etc.</p>
+<p>Hint:</p>
+<ul>
+<li>With this many options, a case statement isn't so useful.</li>
+<li>Vector indices can be variable, as long as the synthesizer can
+figure out that the width of the bits being selected is constant. It's
+not always good at this. An error saying "... is not a constant" means
+it couldn't prove that the select width is constant. In particular,
+<code>in[ sel*4+3 : sel*4 ]</code> does not work.</li>
+<li>Bit slicing ("Indexed vector part select", since Verilog-2001) has
+an even more compact syntax.</li>
+</ul>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module( <br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">1023</span>:<span class="hljs-number">0</span>] in,<br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] sel,<br>    <span class="hljs-keyword">output</span> [<span class="hljs-number">3</span>:<span class="hljs-number">0</span>] out );<br>    <br>    <span class="hljs-keyword">assign</span> out = &#123;in[sel*<span class="hljs-number">4</span>+<span class="hljs-number">3</span>], in[sel*<span class="hljs-number">4</span>+<span class="hljs-number">2</span>], in[sel*<span class="hljs-number">4</span>+<span class="hljs-number">1</span>], in[sel*<span class="hljs-number">4</span>]&#125;;<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<p>下面是官方答案：</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module (<br>	<span class="hljs-keyword">input</span> [<span class="hljs-number">1023</span>:<span class="hljs-number">0</span>] in,<br>	<span class="hljs-keyword">input</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] sel,<br>	<span class="hljs-keyword">output</span> [<span class="hljs-number">3</span>:<span class="hljs-number">0</span>] out<br>);<br><br>	<span class="hljs-comment">// We can&#x27;t part-select multiple bits without an error, but we can select one bit at a time,</span><br>	<span class="hljs-comment">// four times, then concatenate them together.</span><br>	<span class="hljs-keyword">assign</span> out = &#123;in[sel*<span class="hljs-number">4</span>+<span class="hljs-number">3</span>], in[sel*<span class="hljs-number">4</span>+<span class="hljs-number">2</span>], in[sel*<span class="hljs-number">4</span>+<span class="hljs-number">1</span>], in[sel*<span class="hljs-number">4</span>+<span class="hljs-number">0</span>]&#125;;<br><br>	<span class="hljs-comment">// Alternatively, &quot;indexed vector part select&quot; works better, but has an unfamiliar syntax:</span><br>	<span class="hljs-comment">// assign out = in[sel*4 +: 4];		// Select starting at index &quot;sel*4&quot;, then select a total width of 4 bits with increasing (+:) index number.</span><br>	<span class="hljs-comment">// assign out = in[sel*4+3 -: 4];	// Select starting at index &quot;sel*4+3&quot;, then select a total width of 4 bits with decreasing (-:) index number.</span><br>	<span class="hljs-comment">// Note: The width (4 in this case) must be constant.</span><br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
 
               
             </div>
@@ -647,7 +403,7 @@ class="math display">\[
   
     <span>></span>
     
-  <a href="/categories/FPGA/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80/" class="category-chain-item">数字电子技术基础</a>
+  <a href="/categories/FPGA/Verilog/" class="category-chain-item">Verilog</a>
   
   
 
@@ -678,8 +434,8 @@ class="math display">\[
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>真值表与逻辑表达式的转换</div>
-      <div>http://weijian-m.github.io/articles/23d52a23.html</div>
+      <div>Verilog-HDLBits-刷题笔记（三）</div>
+      <div>http://weijian-m.github.io/articles/7448510c.html</div>
     </div>
     <div class="license-meta">
       
@@ -697,7 +453,7 @@ class="math display">\[
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年7月19日</div>
+          <div>2022年7月20日</div>
         </div>
       
       <div class="license-meta-item">
@@ -726,18 +482,12 @@ class="math display">\[
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/articles/7448510c.html" title="Verilog-HDLBits-刷题笔记（三）">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Verilog-HDLBits-刷题笔记（三）</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/articles/3956f25e.html" title="Verilog-HDLBits-刷题笔记（二）">
-                        <span class="hidden-mobile">Verilog-HDLBits-刷题笔记（二）</span>
+                      <a href="/articles/23d52a23.html" title="真值表与逻辑表达式的转换">
+                        <span class="hidden-mobile">真值表与逻辑表达式的转换</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -820,12 +570,6 @@ class="math display">\[
 
 
   
-
-
-  
-  
-
-
 
 
 
@@ -1131,44 +875,6 @@ class="math display">\[
 
 
   <script>Fluid.plugins.imageCaption();</script>
-
-  
-      <script>
-        MathJax = {
-          tex    : {
-            inlineMath: { '[+]': [['$', '$']] }
-          },
-          loader : {
-            load: ['ui/lazy']
-          },
-          options: {
-            renderActions: {
-              findScript    : [10, doc => {
-                document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-                  const display = !!node.type.match(/; *mode=display/);
-                  const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-                  const text = document.createTextNode('');
-                  node.parentNode.replaceChild(text, node);
-                  math.start = { node: text, delim: '', n: 0 };
-                  math.end = { node: text, delim: '', n: 0 };
-                  doc.math.push(math);
-                });
-              }, '', false],
-              insertedScript: [200, () => {
-                document.querySelectorAll('mjx-container').forEach(node => {
-                  let target = node.parentNode;
-                  if (target.nodeName.toLowerCase() === 'li') {
-                    target.parentNode.classList.add('has-jax');
-                  }
-                });
-              }, '', false]
-            }
-          }
-        };
-      </script>
-    
-
-  <script  src="https://lib.baomitu.com/mathjax/3.2.0/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
