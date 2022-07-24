@@ -16,17 +16,18 @@
   <meta name="author" content="WeiJian-M">
   <meta name="keywords" content="">
   
-    <meta name="description" content="demo">
+    <meta name="description" content="Circuits Sequential Logic Sequential Logic Dff A D flip-flop is a circuit that stores a bit and is updated periodically, at the (usually) positive edge of a clock signal.  D flip-flops are crea">
 <meta property="og:type" content="article">
 <meta property="og:title" content="demo">
 <meta property="og:url" content="http://mwj2000.cc/articles/d642dfa0.html">
 <meta property="og:site_name" content="WeiJian-M">
-<meta property="og:description" content="demo">
+<meta property="og:description" content="Circuits Sequential Logic Sequential Logic Dff A D flip-flop is a circuit that stores a bit and is updated periodically, at the (usually) positive edge of a clock signal.  D flip-flops are crea">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-24T11:25:24.000Z">
-<meta property="article:modified_time" content="2022-07-24T12:05:33.564Z">
+<meta property="article:modified_time" content="2022-07-24T12:12:42.879Z">
 <meta property="article:author" content="WeiJian-M">
-<meta property="article:tag" content="demo">
+<meta property="article:tag" content="Verilog">
+<meta property="article:tag" content="FPGA">
 <meta name="twitter:card" content="summary_large_image">
   
   
@@ -268,7 +269,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4 字
+          1.2k 字
         
       </span>
     
@@ -279,7 +280,7 @@
         
         
         
-          1 分钟
+          6 分钟
         
       </span>
     
@@ -337,7 +338,35 @@
             
             <div class="markdown-body">
               
-              <h3 id="demo">demo</h3>
+              <h1 id="circuits">Circuits</h1>
+<h2 id="sequential-logic">Sequential Logic</h2>
+<h3 id="sequential-logic-1">Sequential Logic</h3>
+<h4 id="dff">Dff</h4>
+<p>A D flip-flop is a circuit that stores a bit and is updated
+periodically, at the (usually) positive edge of a clock signal.</p>
+<p><a target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/File:Dff.png"><img
+src="https://hdlbits.01xz.net/mw/images/6/6c/Dff.png" srcset="/img/loading.gif" lazyload
+alt="Dff.png" /></a></p>
+<p>D flip-flops are created by the logic synthesizer when a clocked
+always block is used (See <a
+target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/alwaysblock2">alwaysblock2</a>). A D
+flip-flop is the simplest form of "blob of combinational logic followed
+by a flip-flop" where the combinational logic portion is just a
+wire.</p>
+<p>Create a single D flip-flop.</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module (<br>    <span class="hljs-keyword">input</span> clk,    <span class="hljs-comment">// Clocks are used in sequential circuits</span><br>    <span class="hljs-keyword">input</span> d,<br>    <span class="hljs-keyword">output</span> <span class="hljs-keyword">reg</span> q );<span class="hljs-comment">//</span><br><br>    <span class="hljs-comment">// Use a clocked always block</span><br>    <span class="hljs-comment">//   copy d to q at every positive edge of clk</span><br>    <span class="hljs-comment">//   Clocked always blocks should use non-blocking assignments</span><br>    <span class="hljs-keyword">always</span> @(<span class="hljs-keyword">posedge</span> clk) <span class="hljs-keyword">begin</span><br>        q &lt;= d;<br>    <span class="hljs-keyword">end</span><br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h4 id="dff8">Dff8</h4>
+<p>Create 8 D flip-flops. All DFFs should be triggered by the positive
+edge of <code>clk</code>.</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module (<br>    <span class="hljs-keyword">input</span> clk,<br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] d,<br>    <span class="hljs-keyword">output</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] q<br>);<br>    <br>    <span class="hljs-keyword">always</span> @(<span class="hljs-keyword">posedge</span> clk)<br>        q &lt;= d;<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h4 id="dff8r">Dff8r</h4>
+<p>Create 8 D flip-flops with active high synchronous reset. All DFFs
+should be triggered by the positive edge of <code>clk</code>.</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module (<br>    <span class="hljs-keyword">input</span> clk,<br>    <span class="hljs-keyword">input</span> reset,            <span class="hljs-comment">// Synchronous reset</span><br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] d,<br>    <span class="hljs-keyword">output</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] q<br>);<br>    <br>    <span class="hljs-keyword">always</span> @(<span class="hljs-keyword">posedge</span> clk) <span class="hljs-keyword">begin</span><br>        <span class="hljs-keyword">if</span>(reset)<br>            q&lt;=<span class="hljs-number">8&#x27;b0</span>;<br>        <span class="hljs-keyword">else</span><br>            q&lt;=d;<br>    <span class="hljs-keyword">end</span><br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h4 id="dff8p">Dff8p</h4>
+<p>Create 8 D flip-flops with active high synchronous reset. The
+flip-flops must be reset to 0x34 rather than zero. All DFFs should be
+triggered by the <strong>negative</strong> edge of <code>clk</code>.</p>
 
               
             </div>
@@ -345,11 +374,41 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/FPGA/" class="category-chain-item">FPGA</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/FPGA/Verilog/" class="category-chain-item">Verilog</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
   
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/demo/">#demo</a>
+        <a href="/tags/Verilog/">#Verilog</a>
+      
+        <a href="/tags/FPGA/">#FPGA</a>
       
     </div>
   
