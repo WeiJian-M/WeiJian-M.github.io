@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://mwj2000.cc/articles/d642dfa0.html</loc>
-    
-    <lastmod>2022-07-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://mwj2000.cc/articles/c9f5c6f7.html</loc>
     
     <lastmod>2022-07-21</lastmod>
@@ -214,14 +205,14 @@
   </url>
   
   <url>
-    <loc>http://mwj2000.cc/tags/SAT/</loc>
+    <loc>http://mwj2000.cc/tags/%E7%88%AC%E8%99%AB/</loc>
     <lastmod>2022-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://mwj2000.cc/tags/%E7%88%AC%E8%99%AB/</loc>
+    <loc>http://mwj2000.cc/tags/SAT/</loc>
     <lastmod>2022-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -314,14 +305,14 @@
   </url>
   
   <url>
-    <loc>http://mwj2000.cc/categories/FPGA/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/</loc>
+    <loc>http://mwj2000.cc/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2022-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://mwj2000.cc/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
+    <loc>http://mwj2000.cc/categories/FPGA/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/</loc>
     <lastmod>2022-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
