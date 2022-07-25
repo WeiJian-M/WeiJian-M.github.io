@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>01-组合逻辑与时序逻辑</title>
+    <link href="/articles/8cbc4297.html"/>
+    <url>/articles/8cbc4297.html</url>
+    
+    <content type="html"><![CDATA[<h3 id="时序逻辑与组合逻辑的对比">时序逻辑与组合逻辑的对比</h3><ul><li><p>组合逻辑的输出状态与输入直接相关，时序逻辑还必须在时钟上升沿触发后输出新值</p></li><li><p>组合逻辑容易出现竞争、冒险现象，时序逻辑一般不会出现竞争、冒险现象</p></li><li><p>组合逻辑的时序较难保证，时序逻辑更容易达到时序收敛，时序逻辑更可控</p></li><li><p>组合逻辑只适合简单的电路，时序逻辑能够胜任大规模的逻辑电路</p></li></ul><p><imgsrc="https://cdn.jsdelivr.net/gh/WeiJian-M/img@main/blogFluid/20220725114635.png" /></p><figure><imgsrc="https://cdn.jsdelivr.net/gh/WeiJian-M/img@main/blogFluid/image-20220725121130381.png"alt="image-20220725121130381" /><figcaption aria-hidden="true">image-20220725121130381</figcaption></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>FPGA</category>
+      
+      <category>Verilog学习笔记与练习</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Verilog</tag>
+      
+      <tag>FPGA</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Verilog-HDLBits-刷题笔记（六）</title>
     <link href="/articles/c9f5c6f7.html"/>
     <url>/articles/c9f5c6f7.html</url>
