@@ -16,25 +16,23 @@
   <meta name="author" content="WeiJian-M">
   <meta name="keywords" content="">
   
-    <meta name="description" content="时序逻辑与组合逻辑的对比  组合逻辑的输出状态与输入直接相关，时序逻辑还必须在时钟上升沿触发后输出新值 组合逻辑容易出现竞争、冒险现象，时序逻辑一般不会出现竞争、冒险现象 组合逻辑的时序较难保证，时序逻辑更容易达到时序收敛，时序逻辑更可控 组合逻辑只适合简单的电路，时序逻辑能够胜任大规模的逻辑电路   组合逻辑的实现  组合逻辑实现方式1： always @（电平敏感信号列表）">
+    <meta name="description" content="同步reset(synchronous reset) 当reset信号为active的时候，寄存器在下一个时钟沿到来之后被复位，时钟沿到来之前寄存器还是保持其之前的值。 异步reset(asynchronous reset) 当reset信号为active的时候，寄存器立刻被复位，与时钟沿到来与否没有关系。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="01-组合逻辑与时序逻辑">
-<meta property="og:url" content="http://mwj2000.cc/articles/8cbc4297.html">
+<meta property="og:title" content="同步和异步的区别">
+<meta property="og:url" content="http://mwj2000.cc/articles/5d394e96.html">
 <meta property="og:site_name" content="WeiJian-M">
-<meta property="og:description" content="时序逻辑与组合逻辑的对比  组合逻辑的输出状态与输入直接相关，时序逻辑还必须在时钟上升沿触发后输出新值 组合逻辑容易出现竞争、冒险现象，时序逻辑一般不会出现竞争、冒险现象 组合逻辑的时序较难保证，时序逻辑更容易达到时序收敛，时序逻辑更可控 组合逻辑只适合简单的电路，时序逻辑能够胜任大规模的逻辑电路   组合逻辑的实现  组合逻辑实现方式1： always @（电平敏感信号列表）">
+<meta property="og:description" content="同步reset(synchronous reset) 当reset信号为active的时候，寄存器在下一个时钟沿到来之后被复位，时钟沿到来之前寄存器还是保持其之前的值。 异步reset(asynchronous reset) 当reset信号为active的时候，寄存器立刻被复位，与时钟沿到来与否没有关系。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-25T03:14:18.000Z">
-<meta property="article:modified_time" content="2022-07-25T06:54:35.691Z">
+<meta property="article:published_time" content="2022-07-25T12:36:13.000Z">
+<meta property="article:modified_time" content="2022-07-25T12:38:09.381Z">
 <meta property="article:author" content="WeiJian-M">
-<meta property="article:tag" content="FPGA">
-<meta property="article:tag" content="Verilog">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>01-组合逻辑与时序逻辑 - WeiJian-M</title>
+  <title>同步和异步的区别 - WeiJian-M</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -241,7 +239,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="01-组合逻辑与时序逻辑"></span>
+            <span id="subtitle" data-typed-text="同步和异步的区别"></span>
           
         </div>
 
@@ -257,8 +255,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-07-25 11:14" pubdate>
-          2022年7月25日 上午
+        <time datetime="2022-07-25 20:36" pubdate>
+          2022年7月25日 晚上
         </time>
       </span>
     
@@ -269,7 +267,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2k 字
+          149 字
         
       </span>
     
@@ -280,7 +278,7 @@
         
         
         
-          9 分钟
+          1 分钟
         
       </span>
     
@@ -326,100 +324,22 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">01-组合逻辑与时序逻辑</h1>
+            <h1 style="display: none">同步和异步的区别</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年7月25日 下午
+                    本文最后更新于：2022年7月25日 晚上
                   
                 
               </p>
             
             <div class="markdown-body">
               
-              <h3 id="时序逻辑与组合逻辑的对比">时序逻辑与组合逻辑的对比</h3>
-<ul>
-<li><p>组合逻辑的输出状态与输入直接相关，时序逻辑还必须在时钟上升沿触发后输出新值</p></li>
-<li><p>组合逻辑容易出现竞争、冒险现象，时序逻辑一般不会出现竞争、冒险现象</p></li>
-<li><p>组合逻辑的时序较难保证，时序逻辑更容易达到时序收敛，时序逻辑更可控</p></li>
-<li><p>组合逻辑只适合简单的电路，时序逻辑能够胜任大规模的逻辑电路</p></li>
-</ul>
-<p><img
-src="https://cdn.jsdelivr.net/gh/WeiJian-M/img@main/blogFluid/20220725114635.png" srcset="/img/loading.gif" lazyload /></p>
-<h3 id="组合逻辑的实现">组合逻辑的实现</h3>
-<ul>
-<li>组合逻辑实现方式1： always @（电平敏感信号列表）
-<ul>
-<li>在always 模块中可以使用if、case 等语句</li>
-<li>一般建议使用阻塞赋值语句“=”</li>
-<li>always 模块中的信号必须定义为reg
-型，仅仅是语法要求，实际实现仍然是wire类型</li>
-</ul></li>
-<li>组合逻辑实现方式2： assign描述的赋值语句
-<ul>
-<li>信号只能被定义为wire型</li>
-</ul></li>
-</ul>
-<h3 id="时序逻辑的实现">时序逻辑的实现</h3>
-<ul>
-<li>时序逻辑实现方式： always @（posedge clk） begin……end
-<ul>
-<li>时序逻辑always块中定义的reg型信号都会被综合成reg（寄存器）</li>
-<li>时序逻辑中一般建议使用非阻塞赋值“&lt;=”</li>
-<li>敏感变量表中只要有时钟沿的变化即可，即每次触发输出变化都是时钟沿引入的</li>
-</ul></li>
-</ul>
-<h3 id="组合逻辑和时序逻辑代码设计">组合逻辑和时序逻辑代码设计</h3>
-<ul>
-<li><p>异或逻辑的组合逻辑实现</p></li>
-<li><p>异或逻辑的时序逻辑实现</p></li>
-<li><p>z = a ^ b</p></li>
-</ul>
-<table>
-<thead>
-<tr class="header">
-<th><strong>a</strong></th>
-<th><strong>b</strong></th>
-<th><strong>z</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>0</td>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td>1</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>1</td>
-<td>0</td>
-</tr>
-</tbody>
-</table>
-<p>组合逻辑：</p>
-<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-meta">`<span class="hljs-keyword">timescale</span> 1ns/1ps</span><br><span class="hljs-keyword">module</span> vlg_design1(<br>	<span class="hljs-keyword">input</span> a,b,<br>	<span class="hljs-keyword">output</span> <span class="hljs-keyword">reg</span> z<br>    );<br><br><span class="hljs-keyword">always</span> @(a <span class="hljs-keyword">or</span> b) <span class="hljs-keyword">begin</span><br>	z = a ^ b;<br><span class="hljs-keyword">end</span>	<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
-<p>时序逻辑：</p>
-<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> vlg_design2(<br>	<span class="hljs-keyword">input</span> clk,<br>	<span class="hljs-keyword">input</span> rst_n,<br>	<span class="hljs-keyword">input</span> a,b,<br>	<span class="hljs-keyword">output</span> <span class="hljs-keyword">reg</span> z<br>    );<br><br><span class="hljs-keyword">always</span> @(<span class="hljs-keyword">posedge</span> clk)	<br>	<span class="hljs-keyword">if</span>(!rst_n) <br>		z &lt;= <span class="hljs-number">1&#x27;b0</span>;<br>	<span class="hljs-keyword">else</span> <br>		z &lt;= a ^ b;<br>	<br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
-<p>testbench:</p>
-<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-meta">`<span class="hljs-keyword">timescale</span> 1ns/1ps</span><br><span class="hljs-keyword">module</span> testbench_top();<br>	<br><span class="hljs-comment">////////////////////////////////////////////////////////////</span><br><span class="hljs-comment">//参数定义</span><br><br><span class="hljs-meta">`<span class="hljs-keyword">define</span> CLK_PERIORD		10		</span><span class="hljs-comment">//时钟周期设置为10ns（100MHz）	</span><br><br><span class="hljs-comment">////////////////////////////////////////////////////////////</span><br><span class="hljs-comment">//接口申明</span><br>	<br><span class="hljs-keyword">reg</span> clk;<br><span class="hljs-keyword">reg</span> rst_n;<br><span class="hljs-keyword">reg</span> a, b;<br><span class="hljs-keyword">wire</span> z1, z2;<br><br><span class="hljs-comment">////////////////////////////////////////////////////////////	</span><br><span class="hljs-comment">//对被测试的设计进行例化</span><br>	<br>vlg_design1		uut_vlg_design1(<br>	<span class="hljs-variable">.a</span>(a),<br>	<span class="hljs-variable">.b</span>(b),<br>	<span class="hljs-variable">.z</span>(z1)<br>    );	<br><br>vlg_design2		uut_vlg_design2(<br>	<span class="hljs-variable">.clk</span>(clk),<br>	<span class="hljs-variable">.rst_n</span>(rst_n),<br>	<span class="hljs-variable">.a</span>(a),<br>	<span class="hljs-variable">.b</span>(b),<br>	<span class="hljs-variable">.z</span>(z2)<br>    );	<br>	<br><span class="hljs-comment">////////////////////////////////////////////////////////////</span><br><span class="hljs-comment">//复位和时钟产生</span><br><br>	<span class="hljs-comment">//时钟和复位初始化、复位产生</span><br><span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span><br>	clk &lt;= <span class="hljs-number">0</span>;<br>	rst_n &lt;= <span class="hljs-number">0</span>;<br>	#<span class="hljs-number">1000</span>;<br>	rst_n &lt;= <span class="hljs-number">1</span>;<br><span class="hljs-keyword">end</span><br>	<br>	<span class="hljs-comment">//时钟产生</span><br><span class="hljs-keyword">always</span> <span class="hljs-variable">#(`CLK_PERIORD/2)</span> clk = ~clk;	<br><br><span class="hljs-comment">////////////////////////////////////////////////////////////</span><br><span class="hljs-comment">//测试激励产生</span><br><br><span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span><br>	a &lt;= <span class="hljs-number">0</span>;<br>	b &lt;= <span class="hljs-number">0</span>;<br><br>	@(<span class="hljs-keyword">posedge</span> rst_n);	<span class="hljs-comment">//等待复位完成</span><br>	<br>	<span class="hljs-keyword">repeat</span>(<span class="hljs-number">10</span>) <span class="hljs-keyword">begin</span><br>		@(<span class="hljs-keyword">posedge</span> clk);<br>	<span class="hljs-keyword">end</span><br><br>	<span class="hljs-comment">// a和b同步变化</span><br>	@(<span class="hljs-keyword">posedge</span> clk);<br>	#<span class="hljs-number">2</span>;<br>	a &lt;= <span class="hljs-number">1</span>;<br>	b &lt;= <span class="hljs-number">0</span>;<br>	@(<span class="hljs-keyword">posedge</span> clk);<br>	#<span class="hljs-number">2</span>;<br>	a &lt;= <span class="hljs-number">0</span>;<br>	b &lt;= <span class="hljs-number">1</span>;<br>	@(<span class="hljs-keyword">posedge</span> clk);<br>	#<span class="hljs-number">2</span>;<br>	a &lt;= <span class="hljs-number">0</span>;<br>	b &lt;= <span class="hljs-number">0</span>;<br>	<br>	<span class="hljs-comment">// a和b变化有延时</span><br>	@(<span class="hljs-keyword">posedge</span> clk);<br>	#<span class="hljs-number">2</span>;<br>	a &lt;= <span class="hljs-number">1</span>;<br>	#<span class="hljs-number">1</span><br>	b &lt;= <span class="hljs-number">0</span>;<br>	@(<span class="hljs-keyword">posedge</span> clk);<br>	#<span class="hljs-number">2</span>;<br>	a &lt;= <span class="hljs-number">0</span>;<br>	#<span class="hljs-number">1</span>;<br>	b &lt;= <span class="hljs-number">1</span>;<br>	@(<span class="hljs-keyword">posedge</span> clk);<br>	#<span class="hljs-number">2</span>;<br>	a &lt;= <span class="hljs-number">0</span>;<br>	#<span class="hljs-number">1</span>;<br>	b &lt;= <span class="hljs-number">0</span>;<br><br>	<span class="hljs-keyword">repeat</span>(<span class="hljs-number">10</span>) <span class="hljs-keyword">begin</span><br>		@(<span class="hljs-keyword">posedge</span> clk);<br>	<span class="hljs-keyword">end</span><br>	<br>	<span class="hljs-built_in">$stop</span>;<br><span class="hljs-keyword">end</span><br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
-<p>仿真结果：</p>
-<figure>
-<img
-src="https://cdn.jsdelivr.net/gh/WeiJian-M/img@main/blogFluid/image-20220725145416755.png" srcset="/img/loading.gif" lazyload
-alt="image-20220725145416755" />
-<figcaption aria-hidden="true">image-20220725145416755</figcaption>
-</figure>
+              <p><strong>同步reset(synchronous reset)</strong></p>
+<p>当reset信号为active的时候，寄存器在下一个时钟沿到来之后被复位，时钟沿到来之前寄存器还是保持其之前的值。</p>
+<p><strong>异步reset(asynchronous reset)</strong></p>
+<p>当reset信号为active的时候，寄存器立刻被复位，与时钟沿到来与否没有关系。</p>
 
               
             </div>
@@ -442,7 +362,7 @@ alt="image-20220725145416755" />
   
     <span>></span>
     
-  <a href="/categories/FPGA/Verilog%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%8E%E7%BB%83%E4%B9%A0/" class="category-chain-item">Verilog学习笔记与练习</a>
+  <a href="/categories/FPGA/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/" class="category-chain-item">数字电子技术</a>
   
   
 
@@ -456,15 +376,6 @@ alt="image-20220725145416755" />
     </div>
   
   
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/FPGA/">#FPGA</a>
-      
-        <a href="/tags/Verilog/">#Verilog</a>
-      
-    </div>
-  
 </div>
 
 
@@ -473,8 +384,8 @@ alt="image-20220725145416755" />
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>01-组合逻辑与时序逻辑</div>
-      <div>http://mwj2000.cc/articles/8cbc4297.html</div>
+      <div>同步和异步的区别</div>
+      <div>http://mwj2000.cc/articles/5d394e96.html</div>
     </div>
     <div class="license-meta">
       
@@ -521,18 +432,12 @@ alt="image-20220725145416755" />
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/articles/bd77f3db.html" title="02-分频计数器设计">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">02-分频计数器设计</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/articles/c9f5c6f7.html" title="Verilog-HDLBits-刷题笔记（六）">
-                        <span class="hidden-mobile">Verilog-HDLBits-刷题笔记（六）</span>
+                      <a href="/articles/3d1b75af.html" title="03-使能时钟设计">
+                        <span class="hidden-mobile">03-使能时钟设计</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

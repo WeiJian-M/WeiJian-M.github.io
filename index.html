@@ -267,6 +267,207 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/articles/5d394e96.html" target="_self">
+          同步和异步的区别
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/articles/5d394e96.html" target="_self">
+        <div>
+          
+          同步reset(synchronous reset) 当reset信号为active的时候，寄存器在下一个时钟沿到来之后被复位，时钟沿到来之前寄存器还是保持其之前的值。 异步reset(asynchronous reset) 当reset信号为active的时候，寄存器立刻被复位，与时钟沿到来与否没有关系。
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-07-25 20:36" pubdate>
+              2022-07-25
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/FPGA/" class="category-chain-item">FPGA</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/FPGA/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/" class="category-chain-item">数字电子技术</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/articles/3d1b75af.html" target="_self">
+          03-使能时钟设计
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/articles/3d1b75af.html" target="_self">
+        <div>
+          
+          门控时钟  门控时钟通过一个时能信号控制时钟的开关  组合逻辑中多用门控时钟 包含一个门电路，容易因竞争而产生不希望的毛刺 当系统不工作时可以关闭时钟，降低系统功耗  使用门控时钟并不符合同步设计的思想，它可能会影响设计的实现和验证    image-20220725192912437    image-20220725192927933  使能时钟  时钟
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-07-25 19:26" pubdate>
+              2022-07-25
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/FPGA/" class="category-chain-item">FPGA</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/FPGA/Verilog%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%8E%E7%BB%83%E4%B9%A0/" class="category-chain-item">Verilog学习笔记与练习</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/FPGA/">#FPGA</a>
+            
+              <a href="/tags/Verilog/">#Verilog</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/articles/bd77f3db.html" target="_self">
+          02-分频计数器设计
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/articles/bd77f3db.html" target="_self">
+        <div>
+          
+          分频时钟的工程应用  对FPGA系统时钟（频率较高）进行分频，产生分频时钟（频率较低） 分频时钟可以作为FPGA低速外设的同步时钟  IIC总线的时钟（ ≤ 400KHz） 低速SPI总线的时钟（ ≤ 1MHz）  对于频率较高的分频时钟，不能直接作为外设时钟或FPGA内部时钟使用，这类时钟应该由FPGA内部的PLL等时钟管理单元产生  功能需求  输入时钟100MHz，产
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-07-25 14:28" pubdate>
+              2022-07-25
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/FPGA/" class="category-chain-item">FPGA</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/FPGA/Verilog%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%8E%E7%BB%83%E4%B9%A0/" class="category-chain-item">Verilog学习笔记与练习</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/FPGA/">#FPGA</a>
+            
+              <a href="/tags/Verilog/">#Verilog</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/articles/8cbc4297.html" target="_self">
           01-组合逻辑与时序逻辑
         </a>
@@ -275,7 +476,7 @@
       <a class="index-excerpt" href="/articles/8cbc4297.html" target="_self">
         <div>
           
-          时序逻辑与组合逻辑的对比  组合逻辑的输出状态与输入直接相关，时序逻辑还必须在时钟上升沿触发后输出新值 组合逻辑容易出现竞争、冒险现象，时序逻辑一般不会出现竞争、冒险现象 组合逻辑的时序较难保证，时序逻辑更容易达到时序收敛，时序逻辑更可控 组合逻辑只适合简单的电路，时序逻辑能够胜任大规模的逻辑电路     image-20220725121130381
+          时序逻辑与组合逻辑的对比  组合逻辑的输出状态与输入直接相关，时序逻辑还必须在时钟上升沿触发后输出新值 组合逻辑容易出现竞争、冒险现象，时序逻辑一般不会出现竞争、冒险现象 组合逻辑的时序较难保证，时序逻辑更容易达到时序收敛，时序逻辑更可控 组合逻辑只适合简单的电路，时序逻辑能够胜任大规模的逻辑电路   组合逻辑的实现  组合逻辑实现方式1： always @（电平敏感信号列表）
         </div>
       </a>
 
@@ -321,9 +522,9 @@
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Verilog/">#Verilog</a>
-            
               <a href="/tags/FPGA/">#FPGA</a>
+            
+              <a href="/tags/Verilog/">#Verilog</a>
             
           </div>
         
@@ -391,9 +592,9 @@
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Verilog/">#Verilog</a>
-            
               <a href="/tags/FPGA/">#FPGA</a>
+            
+              <a href="/tags/Verilog/">#Verilog</a>
             
           </div>
         
@@ -583,9 +784,9 @@
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Verilog/">#Verilog</a>
-            
               <a href="/tags/FPGA/">#FPGA</a>
+            
+              <a href="/tags/Verilog/">#Verilog</a>
             
           </div>
         
@@ -714,219 +915,9 @@
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Verilog/">#Verilog</a>
-            
               <a href="/tags/FPGA/">#FPGA</a>
             
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/articles/7448510c.html" target="_self">
-          Verilog-HDLBits-刷题笔记（三）
-        </a>
-      </h1>
-
-      <a class="index-excerpt" href="/articles/7448510c.html" target="_self">
-        <div>
-          
-          Circuits Combinational Logic Multiplexers Mux2to1 Create a one-bit wide, 2-to-1 multiplexer. When sel&#x3D;0, choose a. When sel&#x3D;1, choose b. 1234567module top_module(     input a, b, sel,    output
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-07-19 20:53" pubdate>
-              2022-07-19
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/FPGA/" class="category-chain-item">FPGA</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/FPGA/Verilog/" class="category-chain-item">Verilog</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
               <a href="/tags/Verilog/">#Verilog</a>
-            
-              <a href="/tags/FPGA/">#FPGA</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/articles/23d52a23.html" target="_self">
-          真值表与逻辑表达式的转换
-        </a>
-      </h1>
-
-      <a class="index-excerpt" href="/articles/23d52a23.html" target="_self">
-        <div>
-          
-          由逻辑表达式列真值表 \[ F(A,B,C)&#x3D;AB+BC \] 直接法 将A，B，C三变量的所有取值的组合（共8种），分别代入函数式，注意计算函数值，填入真值表中。    A B C F     0 0 0 0   0 0 1 0   0 1 0 0   0 1 1 1   1 0 0 0   1 0
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-07-19 15:36" pubdate>
-              2022-07-19
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/FPGA/" class="category-chain-item">FPGA</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/FPGA/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/" class="category-chain-item">数字电子技术</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Verilog/">#Verilog</a>
-            
-              <a href="/tags/FPGA/">#FPGA</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/articles/3956f25e.html" target="_self">
-          Verilog-HDLBits-刷题笔记（二）
-        </a>
-      </h1>
-
-      <a class="index-excerpt" href="/articles/3956f25e.html" target="_self">
-        <div>
-          
-          Circuits Combinational Logic Basic Gates Exams&#x2F;m2014 q4h Implement the following circuit:  1234567module top_module (    input in,    output out);    assign out &#x3D; in;endmodule Exams&#x2F;m2014 q4i
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-07-18 16:18" pubdate>
-              2022-07-18
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/FPGA/" class="category-chain-item">FPGA</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/FPGA/Verilog/" class="category-chain-item">Verilog</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Verilog/">#Verilog</a>
-            
-              <a href="/tags/FPGA/">#FPGA</a>
             
           </div>
         
@@ -938,7 +929,7 @@
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
 

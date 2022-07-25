@@ -24,10 +24,10 @@
 <meta property="og:description" content="Circuits Sequential Logic Sequential Logic Dff A D flip-flop is a circuit that stores a bit and is updated periodically, at the (usually) positive edge of a clock signal.  D flip-flops are crea">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-20T12:37:02.000Z">
-<meta property="article:modified_time" content="2022-07-21T11:54:05.421Z">
+<meta property="article:modified_time" content="2022-07-25T13:24:52.214Z">
 <meta property="article:author" content="WeiJian-M">
-<meta property="article:tag" content="Verilog">
 <meta property="article:tag" content="FPGA">
+<meta property="article:tag" content="Verilog">
 <meta name="twitter:card" content="summary_large_image">
   
   
@@ -269,7 +269,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.4k 字
+          3k 字
         
       </span>
     
@@ -280,7 +280,7 @@
         
         
         
-          6 分钟
+          13 分钟
         
       </span>
     
@@ -331,7 +331,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年7月21日 晚上
+                    本文最后更新于：2022年7月25日 晚上
                   
                 
               </p>
@@ -368,6 +368,43 @@ should be triggered by the positive edge of <code>clk</code>.</p>
 flip-flops must be reset to 0x34 rather than zero. All DFFs should be
 triggered by the <strong>negative</strong> edge of <code>clk</code>.</p>
 <figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module (<br>    <span class="hljs-keyword">input</span> clk,<br>    <span class="hljs-keyword">input</span> reset,<br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] d,<br>    <span class="hljs-keyword">output</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] q<br>);<br>    <br>    <span class="hljs-keyword">always</span> @(<span class="hljs-keyword">negedge</span> clk) <span class="hljs-keyword">begin</span><br>        <span class="hljs-keyword">if</span>(reset)<br>            q &lt;= <span class="hljs-number">7&#x27;h34</span>;<br>        <span class="hljs-keyword">else</span><br>            q = d;<br>    <span class="hljs-keyword">end</span><br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h4 id="dff8ar">Dff8ar</h4>
+<p>Create 8 D flip-flops with active high asynchronous reset. All DFFs
+should be triggered by the positive edge of <code>clk</code>.</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module (<br>    <span class="hljs-keyword">input</span> clk,<br>    <span class="hljs-keyword">input</span> areset,   <span class="hljs-comment">// active high asynchronous reset</span><br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] d,<br>    <span class="hljs-keyword">output</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] q<br>);<br>    <br>    <span class="hljs-keyword">always</span> @(<span class="hljs-keyword">posedge</span> clk <span class="hljs-keyword">or</span> <span class="hljs-keyword">posedge</span> areset)<br>        <span class="hljs-keyword">if</span>(areset) <br>            q &lt;= <span class="hljs-number">&#x27;b0</span>;<br>    	<span class="hljs-keyword">else</span><br>            q &lt;= d; <br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h4 id="dff16e">Dff16e</h4>
+<p>Create 16 D flip-flops. It's sometimes useful to only modify parts of
+a group of flip-flops. The byte-enable inputs control whether each byte
+of the 16 registers should be written to on that cycle.
+<code>byteena[1]</code> controls the upper byte <code>d[15:8]</code>,
+while <code>byteena[0]</code> controls the lower byte
+<code>d[7:0]</code>.</p>
+<p><code>resetn</code> is a synchronous, active-low reset.</p>
+<p>All DFFs should be triggered by the positive edge of
+<code>clk</code>.</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module (<br>    <span class="hljs-keyword">input</span> clk,<br>    <span class="hljs-keyword">input</span> resetn,<br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">1</span>:<span class="hljs-number">0</span>] byteena,<br>    <span class="hljs-keyword">input</span> [<span class="hljs-number">15</span>:<span class="hljs-number">0</span>] d,<br>    <span class="hljs-keyword">output</span> [<span class="hljs-number">15</span>:<span class="hljs-number">0</span>] q<br>);<br>    <br>    <span class="hljs-keyword">always</span> @(<span class="hljs-keyword">posedge</span> clk) <span class="hljs-keyword">begin</span><br>        <span class="hljs-keyword">if</span>(!resetn)<br>            q &lt;= <span class="hljs-number">&#x27;b0</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">begin</span><br>            <span class="hljs-keyword">if</span>(byteena[<span class="hljs-number">1</span>])<br>                q[<span class="hljs-number">15</span>:<span class="hljs-number">8</span>] &lt;= d[<span class="hljs-number">15</span>:<span class="hljs-number">8</span>];<br>            <span class="hljs-keyword">if</span>(byteena[<span class="hljs-number">0</span>])<br>                q[<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] &lt;= d[<span class="hljs-number">7</span>:<span class="hljs-number">0</span>];<br>        <span class="hljs-keyword">end</span><br>    <span class="hljs-keyword">end</span><br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h4 id="examsm2014-q4a">Exams/m2014 q4a</h4>
+<p>Implement the following circuit:</p>
+<p><a target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/File:Exams_m2014q4a.png"><img
+src="D:\TypoaImg\Exams_m2014q4a.png" srcset="/img/loading.gif" lazyload alt="Exams m2014q4a.png" /></a></p>
+<p>Note that this is a latch, so a Quartus warning about having inferred
+a latch is expected.</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module (<br>    <span class="hljs-keyword">input</span> d, <br>    <span class="hljs-keyword">input</span> ena,<br>    <span class="hljs-keyword">output</span> q);<br>    <br>    <span class="hljs-keyword">always</span> @(*)<br>        <span class="hljs-keyword">if</span>(ena)<br>            q &lt;= d;<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h4 id="examsm2014-q4b">Exams/m2014 q4b</h4>
+<p>Implement the following circuit:</p>
+<p><a target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/File:Exams_m2014q4b.png"><img
+src="D:\TypoaImg\Exams_m2014q4b.png" srcset="/img/loading.gif" lazyload alt="Exams m2014q4b.png" /></a></p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module (<br>    <span class="hljs-keyword">input</span> clk,<br>    <span class="hljs-keyword">input</span> d, <br>    <span class="hljs-keyword">input</span> ar,   <span class="hljs-comment">// asynchronous reset</span><br>    <span class="hljs-keyword">output</span> q);<br><br>    <span class="hljs-keyword">always</span> @(<span class="hljs-keyword">posedge</span> clk <span class="hljs-keyword">or</span> <span class="hljs-keyword">posedge</span> ar)<br>        <span class="hljs-keyword">if</span>(ar)<br>            q &lt;= <span class="hljs-number">0</span>;<br>    	<span class="hljs-keyword">else</span><br>            q &lt;= d;<br>    <br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h4 id="examsm2014-q4c">Exams/m2014 q4c</h4>
+<p>Implement the following circuit:</p>
+<p><a target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/File:Exams_m2014q4c.png"><img
+src="D:\TypoaImg\Exams_m2014q4c.png" srcset="/img/loading.gif" lazyload alt="Exams m2014q4c.png" /></a></p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module (<br>    <span class="hljs-keyword">input</span> clk,<br>    <span class="hljs-keyword">input</span> d, <br>    <span class="hljs-keyword">input</span> r,   <span class="hljs-comment">// synchronous reset</span><br>    <span class="hljs-keyword">output</span> q);<br>    <br>    <span class="hljs-keyword">always</span> @(<span class="hljs-keyword">posedge</span> clk)<br>        <span class="hljs-keyword">if</span>(r)<br>            q &lt;= <span class="hljs-number">0</span>;<br>    	<span class="hljs-keyword">else</span><br>            q &lt;= d;<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
+<h4 id="examsm2014-q4d">Exams/m2014 q4d</h4>
+<p>Implement the following circuit:</p>
+<p><a target="_blank" rel="noopener" href="https://hdlbits.01xz.net/wiki/File:Exams_m2014q4d.png"><img
+src="D:\TypoaImg\Exams_m2014q4d.png" srcset="/img/loading.gif" lazyload alt="Exams m2014q4d.png" /></a></p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs verilog"><span class="hljs-keyword">module</span> top_module (<br>    <span class="hljs-keyword">input</span> clk,<br>    <span class="hljs-keyword">input</span> in, <br>    <span class="hljs-keyword">output</span> out);<br>    <br>    <span class="hljs-keyword">always</span> @(<span class="hljs-keyword">posedge</span> clk)<br>        out &lt;= in^out;<br><br><span class="hljs-keyword">endmodule</span><br></code></pre></td></tr></table></figure>
 
               
             </div>
@@ -407,9 +444,9 @@ triggered by the <strong>negative</strong> edge of <code>clk</code>.</p>
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Verilog/">#Verilog</a>
-      
         <a href="/tags/FPGA/">#FPGA</a>
+      
+        <a href="/tags/Verilog/">#Verilog</a>
       
     </div>
   
@@ -440,7 +477,7 @@ triggered by the <strong>negative</strong> edge of <code>clk</code>.</p>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年7月21日</div>
+          <div>2022年7月25日</div>
         </div>
       
       <div class="license-meta-item">
