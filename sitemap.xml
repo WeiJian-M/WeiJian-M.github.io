@@ -221,13 +221,6 @@
   </url>
   
   <url>
-    <loc>http://mwj2000.cc/tags/SAT/</loc>
-    <lastmod>2022-07-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://mwj2000.cc/tags/Latex/</loc>
     <lastmod>2022-07-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -243,6 +236,13 @@
   
   <url>
     <loc>http://mwj2000.cc/tags/FPGA/</loc>
+    <lastmod>2022-07-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://mwj2000.cc/tags/SAT/</loc>
     <lastmod>2022-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
